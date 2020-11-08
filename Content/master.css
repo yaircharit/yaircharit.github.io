@@ -1,0 +1,9 @@
+@import 'bootstrap.css';
+
+.iframeBasics {
+    border: none;
+    width: 100%;
+    padding: 0px;
+    display: block;
+    /* height: 100%; */
+}
