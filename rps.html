@@ -4,14 +4,46 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yair Charit | RPS</title>
   <link rel="stylesheet" href="TemplateData/style.css">
   <link rel="stylesheet" href="Content/master.css">
   <link rel="icon" href="Art/YCLogo/YC_Logo_DarkRed2.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <base target="_parent">
 </head>
 
 <body>
-  <iframe class="iframeBasics" src="navbar.html" scrolling="no"></iframe>
+  <!-- navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="img-thumbnail img-circle" href="index.html" style="padding: 5px 5px">
+          <img src="Art/YCLogo/YC_Logo_WhiteCyan.png" alt="YCLogo" height="40" /></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">Projects <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="rps.html">RPS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br><br>
+
+  <!-- Body starts here -->
   <div id="unity-container" style="left: 20%;">
     <canvas id="unity-canvas"></canvas>
     <div id="unity-loading-bar">
@@ -20,7 +52,7 @@
         <div id="unity-progress-bar-full"></div>
       </div>
     </div>
-    <div id="unity-fullscreen-button"></div>
+    <div id="unity-fullscreen-button" style="float: left;"></div>
   </div>
   <script>
     var buildUrl = "Build";
@@ -43,6 +75,7 @@
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       container.className = "unity-mobile";
+      container.style.left = 0;
       config.devicePixelRatio = 1;
     } else {
       canvas.style.width = "960px";
@@ -66,9 +99,18 @@
     };
     document.body.appendChild(script);
   </script>
+
+  <!-- Footer starts here -->
+  <ul class="nav navbar-nav navbar-fixed-bottom">
+    <li>Contact me:</li>
+    <li><a href="https://www.linkedin.com/in/yair-charit">
+        <img src="Art/icons/linkedin.png" height="30" /></a></li>
+    <li><a class="navbar-brand" href="yaircharit@gmail.com">
+        <img src="Art/icons/email.png" height="30" /></a>
+    </li>
+    <li><a class="navbar-brand" href="+972-440-8838">
+        <img src="Art/icons/phone.png" height="30" /></a></li>
+  </ul>
 </body>
-<footer>
-  <iframe class="iframeBasics" src="footer.html" scrolling="no"></iframe>
-</footer>
 
 </html>
