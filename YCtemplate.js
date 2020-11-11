@@ -15,11 +15,7 @@ const navbar = ''+
                         '<li><a href="tetris.html">Tetris.asm</a></li>'+
                     '</ul>'+
                 '</li>'+
-                '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Work Experience<span class="caret"></span></a>'+
-                    '<ul class="dropdown-menu">'+
-                        '<li><a href="dina.html">dina.co.il</a></li>'+
-                    '</ul>'+
-                '</li>'+
+                '<li><a href="workRefs.html">Work Projects</a></li>'+
             '</ul>'+
         '</div>'+
     '</div>'+
