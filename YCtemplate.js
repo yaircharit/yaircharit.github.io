@@ -25,9 +25,6 @@ const navbar = ''+
     '</div>'+
 '</div>'+
 '<br><br><br>'
-function addNavbar(){
-    document.body.innerHTML += navbar;
-}
 
 const footer =''+
 '<ul class="nav navbar-nav navbar-fixed-bottom row">'+
@@ -37,6 +34,7 @@ const footer =''+
     '<li><a class="navbar-brand" href="mailto:yaircharit@gmail.com"><img src="Art/icons/email.png" height="30" /></a></li>'+
     '<li><a class="navbar-brand" href="tel:+972-440-8838"><img src="Art/icons/phone.png" height="30" /></a></li>'+
 '</ul>'
-function addFooter(){
+function loadTemplate(){
+    document.body.innerHTML += navbar;
     document.body.innerHTML += footer;
 }
