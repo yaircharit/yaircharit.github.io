@@ -15,11 +15,11 @@
     width: fit-content; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    top: 50%; /* Stay at the top */
     left: 0;
     border: black 1px solid;
     border-radius: 5px 30px 30px 5px;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     background-color: rgb(218, 216, 216);
     /* overflow-x: hidden; Disable horizontal scroll */
     overflow: hidden;
