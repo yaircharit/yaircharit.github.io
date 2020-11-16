@@ -1,14 +1,3 @@
-@import 'bootstrap/Site.css';
-@import 'bootstrap/bootstrap-theme.css';
-@import 'bootstrap/bootstrap-theme.css.map';
-@import 'bootstrap/bootstrap.min.css';
-@import 'bootstrap/bootstrap.min.css.map';
-@import 'bootstrap/bootstrap.css';
-@import 'bootstrap/bootstrap.css.map';
-@import 'bootstrap/bootstrap.min.css';
-@import 'bootstrap/bootstrap.min.css.map';
-
-
 .iframeBasics {
     border: none;
     width: 100%;
