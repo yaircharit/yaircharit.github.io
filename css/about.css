@@ -1,0 +1,39 @@
+td {
+    width: fit-content;
+    padding: 5px 20px 5px 0;
+}
+
+hr {
+    margin: 0;
+    margin-bottom: 10px;
+    height: 1px;
+    color: rgb(44, 44, 44);
+    background-color: rgb(44, 44, 44);
+}
+
+.summeryContainer {
+
+    font-family: 'Times New Roman', Times, serif;
+    width: max-content;
+}
+
+.name {
+    left: 10%;
+    padding-left: 10px;
+    font-size: 40px;
+    text-underline-position: auto;
+}
+
+.lastName {
+    color: rgb(155, 26, 9);
+    padding-left: 3px;
+}
+
+.knowledge {
+    float: right;
+    margin-right: 12%;
+    border: black 1px solid;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
