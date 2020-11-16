@@ -20,13 +20,8 @@
   <script src="YCtemplate.js" onload="loadTemplate()" type="text/javascript"></script>
 
   <!-- Body starts here -->
-  <p style="margin:10%; float:right">
-    <u>W.I.P.</u><br />
-    Rock Paper Scissors from the good ol' days (icq)<br />
-    Last updated: 16/Nov/2020<br/>
-    Alpha v0.2
-  </p>
-  <div id="unity-container" style="left:20%">
+  
+  <div id="unity-container" style="left:10%">
     <canvas id="unity-canvas"></canvas>
     <div id="unity-loading-bar">
       <div id="unity-logo"></div>
@@ -35,19 +30,27 @@
       </div>
     </div>
     <div id="unity-fullscreen-button" style="position: relative; float: left;"></div>
+    <p>
+      <u>W.I.P.</u><br />
+      Rock Paper Scissors from the good ol' days (icq)<br />
+      Last updated: 16/Nov/2020<br/>
+      Alpha v0.2
+    </p>
   </div>
   
+  
   <script>
-    var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/0.2.loader.js";
+    var version = "0.21"
+    var buildUrl = `Build/${version}`;
+    var loaderUrl = buildUrl + `/${version}.loader.js`;
     var config = {
-      dataUrl: buildUrl + "/0.2.data",
-      frameworkUrl: buildUrl + "/0.2.framework.js",
-      codeUrl: buildUrl + "/0.2.wasm",
+      dataUrl: buildUrl + `/${version}.data`,
+      frameworkUrl: buildUrl + `/${version}.framework.js`,
+      codeUrl: buildUrl + `/${version}.wasm`,
       streamingAssetsUrl: "StreamingAssets",
       companyName: "Yair Charit",
       productName: "RPS",
-      productVersion: "0.1",
+      productVersion: `${version}`,
     };
 
     var container = document.querySelector("#unity-container");
