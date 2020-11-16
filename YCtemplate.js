@@ -9,10 +9,10 @@ const navbar = ''+
         '<div class="collapse navbar-collapse" id="myNavbar">'+
             '<ul class="nav navbar-nav">'+
                 '<li><a href="index.html">About</a></li>'+
-                '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Personal Projects<span class="caret"></span></a>'+
+                '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="projects.html">Personal Projects<span class="caret"></span></a>'+
                     '<ul class="dropdown-menu">'+
                         '<li><a href="rps.html">RPS</a></li>'+
-                        '<li><a href="tetris.html">Tetris.asm</a></li>'+
+                        '<li><a href="usefull.html">usefull files</a></li>'+
                     '</ul>'+
                 '</li>'+
                 '<li><a href="workRefs.html">Work Projects</a></li>'+
@@ -23,12 +23,12 @@ const navbar = ''+
 '<br><br><br>'
 
 const footer =''+
-'<ul class="nav navbar-nav navbar-fixed-bottom row">'+
+'<ul class="sidenav">'+
     // '<hr/>'+
-    '<li>Contact me:</li>'+
-    '<li><a href="https://www.linkedin.com/in/yair-charit"><img src="Art/icons/linkedin.png" height="30" /></a></li>'+
-    '<li><a class="navbar-brand" href="mailto:yaircharit@gmail.com"><img src="Art/icons/email.png" height="30" /></a></li>'+
-    '<li><a class="navbar-brand" href="tel:+972-440-8838"><img src="Art/icons/phone.png" height="30" /></a></li>'+
+    // '<li>Contact me:</li>'+
+    '<li><a class="sidenav-object" href="https://www.linkedin.com/in/yair-charit"><img src="Art/icons/linkedin.png" height="30" /></a></li>'+
+    '<li><a class="sidenav-object" href="mailto:yaircharit@gmail.com"><img src="Art/icons/email.png" height="30" /></a></li>'+
+    '<li><a class="sidenav-object" href="tel:+972-440-8838"><img src="Art/icons/phone.png" height="30" /></a></li>'+
 '</ul>'
 function loadTemplate(){
     document.body.innerHTML += navbar;
