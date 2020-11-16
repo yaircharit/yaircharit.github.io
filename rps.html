@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yair Charit | RPS</title>
   <link rel="stylesheet" href="css/master.css">
-  <link rel="stylesheet" href="TemplateData/style.css">
   <link rel="icon" href="Art/YCLogo/YC_Logo_DarkRed2.png">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,7 +20,7 @@
 
   <!-- Body starts here -->
   <p style="left: 20px;">To play the game (in some browsers) you must have <a href="https://unity-web-player.en.softonic.com/">Unity Web Player</a></p>
-  <div id="unity-container" style="left:10%">
+  <div id="unity-container" style="margin-left:10%">
     <canvas id="unity-canvas"></canvas>
     <div id="unity-loading-bar">
       <div id="unity-logo"></div>
@@ -30,17 +29,16 @@
       </div>
     </div>
     <div id="unity-fullscreen-button" style="position: relative; float: left;"></div>
-    <p>
+    <p id='message'>
       <u>W.I.P.</u><br />
       Rock Paper Scissors from the good ol' days (icq)<br />
       Last updated: 16/Nov/2020<br/>
-      Alpha v0.21
-    </p>
+      Alpha v</p>
   </div>
   
   
   <script>
-    var version = "0.21"
+    var version = "0.2.2"
     var buildUrl = `Build/${version}`;
     var loaderUrl = buildUrl + `/${version}.loader.js`;
     var config = {
@@ -83,6 +81,7 @@
       });
     };
     document.body.appendChild(script);
+    document.getElementById('message').innerHTML += version;
   </script>
 
 </body>

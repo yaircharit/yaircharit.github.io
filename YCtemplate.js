@@ -11,7 +11,7 @@ const navbar = ''+
                 '<li><a href="index.html">About</a></li>'+
                 '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="projects.html">Personal Projects<span class="caret"></span></a>'+
                     '<ul class="dropdown-menu">'+
-                        '<li><a href="rps.html">RPS</a></li>'+
+                        '<li><a href="rps.html">RPS CTF</a></li>'+
                         '<li><a href="usefull.html">usefull files</a></li>'+
                     '</ul>'+
                 '</li>'+
