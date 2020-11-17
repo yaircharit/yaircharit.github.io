@@ -1,9 +1,23 @@
-td {
-    width: fit-content;
-    padding: 5px 20px 5px 0;
+td.cv {
+    vertical-align: top;
+    padding: 10px;
+    border-top: 1px solid lightsteelblue;
+    border-bottom: 1px solid lightsteelblue
+    /* padding-bottom: 20px; */
 }
 
-hr {
+table.knowledge_table{
+    border-spacing: 10px;
+    border-collapse: separate;
+    width: fit-content;
+    text-align: center;
+}
+
+img.cv{
+    height: 25px;
+}
+
+hr.seperator {
     margin: 0;
     margin-bottom: 10px;
     height: 1px;
@@ -11,29 +25,54 @@ hr {
     background-color: rgb(44, 44, 44);
 }
 
-.summeryContainer {
-
+body {
     font-family: 'Times New Roman', Times, serif;
-    width: max-content;
+    /* width: max-content; */
 }
 
 .name {
     left: 10%;
     padding-left: 10px;
     font-size: 40px;
-    text-underline-position: auto;
 }
 
-.lastName {
+.title {
+    font-size: 25px;
+}
+
+.red {
     color: rgb(155, 26, 9);
-    padding-left: 3px;
+    padding-left: 0px;
+}
+
+.leftPanel{
+    width: 60%;
+}
+
+.rightPanel{
+    height: 80%; /* Full-height: remove this if you want "auto" height */
+    width: 30%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    right: 0;
+    border-left: 1px solid rgb(173, 173, 173);
+    /* margin-left: 10px; */
+    overflow-x: hidden;
+    padding: 10px; 
+    list-style: none;
+    padding-bottom: 20px;
+}
+
+.paragraph{
+    margin-top: 20px;
 }
 
 .knowledge {
-    float: right;
-    margin-right: 12%;
-    border: black 1px solid;
-    padding: 5px;
+    /* position: static; */
+    margin-right: 50px;
+    /* border: black 1px solid; */
+    /* padding: 0 5px; */
+    width: fit-content;
     border-radius: 10px;
-    text-align: center;
+    /* text-align: center; */
 }

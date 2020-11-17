@@ -1,38 +1,78 @@
+body {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.main {
+    margin-left: 60px;
+    margin-right: 10px;
+}
+
 .iframeBasics {
     border: none;
     width: 100%;
     padding: 0px;
     display: block;
-    position: fixed; 
+    position: fixed;
     z-index: 999;
     /* height: 100%; */
 }
 
-
+p {
+    padding-left: 10px;
+}
 
 .sidenav {
-    height: fit-content; /* Full-height: remove this if you want "auto" height */
-    width: fit-content; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 50%; /* Stay at the top */
+    width: 50px;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
     left: 0;
     border: black 1px solid;
     border-radius: 5px 30px 30px 5px;
     /* margin-top: 10%; */
     background-color: rgb(218, 216, 216);
-    /* overflow-x: hidden; Disable horizontal scroll */
     overflow: hidden;
-    padding: 10px; 
+    padding: 10px;
     list-style: none;
-  }
+}
 
-  .sidenav-object{
-      width: fit-content;
-      margin-top: 15px;
-  }
+.sidenav-object {
+    width: fit-content;
+    margin-top: 15px;
+}
 
-  .sidenav-object:hover{
-        opacity: 20%;
-        /* background-color: transparent; */
-  }
+.sidenav-object:hover {
+    opacity: 20%;
+    /* background-color: transparent; */
+}
+
+.loadbar {
+    border-radius: 10px;
+    width: 200px;
+    border: 1px solid transparent;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    float: left;
+}
+
+.loadbar.inner{
+    margin: 0;
+}
+
+.loadbar.green{
+    background-color: rgb(93, 192, 93);
+}
+.loadbar.lightgreen{
+    background-color: rgb(124, 189, 124);
+}
+.loadbar.red{
+    background-color: rgb(182, 3, 3);
+}
+.loadbar.orange{
+    background-color: rgb(216, 158, 92);
+}
+.loadbar.gray{
+    background-color: rgb(219, 219, 219);
+}
