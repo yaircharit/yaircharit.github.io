@@ -28,7 +28,7 @@ const footer =''+
     // '<li>Contact me:</li>'+
     '<li><a class="sidenav-object" href="https://www.linkedin.com/in/yair-charit"><img src="Art/icons/linkedin.png" height="30" /></a></li>'+
     '<li><a class="sidenav-object" href="mailto:yaircharit@gmail.com"><img src="Art/icons/email.png" height="30" /></a></li>'+
-    '<li><a class="sidenav-object" href="tel:+972-440-8838"><img src="Art/icons/phone.png" height="30" /></a></li>'+
+    '<li><a class="sidenav-object" href="tel:+97254-440-8838"><img src="Art/icons/phone.png" height="30" /></a></li>'+
 '</ul>'
 function loadTemplate(){
     document.body.innerHTML += navbar;
