@@ -25,7 +25,7 @@
         </div>
         <hr class="seperator">
 
-        <div class="main leftPanel">
+        <div id="lPanel" class="main leftPanel">
             <div style="float: left;">
                 <label class="title">Summery</label>
                 <p>
@@ -131,10 +131,10 @@
                 </div>
                 <br><br>
             </div>
-
+            <br>
             <div id="secPanel" class="rightPanel">
-                <label class="title red">Str</label><label class="title">engths</label>
-                <table style="width: 70%;text-align: center;">
+                <label class="title">Strengths</label>
+                <table style="text-align: center;">
                     <tr>
                         <td>
                             <div class="loadbar green">
@@ -196,7 +196,8 @@
     </div>
     <script>
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            document.getElementById('secPanel').className = "";
+            document.getElementById('secPanel').className = "main";
+            document.getElementById('lPanel').className = "main";
         }
     </script>
 </body>

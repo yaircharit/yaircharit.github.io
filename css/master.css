@@ -6,6 +6,9 @@ body {
 .main {
     margin-left: 60px;
     margin-right: 10px;
+    width: 100%;
+    float: left;
+    /* text-overflow: clip; */
 }
 
 .iframeBasics {
