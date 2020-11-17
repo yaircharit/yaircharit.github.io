@@ -19,8 +19,8 @@ const navbar = ''+
             '</ul>'+
         '</div>'+
     '</div>'+
-'</div>'+
-'<br><br><br>'
+'</div>'
+// '<br><br><br>'
 
 const footer =''+
 '<ul class="sidenav">'+
