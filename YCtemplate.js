@@ -1,5 +1,5 @@
 const navbar = ''+
-'<div class="navbar navbar-inverse navbar-fixed-top">'+
+'<div class="navbar navbar-fixed-top" style="background-color: white; color: black">'+
     '<div class="container">'+
         '<div class="navbar-header">'+
             '<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">'+
@@ -32,5 +32,5 @@ const footer =''+
 '</ul>'
 function loadTemplate(){
     document.body.innerHTML += navbar;
-    document.body.innerHTML += footer;
+    // document.body.innerHTML += footer;
 }
