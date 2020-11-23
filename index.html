@@ -20,12 +20,44 @@
 
     <!-- Body starts here -->
 
-    <div style="position: fixed; background-color: inherit; width: 100%; z-index: 1;">
-        <u style="margin-left:20px; "><label class="name">Yair</label><label class="name red">Charit</label></u>
-        <hr class="seperator">
+    <div id="first"
+        style="position: fixed; z-index: -99; width: 100%; opacity: 1; height: 80%; padding: 10% 37%;  text-align: center;align-items: center;">
+        <table id="nameTable">
+            <tr>
+                <td>
+                    <label class="name">Yair</label><label class="name red">Charit</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <hr class="seperator" style="width: 90%;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table style="width: 100%; border-collapse: separate; border-spacing: 20px;">
+                        <tr>
+                            <td><a href="https://LinkedIn/in/yair-charit"><img src="Art/icons/linkedin.png"
+                                        class="thumbnail img-rounded"
+                                        style="height: 40px; border-radius: 25px; border: 1px solid black;" /></a></td>
+                            <td><a href="mailto:yaircharit@gmail.com"><img src="Art/icons/email.png"
+                                        class="thumbnail img-rounded"
+                                        style="height: 40px; border-radius: 25px; border: 1px solid black;" /></a></td>
+                            <td><a href="https://github.com/yaicharit"><img src="Art/icons/github.png"
+                                        class="thumbnail img-rounded"
+                                        style="height: 40px; border-radius: 25px; border: 1px solid black;" /></a></td>
+                            <td><a href="tel:+972-54-440-8838"><img src="Art/icons/phone.png"
+                                        class="thumbnail img-rounded"
+                                        style="height: 40px; border-radius: 25px; border: 1px solid black;" /></a></td>
+                        </tr>
+                    </table>
+                </td>
+
+            </tr>
+        </table>
     </div>
-    <div style="padding-top:60px">
-        <div id="lPanel" class="main leftPanel">
+    <div style="padding-top:450px;  z-index: 1;">
+        <div id="lPanel" class="main leftPanel" style=" background-color: blanchedalmond;">
             <div style="width: fit-content;">
                 <label class="title">Summery</label>
                 <hr class="seperator">
@@ -137,7 +169,7 @@
             <br><br>
         </div>
         <br>
-        <div id="secPanel" class="rightPanel">
+        <div id="secPanel">
             <label class="title red">Str</label><label class="title">engths</label>
             <table style="text-align: center;">
                 <tr>
@@ -204,11 +236,21 @@
     </div>
     </div>
     <script>
+        var firstDiv = document.getElementById('first')
+        window.onscroll = function () {
+            if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+                firstDiv.style.opacity -= 0.1;
+            }else{
+                firstDiv.style.opacity += 0.1;
+            }
+        };
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             document.getElementById('secPanel').className = "main";
             document.getElementById('lPanel').className = "main";
         }
     </script>
 </body>
+
+<script src="scripts/about.js" type="text/javascript"></script>
 
 </html>
