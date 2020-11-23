@@ -17,11 +17,12 @@
 <body>
     <!-- navbar -->
     <script src="YCtemplate.js" onload="loadTemplate()" type="text/javascript"></script>
+    <hr id="navShaddow" class="seperator" style="position: fixed; margin-top:11px; opacity: 0; background-color: rgb(83, 83, 83);">
 
     <!-- Body starts here -->
 
     <div id="first"
-        style="position: fixed; z-index: -99; width: 100%; opacity: 1; height: 80%; padding: 10% 37%;  text-align: center;align-items: center;">
+        style="position: fixed;  width: 100%; opacity: 1; height: 80%; padding: 10% 37%;  text-align: center;align-items: center;">
         <table id="nameTable">
             <tr>
                 <td>
@@ -34,12 +35,14 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td id="socialLogo">
                     <table style="width: 100%; border-collapse: separate; border-spacing: 20px;">
                         <tr>
-                            <td><a href="https://LinkedIn/in/yair-charit"><img src="Art/icons/linkedin.png"
-                                        class="thumbnail img-rounded"
-                                        style="height: 40px; border-radius: 25px; border: 1px solid black;" /></a></td>
+                            <td><a href="https://LinkedIn/in/yair-charit">
+                                    <img src="Art/icons/linkedin.png" class="thumbnail img-rounded"
+                                        style="height: 40px; border-radius: 25px; border: 1px solid black;">
+                                </a>
+                            </td>
                             <td><a href="mailto:yaircharit@gmail.com"><img src="Art/icons/email.png"
                                         class="thumbnail img-rounded"
                                         style="height: 40px; border-radius: 25px; border: 1px solid black;" /></a></td>
@@ -52,12 +55,11 @@
                         </tr>
                     </table>
                 </td>
-
             </tr>
         </table>
     </div>
     <div style="padding-top:450px;  z-index: 1;">
-        <div id="lPanel" class="main leftPanel" style=" background-color: blanchedalmond;">
+        <div id="lPanel" class="main leftPanel">
             <div style="width: fit-content;">
                 <label class="title">Summery</label>
                 <hr class="seperator">
@@ -237,12 +239,13 @@
     </div>
     <script>
         var firstDiv = document.getElementById('first')
+        var navShaddow = document.getElementById('navShaddow');
+        var navSocial = document.getElementById('navSocial');
         window.onscroll = function () {
-            if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
-                firstDiv.style.opacity -= 0.1;
-            }else{
-                firstDiv.style.opacity += 0.1;
-            }
+            firstDiv.style.opacity = 1 - document.documentElement.scrollTop / 150;
+            navSocial.style.opacity = document.documentElement.scrollTop / 200;
+            navShaddow.style.opacity = document.documentElement.scrollTop / 1000;
+
         };
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             document.getElementById('secPanel').className = "main";
