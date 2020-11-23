@@ -6,6 +6,7 @@ td.cv {
     /* padding-bottom: 20px; */
 }
 
+
 table.knowledge_table{
     border-spacing: 10px;
     border-collapse: separate;
@@ -29,23 +30,33 @@ hr.seperator {
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
+    /* font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', 'serif'; */
+    font-family: 'Copperplate';
     /* width: max-content; */
 }
 
 .name {
-    left: 10%;
-    padding-left: 10px;
-    font-size: 40px;
+    font-size: 64px;
 }
 
 .title {
     font-size: 25px;
 }
+@keyframes example {
+    0% {color:  rgb(155, 26, 9);}
+    25% {color: rgb(27, 160, 56); }
+    50% {color: rgb(27, 160, 142); }
+    75% {color: rgb(118, 27, 160); }
+    100% {color: rgb(155, 26, 9); }
+  }
 
 .red {
     color: rgb(155, 26, 9);
     padding-left: 0px;
+    animation-name: example;
+    animation-iteration-count: infinite;
+    animation-duration: 50s;
 }
 
 .leftPanel{
