@@ -3,7 +3,7 @@ const socialbar =   '<table>'+
                         '<tr style="height:70px">'+
                             '<td><a href="https://LinkedIn.com/in/yair-charit"><img id="linkedinIcon" src="Art/icons/linkedin.png" class="thumbnail img-rounded social-icon"></a></td>'+
                             '<td><a href="mailto:yaircharit@gmail.com"><img id="emailIcon" src="Art/icons/email.png"class="thumbnail img-rounded social-icon"></a></td>'+
-                            '<td><a href="https://github.com/yaicharit"><img id="githubIcon" src="Art/icons/github.png"class="thumbnail img-rounded social-icon"></a></td>'+
+                            '<td><a href="https://github.com/yaircharit"><img id="githubIcon" src="Art/icons/github.png"class="thumbnail img-rounded social-icon"></a></td>'+
                             '<td><a href="tel:+972-54-440-8838"><img id="phoneIcon" src="Art/icons/phone.png" class="thumbnail img-rounded social-icon"></a></td>'+
                             '<td><a href="https://api.whatsapp.com/send?phone=972544408838"><img id="whatsappIcon" src="Art/icons/whatsapp.png" class="thumbnail img-rounded social-icon"></a></td>'+
                         '</tr>'+
