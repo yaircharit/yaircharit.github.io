@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 
 td.cv {
     vertical-align: top;
@@ -21,6 +21,7 @@ hr.seperator {
 
 body{
     font-family: 'Poiret One', cursive;
+    padding-top: 0;
 }
 
 
@@ -62,14 +63,6 @@ body{
     margin: 20px 40px;
 }
 
-.colors {
-    background: linear-gradient(-45deg, #eeca52, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-}
-
-
-
 @keyframes example {
     0% {
         color: rgb(155, 26, 9);
@@ -98,33 +91,6 @@ body{
     /* animation: example 25s infinite; */
 }
 
-.leftPanel {
-    width: 60%;
-}
-
-.rightPanel {
-    height: 100%;
-    width: 30%;
-    position: fixed;
-    z-index: 1;
-    right: 0;
-    border-left: 1px solid rgb(173, 173, 173);
-    overflow: auto;
-    padding: 10px;
-    padding-bottom: 100px;
-}
-
 .paragraph {
     margin-top: 20px;
-}
-
-.knowledge {
-    /* position: static; */
-    margin-right: 50px;
-    /* border: black 1px solid; */
-    /* padding: 0 5px; */
-    width: fit-content;
-    border-radius: 10px;
-    background-color: tr;
-    /* text-align: center; */
 }

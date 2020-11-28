@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 body {
-    padding-bottom: 50px;
-    /* padding-top: 50px; */
+    padding: 70px 0;
+    font-family: 'Poiret One', cursive;
+    font-weight: 400;
 }
 
 .main {
@@ -27,6 +30,11 @@ p {
     animation: enlargeSocIcon 2s ease infinite;
 }
 
+.colors {
+    background: linear-gradient(-45deg, #eeca52, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
 .loadbar {
     border-radius: 10px;
     width: 200px;
