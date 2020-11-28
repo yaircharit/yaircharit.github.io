@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 td.cv {
     vertical-align: top;
     padding: 10px;
@@ -5,9 +7,6 @@ td.cv {
     border-bottom: 1px solid lightsteelblue
         /* padding-bottom: 20px; */
 }
-
-
-
 
 hr.seperator {
     padding: 0;
@@ -17,18 +16,18 @@ hr.seperator {
     left: 1%;
     height: 1px;
     display: block;
-    background-color: rgb(44, 44, 44);
+    /* background-color: rgb(44, 44, 44); */
 }
 
-body {
-    /* font-family: 'Times New Roman', Times, serif; */
-    /* font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', 'serif'; */
-    font-family: 'Copperplate';
-    /* width: max-content; */
+body{
+    font-family: 'Poiret One';
 }
+
+
 
 .name {
     font-size: 64px;
+    color:white;
 }
 
 .title {
@@ -63,7 +62,7 @@ body {
 }
 
 .colors {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #eeca52, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
