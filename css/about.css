@@ -20,13 +20,14 @@ hr.seperator {
 }
 
 body{
-    font-family: 'Poiret One';
+    font-family: 'Poiret One', cursive;
 }
 
 
 
 .name {
     font-size: 64px;
+    font-weight: 400;
     color:white;
 }
 
