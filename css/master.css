@@ -17,9 +17,10 @@ p {
 .social-icon {
     height: 40px;
     border-radius: 25px;
-    border: 1px solid black;
+    border: 1px solid whitesmoke;
     margin: 10px;
     background-color: transparent;
+    color:white;
 }
 
 .social-icon:hover{
