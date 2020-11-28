@@ -4,8 +4,7 @@ body {
 }
 
 .main {
-    margin-left: 60px;
-    margin-right: 10px;
+    /* margin: auto; */
     width: 100%;
     float: left;
     /* text-overflow: clip; */
@@ -20,6 +19,7 @@ p {
     border-radius: 25px;
     border: 1px solid black;
     margin: 10px;
+    background-color: transparent;
 }
 
 .social-icon:hover{
