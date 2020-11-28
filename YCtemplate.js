@@ -12,11 +12,11 @@ const socialbar =   '<table>'+
 const navbar = ''+
 '<div id="navbar" class="navbar navbar-fixed-top" style="background-color: transparent;height: 62px; position:fixed;">'+
     '<div id="navbarBackground" class="colors" style="width:100%; height:62px; position:fixed; opacity:0; z-index:-99;"> </div>'+
-    '<div class="container"  style="margin:5px;">'+
-        '<div id="navSocial" style="float:right; opacity: 0; ">'+
+    '<div class="container"  style="margin-top:5px; width: 100%">'+
+        '<div id="navSocial" style="opacity: 0; margin-right:0; float:right">'+
             socialbar+
         '</div>'+
-        '<div >'+
+        '<div style="margin-left: 0">'+
             '<div class="navbar-header" >'+
                 '<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">'+
                 '<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>'+

@@ -52,6 +52,7 @@ body {
     width: 100%;
     height: 450px;
     padding: 10% 37%;
+    margin-bottom: 100px;
     text-align: center;
     align-items: center;
 }
@@ -89,9 +90,7 @@ body {
 .red {
     color: rgb(155, 26, 9);
     padding-left: 0px;
-    animation-name: example;
-    animation-iteration-count: infinite;
-    animation-duration: 25s;
+    /* animation: example 25s infinite; */
 }
 
 .leftPanel {
