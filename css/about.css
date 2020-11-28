@@ -3,18 +3,18 @@ td.cv {
     padding: 10px;
     border-top: 1px solid lightsteelblue;
     border-bottom: 1px solid lightsteelblue
-    /* padding-bottom: 20px; */
+        /* padding-bottom: 20px; */
 }
 
 
-table.knowledge_table{
+table.knowledge_table {
     border-spacing: 10px;
     border-collapse: separate;
     width: fit-content;
     text-align: center;
 }
 
-img.cv{
+img.cv {
     height: 25px;
 }
 
@@ -22,8 +22,8 @@ hr.seperator {
     padding: 0;
     margin-top: -1em;
     margin-bottom: 10px;
-    width: 98%; 
-    left:1%;
+    width: 98%;
+    left: 1%;
     height: 1px;
     display: block;
     background-color: rgb(44, 44, 44);
@@ -43,40 +43,78 @@ body {
 .title {
     font-size: 25px;
 }
+
+.First {
+    
+    position: relative;
+    
+    z-index: 10;
+    width: 100%;
+    height: 450px;
+    padding: 10% 37%;
+    text-align: center;
+    align-items: center;
+}
+
+.colors{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+
+
 @keyframes example {
-    0% {color:  rgb(155, 26, 9);}
-    25% {color: rgb(27, 160, 56); }
-    50% {color: rgb(27, 160, 142); }
-    75% {color: rgb(118, 27, 160); }
-    100% {color: rgb(155, 26, 9); }
-  }
+    0% {
+        color: rgb(155, 26, 9);
+    }
+
+    25% {
+        color: rgb(27, 160, 56);
+    }
+
+    50% {
+        color: rgb(27, 160, 142);
+    }
+
+    75% {
+        color: rgb(118, 27, 160);
+    }
+
+    100% {
+        color: rgb(155, 26, 9);
+    }
+}
 
 .red {
     color: rgb(155, 26, 9);
     padding-left: 0px;
     animation-name: example;
     animation-iteration-count: infinite;
-    animation-duration: 50s;
+    animation-duration: 25s;
 }
 
-.leftPanel{
+.leftPanel {
     width: 60%;
 }
 
-.rightPanel{
+.rightPanel {
     height: 100%;
-    width: 30%; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
+    width: 30%;
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
     right: 0;
     top: 105px;
     border-left: 1px solid rgb(173, 173, 173);
     overflow: auto;
-    padding: 10px; 
+    padding: 10px;
     padding-bottom: 100px;
 }
 
-.paragraph{
+.paragraph {
     margin-top: 20px;
 }
 
@@ -87,5 +125,6 @@ body {
     /* padding: 0 5px; */
     width: fit-content;
     border-radius: 10px;
+    background-color: tr;
     /* text-align: center; */
 }
