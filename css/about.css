@@ -43,6 +43,12 @@ body{
         height: 70px;
     }
 }
+#particlesjs{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* z-index: 999999; */
+}
 .name {
     font-size: 64px;
     font-weight: 400;
