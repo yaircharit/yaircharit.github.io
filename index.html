@@ -51,10 +51,10 @@
     <!-- <img src="Art/websiteunderconstruction.jpg" style=" margin:auto; display: block; width: 80%;"> -->
     <div class="section">
         <h3 class="name" style="color: darkgray;">About <label class="name red"
-            style="animation: example 20s infinite;">Me</label>:</h3>
+                style="animation: example 20s infinite;">Me</label>:</h3>
         <hr>
         <!-- style="background-color: black; height: 1px;"> -->
-        <p class="title" style="float: right; margin-left: 40%; font-weight: 700;">
+        <p id="littleAboutMe" class="title" style="float: right; margin-left: 40%; font-weight: 700;">
             Graduating from Tel-Hai College the end of this semester (Feb 21)<br><br>
             Currently looking for a job where I'd do what I love- writing code and solving problems<br><br>
             Since September 2019 I'm teaching the Architecture course as part of the "Magshimim" program, eversince the
@@ -64,15 +64,15 @@
         </p>
 
 
-        <div id="myImgDiv" style="align-items: center; margin: 3%">
-            <img src="Art/me.jpeg" alt="me" class="img-circle" height="50%"
+        <div id="myImgDiv" style="align-items: center; margin: 3%; ">
+            <img id="myImg" src="Art/me.jpeg" alt="me" class="img-circle" height="50%"
                 style="position: absolute; z-index: 1; margin: 0.25%;">
-            <img src="Art/me.jpeg" alt="me" class="img-circle" height="51%" style="-webkit-filter: blur(10px);
-        -moz-filter: blur(10px);
-        -o-filter: blur(10px);
-        -ms-filter: blur(10px);
-        filter: blur(10px);
-        position: absolute;" />
+            <img id="myImgBlur" src="Art/me.jpeg" alt="me" class="img-circle" height="51%" style="-webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
+            position: absolute;" />
         </div>
 
 
@@ -113,55 +113,38 @@
         </table>
 
     </div>
-    <div class="section">
+    <div class="section" class="col-12 col-sm-12 col-md-7 mx-auto">
         <label class="name" style="color: darkgray;">Tool<label class="name red"
-            style="animation: example 20s infinite;">kit</label>:</label>
-            <hr>
-            <!-- <hr class="seperator"> -->
-            <table>
-                <tr>
-                    <table style="margin-left: 15%; height: 150px; width: fit-content;">
-                        <tr>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/python.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/Java.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/cpp.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/c.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/matlab.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/linux.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/shell.png"></td>
-                        </tr>
-                    </table>
-                </tr>
-                <tr>
-                    <table style="margin-left: 10%; height: 150px">
-                        <tr>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/html.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/css.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/js.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/SQL.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/NET.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/nodeJS.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/android.png"></td>
-                            <td><img class="toolkitLogo" src="Art/icons/Toolkit/csharp.png"></td>
-                        </tr>
-                    </table>
-                </tr>
-            </table>
-        </div>
-
-
-        <div class="section">
-            <h3 class="title">Recent Projects:</h3>
-            <div class="project">Project</div>
-            <div class="project">Project</div>
-        </div>
-
-        <br>
+                style="animation: example 20s infinite;">kit</label>:</label>
         <hr>
+        <!-- <hr class="seperator"> -->
+        <div>
+            <img class="toolkitLogo" src="Art/icons/Toolkit/python.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/Java.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/cpp.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/c.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/matlab.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/linux.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/shell.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/html.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/css.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/js.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/SQL.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/NET.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/nodeJS.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/android.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/csharp.png">
+        </div>
     </div>
 
+
+    <!-- <div class="section">
+        <h3 class="title">Recent Projects:</h3>
+        <div class="project">Project</div>
+        <div class="project">Project</div>
     </div>
-    </div>
+    <hr> -->
+
     <script>
         document.getElementById('socialLogo').innerHTML = socialbar
 
@@ -179,8 +162,8 @@
 
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            document.getElementById('secPanel').className = "main";
-            document.getElementById('lPanel').className = "main";
+            document.getElementById('myImgDiv').style.display = "none";
+            document.getElementById('littleAboutMe').style.marginLeft = "3%"
         }
 
     </script>
