@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/about.css">
 </head>
@@ -21,7 +20,7 @@
         style="position: fixed; margin-top:61px; opacity: 0; background-color: rgb(83, 83, 83);"> -->
 
     <!-- Body starts here -->
-
+    <!-- <div id="particles-js"></div> -->
     <div class="First colors" id="firstDiv">
         <table id="first" style="margin: auto;">
             <tr style="height: 200px;"></tr>
@@ -134,6 +133,8 @@
             <img class="toolkitLogo" src="Art/icons/Toolkit/nodeJS.png">
             <img class="toolkitLogo" src="Art/icons/Toolkit/android.png">
             <img class="toolkitLogo" src="Art/icons/Toolkit/csharp.png">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/wix.jpeg">
+            <img class="toolkitLogo" src="Art/icons/Toolkit/wordpress.png">
         </div>
     </div>
 
@@ -150,13 +151,13 @@
 
         var firstTable = document.getElementById('first');
         var navBG = document.getElementById('navbarBackground');
-        var navShaddow = document.getElementById('navShaddow');
+        // var navShaddow = document.getElementById('navShaddow');
         var navSocial = document.getElementById('navSocial');
         window.onscroll = function () {
             firstTable.style.opacity = 1 - document.documentElement.scrollTop / 150;
             navBG.style.opacity = document.documentElement.scrollTop / 500
             navSocial.style.opacity = document.documentElement.scrollTop / 200;
-            navShaddow.style.opacity = document.documentElement.scrollTop / 1000;
+            // navShaddow.style.opacity = document.documentElement.scrollTop / 1000;
 
         };
 
@@ -167,10 +168,11 @@
         }
 
     </script>
-    <canvas id="particles-js" class="background"></canvas>
-    <script src="path/to/particles.min.js"></script>
+    <div id="particles-js" class="background"></div>
+    <script type="text/javascript" src="scripts/particles.js">
+        particlesJS.load('particles-js', 'scripts/particles.json', function () {
+            console.log('particles.js loaded - callback');
+        });</script>
 </body>
-
-<script src="scripts/about.js" type="text/javascript"></script>
 
 </html>
