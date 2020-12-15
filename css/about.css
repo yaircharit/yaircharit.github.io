@@ -24,8 +24,25 @@ body{
     padding-top: 0;
 }
 
+.toolkitLogo{
+    height: 100px;
+    margin: 10px;
+}
 
-
+.toolkitLogo:hover{
+    animation: enlargeTKIcon 2s ease infinite;
+}
+@keyframes enlargeTKIcon {
+    0%{
+        height: 100px;
+    }
+    50%{
+        height: 130px;
+    }
+    100%{
+        height: 100px;
+    }
+}
 .name {
     font-size: 64px;
     font-weight: 400;
@@ -33,7 +50,8 @@ body{
 }
 
 .title {
-    font-size: 25px;
+    font-size: 20px;
+    
 }
 
 .First {
@@ -47,9 +65,9 @@ body{
 }
 
 .section {
-    margin: 2%;
+    margin: 8% 2%;
     padding: 2%;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     
 }
 
