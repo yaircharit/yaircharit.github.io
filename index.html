@@ -26,7 +26,7 @@
             <tr style="height: 200px;"></tr>
             <tr>
                 <td>
-                    <label class="name">YairCharit</label>
+                    <label class="name">Yair Charit</label>
                 </td>
             </tr>
             <tr>
@@ -54,12 +54,12 @@
         <hr>
         <!-- style="background-color: black; height: 1px;"> -->
         <p id="littleAboutMe" class="title" style="float: right; margin-left: 40%; font-weight: 700;">
-            B.Sc. in computer science Graduate from Tel-Hai College <br><br>
-            Currently looking for a job where I'd do what I love- writing code and solving problems<br><br>
-            Since September 2019 I'm teaching the Architecture course as part of the "Magshimim" program, eversince the
+            B.Sc. in computer science graduate from Tel-Hai College <br><br>
+            Currently looking for a job where I'd do what I love, writing code and solving problems<br><br>
+            Since September 2019 I'm teaching the architecture course as part of the "Magshimim" program, eversince the
             COVID-19 outbreak the entire course has adapted to be communicated entirely online<br><br>
-            Nowadays I'm doing freelance jobs- Building websites, apps and automations.<br><br>
-            Please feel free to contact me for any question which arrises :)
+            Nowadays I'm doing freelance jobs: building websites, apps and automations.<br><br>
+            Feel free to contact me for any question which arrises :)
         </p>
 
 
@@ -152,15 +152,21 @@
         var firstTable = document.getElementById('first');
         var navBG = document.getElementById('navbarBackground');
         // var navShaddow = document.getElementById('navShaddow');
+        // var navbar = document.getElementById('myNavbar');
         var navSocial = document.getElementById('navSocial');
         window.onscroll = function () {
             firstTable.style.opacity = 1 - document.documentElement.scrollTop / 150;
             navBG.style.opacity = document.documentElement.scrollTop / 500
             navSocial.style.opacity = document.documentElement.scrollTop / 200;
             // navShaddow.style.opacity = document.documentElement.scrollTop / 1000;
-
         };
-
+        document.getElementById('toggler').onclick = function(){
+            isNavbarOpen = !isNavbarOpen;
+            if (isNavbarOpen)
+                navBG.style.animation = "openNavbar 1s ease forwards"
+            else
+                navBG.style.animation = "closeNavbar 1s ease forwards"
+        }
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             document.getElementById('myImgDiv').style.display = "none";
