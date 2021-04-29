@@ -37,7 +37,7 @@ const navbar = ''+
                             // '<li><a href="usefull.html">usefull files</a></li>'+
                         '</ul>'+
                     '</li>'+
-                    '<li class="nav-item"><a href="Yair Charit - CV2021.pdf" target="parent" style="color:white; background-color:transparent;">Resume</a></li>'+
+                    '<li class="nav-item"><a href="Yair Charit CV_May_2021.pdf" target="parent" style="color:white; background-color:transparent;">Resume</a></li>'+
                     
                     // '<li><a href="workRefs.html">Work Projects</a></li>'+
                 '</ul>'+
