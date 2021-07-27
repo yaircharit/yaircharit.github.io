@@ -16,11 +16,8 @@
 <body>
     <!-- navbar -->
     <script src="YCtemplate.js" onload="loadTemplate()" type="text/javascript"></script>
-    <!-- <hr id="navShaddow" class="seperator"
-        style="position: fixed; margin-top:61px; opacity: 0; background-color: rgb(83, 83, 83);"> -->
 
     <!-- Body starts here -->
-    <!-- <div id="particles-js"></div> -->
     <div class="First colors" id="firstDiv">
         <table id="first" style="margin: auto;">
             <tr style="height: 200px;"></tr>
@@ -47,71 +44,71 @@
             </tr>
         </table>
     </div>
-    <!-- <img src="Art/websiteunderconstruction.jpg" style=" margin:auto; display: block; width: 80%;"> -->
+
     <div class="section">
         <h3 class="name" style="color: darkgray;">About <label class="name red"
                 style="animation: example 20s infinite;">Me</label>:</h3>
-        <hr>
-        <!-- style="background-color: black; height: 1px;"> -->
-        <p id="littleAboutMe" class="title" style="float: right; margin-left: 40%; font-weight: 700;">
-            B.Sc. in computer science graduate from Tel-Hai College <br><br>
-            Currently working at Biosense Webster as a Software Quality Assurance since January 2021<br><br>
-            Since September 2019 I'm teaching the architecture course as part of the "Magshimim" program, eversince the
-            COVID-19 outbreak the entire course has adapted to be communicated entirely online<br><br>
+        <hr/>
+        <p id="littleAboutMe" class="title" style="float: left; width: 60%; font-weight: 700;">
+            B.Sc. in computer science graduate from Tel-Hai College.<br>
+            Can spend full days (and nights) working on a software solution until its impeccable.<br>
             Taking projects as a freelance fullstack web developer- building websites, apps and automations.<br><br>
+            Currently working at Biosense Webster as a Software Quality Assurance Engineer since January 2021.<br><br>
+            Since September 2019 until July 2021 I was teaching the architecture course as part of the "Magshimim" program, eversince the
+            COVID-19 outbreak the entire course was adapted to be communicated entirely online.<br><br>
+            
         </p>
+        <div style="flex-direction: column; display: flex; width: 40%; float:left">
+            <div id="myImgDiv" style="align-items: center; height: 100%;">
+                <img id="myImg" src="Art/me.jpeg" alt="me" class="img-circle" height="200em"
+                    style="z-index: 1; margin: 3em;">
+                <!-- <img id="myImgBlur" src="Art/me.jpeg" alt="me" class="img-circle" height="200em" style="-webkit-filter: blur(10px);
+                -moz-filter: blur(10px);
+                -o-filter: blur(10px);
+                -ms-filter: blur(10px);
+                filter: blur(10px);
+                position: absolute" /> -->
+            </div>
 
 
-        <div id="myImgDiv" style="align-items: center; margin: 3%; ">
-            <img id="myImg" src="Art/me.jpeg" alt="me" class="img-circle" height="50%"
-                style="position: absolute; z-index: 1; margin: 0.25%;">
-            <img id="myImgBlur" src="Art/me.jpeg" alt="me" class="img-circle" height="51%" style="-webkit-filter: blur(10px);
-            -moz-filter: blur(10px);
-            -o-filter: blur(10px);
-            -ms-filter: blur(10px);
-            filter: blur(10px);
-            position: absolute;" />
+            <table style="text-align: center; width: fit-content; position:static">
+                <tr>
+                    <td>
+                        <div class="loadbar green">
+                            Expert</div>
+                    </td>
+                    <td>Coding & Debugging</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="loadbar gray">
+                            <div class="loadbar inner lightgreen" style="width: 90%;">Very Strong</div>
+                        </div>
+                    </td>
+                    <td>Meeting Deadlines</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="loadbar gray">
+                            <div class="loadbar inner orange" style="width: 75%;">Intermediate</div>
+                        </div>
+                    </td>
+                    <td>Mathematics</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="loadbar gray">
+                            <div class="loadbar inner green" style="width: 97%;">Fluent</div>
+                        </div>
+                    </td>
+                    <td>English</td>
+                </tr>
+            </table>
         </div>
-
-
-        <table style="text-align: center;">
-            <tr>
-                <td>
-                    <div class="loadbar green">
-                        Expert</div>
-                </td>
-                <td>Coding & Debugging</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="loadbar gray">
-                        <div class="loadbar inner lightgreen" style="width: 90%;">
-                            Very Strong</div>
-                    </div>
-                </td>
-                <td>Meeting Deadlines</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="loadbar gray">
-                        <div class="loadbar inner orange" style="width: 75%;">Intermediate</div>
-                    </div>
-                </td>
-                <td>Mathematics</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="loadbar gray">
-                        <div class="loadbar inner green" style="width: 97%;">
-                            Fluent</div>
-                    </div>
-                </td>
-                <td>English</td>
-            </tr>
-        </table>
-
+        
     </div>
-    <div class="section" class="col-12 col-sm-12 col-md-7 mx-auto">
+    
+    <div class="section" style="float:left;">
         <label class="name" style="color: darkgray;">Tool<label class="name red"
                 style="animation: example 20s infinite;">kit</label>:</label>
         <hr>
@@ -150,14 +147,12 @@
 
         var firstTable = document.getElementById('first');
         var navBG = document.getElementById('navbarBackground');
-        // var navShaddow = document.getElementById('navShaddow');
-        // var navbar = document.getElementById('myNavbar');
         var navSocial = document.getElementById('navSocial');
+
         window.onscroll = function () {
             firstTable.style.opacity = 1 - document.documentElement.scrollTop / 150;
             navBG.style.opacity = document.documentElement.scrollTop / 500
             navSocial.style.opacity = document.documentElement.scrollTop / 200;
-            // navShaddow.style.opacity = document.documentElement.scrollTop / 1000;
         };
         document.getElementById('toggler').onclick = function(){
             isNavbarOpen = !isNavbarOpen;
