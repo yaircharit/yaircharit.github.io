@@ -25,7 +25,7 @@ const navbar = ''+
                     '<span class="icon-bar"></span>'+
                     '<span class="icon-bar"></span>'+
                 '</button>'+
-                '<a href="/" class="img-thumbnail img-circle" style="background-color:transparent; margin-top:5px"><img src="Art/YCLogo/YC_Logo_DarkRed2.png" alt="YCLogo" height="35px"/></a>'+
+                '<a href="https://yaircharit.github.io" class="img-thumbnail img-circle" style="background-color:transparent; margin-top:5px"><img src="Art/YCLogo/YC_Logo_DarkRed2.png" alt="YCLogo" height="35px"/></a>'+
             '</div>'+
             '<div class="collapse navbar-collapse title" id="myNavbar">'+
                 '<ul id="toggle-navbar" class="nav navbar-nav ml-auto" style="width:94%">'+
@@ -34,6 +34,7 @@ const navbar = ''+
                     '<li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="projects.html" style="color:white; background-color: transparent;">Projects<span class="caret"></span></a>'+
                         '<ul class="dropdown-menu">'+
                             '<li><a href="rps.html">RPS CTF</a></li>'+
+                            '<li><a href="bookmarks.html">Dashboard+</a></li>'+
                             // '<li><a href="usefull.html">usefull files</a></li>'+
                         '</ul>'+
                     '</li>'+
@@ -46,7 +47,6 @@ const navbar = ''+
         '</div>'+
     '</div>'+
 '</div>'
-// '<br><br><br>'
 
 const footer =''+
 '<ul class="sidenav">'+
