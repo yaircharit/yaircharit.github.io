@@ -11,13 +11,14 @@ const socialbar =   '<table >'+
 
 var isNavbarOpen = false;
 const navbar = ''+
-'<div id="navbar" class="navbar navbar-fixed-top" style="background-color: transparent;height: 62px; position:fixed;">'+
-    '<div id="navbarBackground" class="colors navbar-collapsed" style="width:100%; height:65px; position:fixed; opacity:0; z-index:-99;"> </div>'+
+
+'<div id="navbar" class="navbar navbar-fixed-top" style="background-color: transparent;height: auto; position:fixed;">'+
+'<div id="navbarBackground" class="toggle-navbar colors heightAnimation navbar-collapsed " style="position:fixed; opacity:0; z-index:-99;"> </div>'+    
     '<div class="container">'+
         // '<div id="navSocial" style="opacity: 0; margin-right:0; float:right">'+
         //     socialbar+
         // '</div>'+
-        '<div class="navbar navbar-fixed-top" style="margin-left:2%">'+
+        '<div id="navbarContent" class="navbar navbar-fixed-top" style="margin-left:2%; height:auto">'+
             '<div class="navbar-header" >'+
                 // '<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>+
                 '<button type="button" id="toggler" class="navbar-toggle navbar-nav navbar-toggler-right" data-toggle="collapse" data-target=".navbar-collapse" style="margin-right:2%">'+
@@ -31,10 +32,10 @@ const navbar = ''+
                 '<ul id="toggle-navbar" class="nav navbar-nav ml-auto" style="width:94%">'+
                     '<li id="navSocial" style="float:right; z-index:1000; margin-right:0">'+socialbar +'</li>'+
                     '<li class="nav-item"><a href="index.html" style="color:white; background-color:transparent;">About</a></li>'+
-                    '<li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="projects.html" style="color:white; background-color: transparent;">Projects<span class="caret"></span></a>'+
+                    '<li id="projectsDD" class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="projects.html" style="color:white; background-color: transparent;">Projects<span class="caret"></span></a>'+
                         '<ul class="dropdown-menu">'+
                             '<li><a href="rps.html">RPS CTF</a></li>'+
-                            '<li><a href="bookmarks.html">Dashboard+</a></li>'+
+                            '<li><a href="bookmarks.html" target="blank">Dashboard+</a></li>'+
                             // '<li><a href="usefull.html">usefull files</a></li>'+
                         '</ul>'+
                     '</li>'+
