@@ -48,15 +48,16 @@
     <div class="section">
         <h3 class="name" style="color: darkgray;">About <label class="name red"
                 style="animation: example 20s infinite;">Me</label>:</h3>
-        <hr/>
+        <hr />
         <p id="littleAboutMe" class="title" style="float: left; width: 60%; font-weight: 700;">
             B.Sc. in computer science graduate from Tel-Hai College.<br>
             Can spend full days (and nights) working on a software solution until its impeccable.<br>
             Taking projects as a freelance fullstack web developer- building websites, apps and automations.<br><br>
             Currently working at Biosense Webster as a Software Quality Assurance Engineer since January 2021.<br><br>
-            Since September 2019 until July 2021 I was teaching the architecture course as part of the "Magshimim" program, eversince the
+            Since September 2019 until July 2021 I was teaching the architecture course as part of the "Magshimim"
+            program, eversince the
             COVID-19 outbreak the entire course was adapted to be communicated entirely online.<br><br>
-            
+
         </p>
         <div style="flex-direction: column; display: flex; width: 40%; float:left">
             <div id="myImgDiv" style="align-items: center; height: 100%;">
@@ -105,9 +106,9 @@
                 </tr>
             </table>
         </div>
-        
+
     </div>
-    
+
     <div class="section" style="float:left;">
         <label class="name" style="color: darkgray;">Tool<label class="name red"
                 style="animation: example 20s infinite;">kit</label>:</label>
@@ -148,25 +149,60 @@
         var firstTable = document.getElementById('first');
         var navBG = document.getElementById('navbarBackground');
         var navSocial = document.getElementById('navSocial');
+        var aboutMe = document.getElementById('littleAboutMe');
+        var navContent = document.getElementById('navbarContent');
+        var toggler = document.getElementById('toggler');
+        var projDD = document.getElementById('projectsDD')
 
         window.onscroll = function () {
             firstTable.style.opacity = 1 - document.documentElement.scrollTop / 150;
             navBG.style.opacity = document.documentElement.scrollTop / 500
             navSocial.style.opacity = document.documentElement.scrollTop / 200;
         };
-        document.getElementById('toggler').onclick = function(){
+        toggler.onclick = function () {
             isNavbarOpen = !isNavbarOpen;
-            if (isNavbarOpen)
-                navBG.style.animation = "openNavbar 1s ease forwards"
-            else
-                navBG.style.animation = "closeNavbar 1s ease forwards"
+            console.log(navContent.offsetHeight)
+            if (isNavbarOpen) {
+                navBG.style.maxHeight = `${maxHeight}px`
+            }
+            else {
+                navBG.style.maxHeight = `${minHeight}px`
+                isProjOpen = false
+            }
+
         }
+
+        var isProjOpen = false;
+        projDD.onclick = function () {
+            if (isNavbarOpen) {
+                isProjOpen = !isProjOpen
+                console.log(projDD.offsetHeight)
+                if (isProjOpen) {
+                    navBG.style.maxHeight = `${maxHeight + projDD.offsetHeight + 15}px`
+                }
+                else {
+                    navBG.style.maxHeight = `${maxHeight}px`
+                }
+                console.log(projDD);
+            }
+        }
+
+        var minHeight = navContent.offsetHeight
+        toggler.click();
+
+        var maxHeight = navContent.offsetHeight + 60
+        toggler.click();
+        console.log('min:', minHeight)
+        console.log('max:', maxHeight)
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             document.getElementById('myImgDiv').style.display = "none";
-            document.getElementById('littleAboutMe').style.marginLeft = "3%"
+            aboutMe.style.margin = "3%";
+            aboutMe.style.width = "auto";
         }
-
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
     </script>
     <div id="particles-js"></div>
     <script type="text/javascript" src="scripts/particles.js">

@@ -33,9 +33,20 @@ p {
 }
 
 .colors {
+    width: 100%;
     background: linear-gradient(-45deg, #eeca52, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
+    background-repeat: no-repeat !important;
+    /* background-size: contain !important; */
     animation: gradient 15s ease infinite;
+    
+}
+
+.heightAnimation{
+    min-height: 4em;
+    max-height: 4em;
+    height: -webkit-fill-available;
+    transition: max-height 0.4s ease;
 }
 
 .loadbar {
@@ -112,15 +123,15 @@ img[id='whatsappIcon']:hover {
 
 @keyframes openNavbar {
     0%{
-        height: 65px;
+        height: 4em;
     }
     100% {
-        height: 200px;
+        height: 100%;
     }
 }
 @keyframes closeNavbar {
     0%{
-        height: 200px;
+        height: 100%;
     }
     100% {
         height: 65px;
