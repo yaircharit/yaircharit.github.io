@@ -153,6 +153,9 @@
         var navContent = document.getElementById('navbarContent');
         var toggler = document.getElementById('toggler');
         var projDD = document.getElementById('projectsDD')
+        var minHeight = navContent.offsetHeight
+        var maxHeight;
+        var isNavbarOpen = false
 
         window.onscroll = function () {
             firstTable.style.opacity = 1 - document.documentElement.scrollTop / 150;
@@ -161,39 +164,33 @@
         };
         toggler.onclick = function () {
             isNavbarOpen = !isNavbarOpen;
-            console.log(navContent.offsetHeight)
             if (isNavbarOpen) {
                 navBG.style.maxHeight = `${maxHeight}px`
             }
             else {
                 navBG.style.maxHeight = `${minHeight}px`
+                maxHeight = navContent.offsetHeight 
                 isProjOpen = false
             }
-
         }
+
+        toggler.click()
+        maxHeight = navContent.offsetHeight + 60
+        toggler.click()
 
         var isProjOpen = false;
         projDD.onclick = function () {
             if (isNavbarOpen) {
                 isProjOpen = !isProjOpen
-                console.log(projDD.offsetHeight)
                 if (isProjOpen) {
                     navBG.style.maxHeight = `${maxHeight + projDD.offsetHeight + 15}px`
                 }
                 else {
                     navBG.style.maxHeight = `${maxHeight}px`
                 }
-                console.log(projDD);
             }
         }
 
-        var minHeight = navContent.offsetHeight
-        toggler.click();
-
-        var maxHeight = navContent.offsetHeight + 60
-        toggler.click();
-        console.log('min:', minHeight)
-        console.log('max:', maxHeight)
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             document.getElementById('myImgDiv').style.display = "none";
