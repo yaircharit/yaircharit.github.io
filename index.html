@@ -108,12 +108,32 @@
         </div>
 
     </div>
-
+    <div class="section" style="float:left;">
+        <label class="name red" style="animation: example 20s infinite;">Pro</label><label class="name"
+            style="color: darkgray;">jects:</label>
+        <hr>
+        <div>
+            <a href="bookmarks.html" target="_blank">
+                <div class="project">
+                    <label class="title name darkgray">Dashboard+</label>
+                    <button>i</button>
+                    <a href="https://github.com/yaircharit/Dashboard-Plus"><img id="githubIcon" src="Art/icons/white/github.png"class="thumbnail img-rounded social-icon"></a>
+                </div>
+            </a>
+            <a href="rps.html" target="_blank"></a>
+                <div class="project">
+                    <label class="title name darkgray">RPS</label>
+                </div>
+            </a>
+            <div class="project">
+                <label class="title name darkgray">Mailing Automation</label>
+            </div>
+        </div>
+    </div>
     <div class="section" style="float:left;">
         <label class="name" style="color: darkgray;">Tool<label class="name red"
                 style="animation: example 20s infinite;">kit</label>:</label>
         <hr>
-        <!-- <hr class="seperator"> -->
         <div>
             <img class="toolkitLogo" src="Art/icons/Toolkit/python.png">
             <img class="toolkitLogo" src="Art/icons/Toolkit/Java.png">
@@ -169,7 +189,7 @@
             }
             else {
                 navBG.style.maxHeight = `${minHeight}px`
-                maxHeight = navContent.offsetHeight 
+                maxHeight = navContent.offsetHeight
                 isProjOpen = false
             }
         }
@@ -197,15 +217,12 @@
             aboutMe.style.margin = "3%";
             aboutMe.style.width = "auto";
         }
-        function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
     </script>
-    <div id="particles-js"></div>
+    <!-- <div id="particles-js"></div>
     <script type="text/javascript" src="scripts/particles.js">
         particlesJS.load('particles-js', 'scripts/particles.json', function () {
             console.log('particles.js loaded - callback');
-        });</script>
+        });</script> -->
 </body>
 
 </html>

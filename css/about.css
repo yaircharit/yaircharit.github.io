@@ -64,11 +64,10 @@ body {
 }
 
 .First {
+    top: 0;
     z-index: 10;
-    width: 100%;
+    width: -webkit-fill-available;
     height: 90%;
-    /* padding: 10% 37%; */
-    /* margin-bottom: 100px; */
     text-align: center;
     align-items: center;
 }
@@ -78,19 +77,21 @@ td{
 }
 
 .section {
-    padding: 0 2%;
-    /* background-color: lightblue; */
-
+    margin: 2%;
+    padding: 0 1%;
+    width: 90%;
 }
 
 .project {
     text-align: center;
-    width: 200px;
-    height: 300px;
+    width: 20em;
+    height: 20em;
+    font-weight: bold;
     border-radius: 25px;
-    border: 1px solid black;
+    border: 1px thin black;
     display: inline-block;
     margin: 20px 40px;
+    background-color: gainsboro;
 }
 
 .icon-bar {
@@ -122,7 +123,12 @@ td{
 .red {
     color: rgb(155, 26, 9);
     padding-left: 0px;
-    /* animation: example 25s infinite; */
+}
+.darkgray {
+    color: rgb(75, 75, 75);
+    padding-left: 0px;
+    font-weight: bold;
+    margin-top: 1em;
 }
 
 .paragraph {
