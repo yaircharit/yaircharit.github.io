@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=yes" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <meta name="viewport" content="height=device-height,initial-scale=1,shrink-to-fit=no" />
     <meta name="theme-color" content="#742e74" />
     <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/movies-4/48/pokemon-movie-cinema-ball-512.png">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
@@ -226,6 +227,60 @@
         button:disabled:hover {
             opacity: 100%;
         }
+
+        /* News Ticker */
+        #placeholder{
+            margin-bottom:50px;
+        }
+
+        .vwrap,
+        .vitem {
+            height: 30px;
+            line-height: 30px;
+            font-size: large;
+        }
+
+        .vwrap {
+            overflow: hidden;
+            position: fixed;
+            z-index: 100;
+            width: -webkit-fill-available;
+            background: #eee;
+            margin: 0 1.5em;
+            bottom: 0;
+            border: 2px solid rgb(184, 184, 184);
+            border-bottom:rgb(184, 184, 184) solid 10px;
+            box-shadow: black 2px;
+            border-radius: 15px 15px 0 0;
+            margin-right: 10em;
+        }
+
+        .vitem {
+            text-align: center;
+        }
+
+        .vmove {
+            position: relative;
+        }
+
+        @keyframes tickerv {
+			0.0% {bottom: 0px}
+			25.0% {bottom: 30px}
+			50.0% {bottom: 60px}
+			75.0% {bottom: 90px}
+			100% {bottom: 0px}
+        }
+
+        .vmove {
+            animation-name: tickerv;
+			animation-duration: 28s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(1, 0, .5, 0);
+        }
+
+        .vmove:hover {
+            animation-play-state: paused;
+        }
     </style>
 
     <script>
@@ -414,7 +469,7 @@
                     }
                     temp[0].disabled = true
                     temp[2].value = key.substr(1)
-                    
+
                 }
                 else if (temp[2].classList.contains('const')) {
                     key = '*' + key
@@ -439,7 +494,7 @@
                     }
                     temp[0].disabled = true
                     temp[2].value = key.substr(1)
-                    
+
                 }
                 else if (temp[2].classList.contains('const')) {
                     key = '*' + key
@@ -717,11 +772,25 @@
 
             return res
         }
+
+        function insertNews(json) {
+            let res = ''
+            if (json != undefined && json.length > 0) {
+                res = '<div class="vmove">'
+                for (item in json)
+                    res = `${res}\n<div class="vitem">${json[item]}</div>`
+                res = `${res}\n</div>`
+            }else{
+                news_placeholder.style.display = 'none'
+            }
+            return res
+        }
     </script>
 </head>
 
 <body>
     <div class="background"></div>
+    <div id="news_placeholder" class="vwrap"></div>
     <div id="placeholder"></div>
 
     <footer>
@@ -730,11 +799,18 @@
             <button id="downloadButton" class="intButton saveButton"
                 onclick="downloadButtonClick()">Download</button></a>
         </div>
-        <p style="bottom:0; right: 1em; position:fixed">Made by Yair :)</p><br><a style="bottom:0; right: 1em; position:fixed" href="https://github.com/yaircharit/Dashboard-Plus">Git Repository</a>
+        <p style="bottom:0; right: 1em; position:fixed">Made by Yair :)</p><br><a
+            style="bottom:0; right: 1em; position:fixed" href="https://github.com/yaircharit/Dashboard-Plus">Git
+            Repository</a>
 
         <script>
 			document.staticMarks = {'Main Collection': [{'🌐Search Engines': [{'*🔎Google': 'https://www.google.com'}, {'🧷Bing': 'https://www.Bing.com'}]}, {'📢 Social Media': [{'💠Facebook': ['https://www.facebook.com', {'📸Instegram': 'https://www.instegram.com'}, {'✔️Whatsapp': 'https://web.whatsapp.com'}]}, {'🌀Twitter': 'https://www.twitter.com'}, {'🔻Youtube': 'https://www.youtube.com'}]}, {'📰News Sites': [{'Popular News Sites': ''}, {'🦊 FOX': 'https://www.foxnews.com'}, {'☕️ BBC': 'https://www.bbc.com/news'}, {'🏈 ESPN': 'https://www.espn.com/'}]}], 'Created By': [{'Yair Charit': [{'👨🏽\u200d💻 See some more of my work 👨🏽\u200d💻': ''}, {'*👓Portfolio': 'https://yaircharit.github.io'}, {'*💼LinkedIn': 'https://il.linkedin.com/in/yair-charit'}, {'*👷🏽\u200d♂️ Github': 'https://github.com/yaircharit'}]}]}
             // document.staticMarks will be inserted above. the line below is only for testing purposes
+			document.newsFeed = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Aliquam consequat varius consequat.', 'Fusce dapibus turpis vel nisi malesuada sollicitudin.', 'Pellentesque auctor molestie orci ut blandit.']
+
+
+            news_placeholder = document.getElementById('news_placeholder')
+            news_placeholder.innerHTML = insertNews(document.newsFeed)
 
             placeholder = document.getElementById('placeholder')
             interButton = document.getElementById('interButton')
