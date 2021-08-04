@@ -63,6 +63,7 @@
                     <div class="relative">
                         <label class='timelineTitle' for='work3'>Software Quality Assurance Engineer at Biosense
                             Webster</label>
+                            
                         <span class='date'>Since January 2021</span>
                         <span class='circle'></span>
                     </div>
@@ -125,7 +126,7 @@
                 </table>
             </div>
         </div>
-        <p id="littleAboutMe" class="font20" style="float: left; width: 60%;display: inline;">
+        <p id="littleAboutMe" class="font20" style="float: left; display: inline;">
             Can spend full days (and nights) working on a software solution until its impeccable.<br>
             Taking projects as a freelance fullstack web developer- building websites, apps and automations.<br><br>
         </p>
@@ -217,6 +218,9 @@
             navBG.style.opacity = document.documentElement.scrollTop / 500
             navSocial.style.opacity = document.documentElement.scrollTop / 200;
         };
+        toggler.click()
+        maxHeight = navContent.offsetHeight
+        toggler.click()
         toggler.onclick = function () {
             isNavbarOpen = !isNavbarOpen;
             if (isNavbarOpen) {
@@ -228,10 +232,8 @@
                 isProjOpen = false
             }
         }
-
-        toggler.click()
-        maxHeight = navContent.offsetHeight + 60
-        toggler.click()
+        
+        
 
         var isProjOpen = false;
         projDD.onclick = function () {
@@ -245,6 +247,7 @@
                 }
             }
         }
+        
 
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {

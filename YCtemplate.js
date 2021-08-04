@@ -25,7 +25,6 @@ const navbar = ''+
             '</div>'+
             '<div class="collapse navbar-collapse title" id="myNavbar">'+
                 '<ul id="toggle-navbar" class="nav navbar-nav ml-auto" style="width:94%">'+
-                    '<li id="navSocial" class="horizontal" style="float:right; margin-right:0; opacity:0; display:flex;flex-direction: row;">'+socialbar +'</li>'+
                     '<li class="nav-item"><a href="index.html" style="color:white; background-color:transparent;">About</a></li>'+
                     '<li id="projectsDD" class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="projects.html" style="color:white; background-color: transparent;">Projects<span class="caret"></span></a>'+
                         '<ul class="dropdown-menu">'+
@@ -35,6 +34,7 @@ const navbar = ''+
                         '</ul>'+
                     '</li>'+
                     '<li class="nav-item"><a href="Yair Charit - CVMay2021.pdf" target="blank" style="color:white; background-color:transparent;">Resume</a></li>'+
+                    '<li id="navSocial" class="horizontal" style="float:right; margin-right:0; opacity:0; display:flex;flex-direction: row;">'+socialbar +'</li>'+
                     
                     // '<li><a href="workRefs.html">Work Projects</a></li>'+
                 '</ul>'+
