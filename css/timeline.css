@@ -53,7 +53,7 @@ p {
 }
 
 .content {
-  margin-left: 10px;
+  margin-left: 5px;
   max-height: 20px;
   font-size: 20px;
   padding: 50px 30px 0;
@@ -162,7 +162,7 @@ p {
   .content {
     padding-top: 45px;
     border-color: #7cdd99;
-    /* margin-left:20px; */
+    margin-left:25px;
   }
   .content:before, .content:after {
     content: "";
@@ -188,6 +188,9 @@ p {
   .content p {
     font-size: 0.9em;
     line-height: 1.4;
+  }
+  .circle{
+    left: -14px;
   }
 /* 
   .circle,
