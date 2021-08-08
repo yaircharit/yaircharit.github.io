@@ -40,7 +40,9 @@
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768) {
             cont.children[0].style.width = 'auto';
             cont.children[1].style.width = 'auto';
+            cont.children[1].style.height = 'auto';
             cont.style.flexDirection = 'column'
+            cont.children[1].style.margin = '0.5em 2em';
         }
 
         window.onresize = function() {
@@ -48,10 +50,13 @@
                 if (cont.style.flexDirection == 'row'){
                 cont.children[0].style.width = 'auto';
                 cont.children[1].style.width = 'auto';
-                cont.style.flexDirection = 'column'}
+                cont.children[1].style.margin = '0.5em 2em';
+                cont.style.flexDirection = 'column'
+            }
             }else if (cont.style.flexDirection == 'column'){
                 cont.children[0].style.width = '50%';
                 cont.children[1].style.width = '50%';
+                cont.children[1].style.margin = '0.5em -3em 2em 2em';
                 cont.style.flexDirection = 'row'
             }
         }
