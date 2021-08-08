@@ -146,12 +146,12 @@
                     Use folders and notes for even more organization.<br>
                     Every field you can see is editable! Just remember to download the page with all your changes
                 </p>
-                <a href="https://github.com/yaircharit/Dashboard-Plus"><img id="githubIcon"
+                <a href="https://github.com/yaircharit/Dashboard-Plus" target="_blank"><img id="githubIcon"
                         src="Art/icons/black/github.png" class="thumbnail img-rounded social-icon"></a>
             </div>
 
             <div class="project">
-                <a href="rps.html" target="_blank" class="name darkgray">RPS</a>
+                <a href="rps.html" class="name darkgray">RPS</a>
                 <p class="font20">
                     Play "Rock, Paper, Scissors" on a chess board, Just like it was in ICQ!<br>
                     Capture the enemy's flag to win the game!
@@ -159,12 +159,12 @@
             </div>
             </a>
             <div class="project">
-                <label class="name darkgray">Mailing Automation</label>
+                <a class="name darkgray" href="autoMail.html">Mailing Automation</a>
                 <p class="font20">
-                    Dina.co.il is an online shop that sells paintings on order<br>
-                    An email is recieved for each order that is placed. <br>
-                    The orders emails are being processed and a new mail is created and sent to the printing factory with only the relevant data.<br>
-                    No need for anymore human involvment to transfer data, automation at its best!
+                    Dina.co.il is an online shop which sells paintings on order<br>
+                    Each order that is placed is being saved in the site's databases.<br>
+                    All new orders in the database are being processed and a new e-mail is created and sent to the printing factory with only the relevant data.<br>
+                    No need for human involvment to transfer data anymore, automation at its best!
                 </p>
             </div>
         </div>
@@ -193,79 +193,55 @@
         </div>
     </div>
 
-
-    <!-- <div class="section">
-        <h3 class="title">Recent Projects:</h3>
-        <div class="project">Project</div>
-        <div class="project">Project</div>
-    </div>
-    <hr> -->
-
     <script>
         document.getElementById('firstLogo').innerHTML = socialbar
 
-        var firstTable = document.getElementById('firstLogo');
         var navBG = document.getElementById('navbarBackground');
+        var firstTable = document.getElementById('firstLogo');
         var navSocial = document.getElementById('navSocial');
         var aboutMe = document.getElementById('littleAboutMe');
-        var navContent = document.getElementById('navbarContent');
-        var toggler = document.getElementById('toggler');
-        var projDD = document.getElementById('projectsDD')
-        var minHeight = navContent.offsetHeight
-        var maxHeight;
-        var isNavbarOpen = false
 
+        navSocial.style.opacity = 0;
         window.onscroll = function () {
             firstTable.style.opacity = 1 - document.documentElement.scrollTop / 150;
             navBG.style.opacity = document.documentElement.scrollTop / 500
             navSocial.style.opacity = document.documentElement.scrollTop / 200;
         };
-        toggler.click()
-        maxHeight = navContent.offsetHeight
-        toggler.click()
-        toggler.onclick = function () {
-            isNavbarOpen = !isNavbarOpen;
-            if (isNavbarOpen) {
-                navBG.style.maxHeight = `${maxHeight}px`
-            }
-            else {
-                navBG.style.maxHeight = `${minHeight}px`
-                maxHeight = navContent.offsetHeight
-                isProjOpen = false
-            }
-        }
-        
-        
-
-        var isProjOpen = false;
-        projDD.onclick = function () {
-            if (isNavbarOpen) {
-                isProjOpen = !isProjOpen
-                if (isProjOpen) {
-                    navBG.style.maxHeight = `${maxHeight + projDD.offsetHeight + 15}px`
-                }
-                else {
-                    navBG.style.maxHeight = `${maxHeight}px`
-                }
-            }
-        }
-        
-
-
-        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768) {
             document.getElementById('myImgDiv').style.display = "none";
             document.getElementById('horizFlex').classList = [];
             document.getElementById('timeline').style.width = 'auto';
             aboutMe.style.margin = "3%";
             aboutMe.style.width = "auto";
-
         }
     </script>
-    <!-- <div id="particles-js"></div>
-    <script type="text/javascript" src="scripts/particles.js">
-        particlesJS.load('particles-js', 'scripts/particles.json', function () {
-            console.log('particles.js loaded - callback');
-        });</script> -->
+    <script
+    type="text/javascript"
+    src="/dist/wait-for-element-transition.min.js"
+>document.body.onresize = function(){
+    let navContent = document.getElementById('navbarContent');
+    let toggler = document.getElementById('toggler');
+    
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768) {
+        if (navSocial.style.float == 'right')
+        {
+            toggler.click()
+            waitForElementTransition(toggler).then(() => {
+                maxHeight = navContent.offsetHeight
+                toggler.click()
+            });
+        }
+        navSocial.style.float = "left"
+    }
+    else{
+        if (isNavbarOpen){
+            toggler.click()
+        }
+        
+        navSocial.style.float = "right"
+    }
+    
+}</script>
 </body>
 
 </html>
