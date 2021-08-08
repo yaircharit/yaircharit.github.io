@@ -50,7 +50,8 @@
                 <li class='work'>
                     <input class='radio' id='work4' name='works' type='radio'>
                     <div class="relative">
-                        <label class='timelineTitle' for='work4'>OS and Assembly Language Instructor at Cyber Education Center</label>
+                        <label class='timelineTitle' for='work4'>OS and Assembly Language Instructor at Cyber Education
+                            Center</label>
                         <span class='date'>September 2019 - April 2021</span>
                         <span class='circle'></span>
                     </div>
@@ -65,7 +66,7 @@
                     <div class="relative">
                         <label class='timelineTitle' for='work3'>Software Quality Assurance Engineer at Biosense
                             Webster</label>
-                            
+
                         <span class='date'>Since January 2021</span>
                         <span class='circle'></span>
                     </div>
@@ -163,7 +164,8 @@
                 <p class="font20">
                     Dina.co.il is an online shop which sells paintings on order<br>
                     Each order that is placed is being saved in the site's databases.<br>
-                    All new orders in the database are being processed and a new e-mail is created and sent to the printing factory with only the relevant data.<br>
+                    All new orders in the database are being processed and a new e-mail is created and sent to the
+                    printing factory with only the relevant data.<br>
                     No need for human involvment to transfer data anymore, automation at its best!
                 </p>
             </div>
@@ -215,33 +217,29 @@
             aboutMe.style.width = "auto";
         }
     </script>
-    <script
-    type="text/javascript"
-    src="/dist/wait-for-element-transition.min.js"
->document.body.onresize = function(){
-    let navContent = document.getElementById('navbarContent');
-    let toggler = document.getElementById('toggler');
-    
-    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768) {
-        if (navSocial.style.float == 'right')
-        {
-            toggler.click()
-            waitForElementTransition(toggler).then(() => {
-                maxHeight = navContent.offsetHeight
-                toggler.click()
-            });
-        }
-        navSocial.style.float = "left"
-    }
-    else{
-        if (isNavbarOpen){
-            toggler.click()
-        }
-        
-        navSocial.style.float = "right"
-    }
-    
-}</script>
+    <script type="text/javascript" src="/dist/wait-for-element-transition.min.js">document.body.onresize = function () {
+            let navContent = document.getElementById('navbarContent');
+            let toggler = document.getElementById('toggler');
+
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768) {
+                if (navSocial.style.float == 'right') {
+                    toggler.click()
+                    waitForElementTransition(toggler).then(() => {
+                        maxHeight = navContent.offsetHeight
+                        toggler.click()
+                    });
+                }
+                navSocial.style.float = "left"
+            }
+            else {
+                if (isNavbarOpen) {
+                    toggler.click()
+                }
+
+                navSocial.style.float = "right"
+            }
+
+        }</script>
 </body>
 
 </html>

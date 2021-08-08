@@ -21,7 +21,7 @@
     <div class="section" style="margin-top: 80px;">
         <label class="title">Mailing </label><label class="title rainbow"> Automations</label>
         <hr>
-        <div style="display: flex; flex-direction: row; width: -webkit-fill-available;">
+        <div id="content" style="display: flex; flex-direction: row; width: -webkit-fill-available;">
             <p class="font20" style="width: 50%;">
                 Dina.co.il is an online shop which sells paintings on order.<br>
                 Each order that is placed is being saved in the site's databases.<br>
@@ -36,5 +36,11 @@
     <script>
         document.getElementById('navbarBackground').style.opacity = 1;
         document.getElementById('navSocial').style.opacity = 1;
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768) {
+            let cont = document.getElementById('content');
+            cont.children[0].style.width = 'auto';
+            cont.children[1].style.width = 'auto';
+            cont.style.flexDirection = 'column'
+        }
     </script>
 </body>
