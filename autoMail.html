@@ -29,18 +29,31 @@
                 As it was tailored to their needs, there is no need for human involvment anymore, it even adds an image of the required painting!<br>
                 Automation at its best!
             </p>
-            <img src="Art/Dina.png" style="border-radius: 25px; border: 1px transparent; width: 50%; margin-left: 2em;" />
+            <img src="Art/Dina.png" style="border-radius: 25px; border: 1px transparent; width: 50%; margin: 0.5em -3em 2em 2em;" />
         </div>
     </div>
 
     <script>
         document.getElementById('navbarBackground').style.opacity = 1;
         document.getElementById('navSocial').style.opacity = 1;
+        var cont = document.getElementById('content');
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768) {
-            let cont = document.getElementById('content');
             cont.children[0].style.width = 'auto';
             cont.children[1].style.width = 'auto';
             cont.style.flexDirection = 'column'
+        }
+
+        window.onresize = function() {
+            if ( ( /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768)) {
+                if (cont.style.flexDirection == 'row'){
+                cont.children[0].style.width = 'auto';
+                cont.children[1].style.width = 'auto';
+                cont.style.flexDirection = 'column'}
+            }else if (cont.style.flexDirection == 'column'){
+                cont.children[0].style.width = '50%';
+                cont.children[1].style.width = '50%';
+                cont.style.flexDirection = 'row'
+            }
         }
     </script>
 </body>
