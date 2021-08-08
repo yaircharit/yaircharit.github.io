@@ -108,6 +108,23 @@ hr.seperator {
 .name{
     font-size: 32px;
 }
+
+.whiteText{
+    color: white !important;
+    background-color: transparent !important;
+}
+.grayText{
+    color: #333 !important;
+    background-color: transparent !important;
+}
+.grayText:hover{
+    color: white !important;
+    background-color: rgb(124, 124, 124) !important;
+}
+.whiteText:hover{
+    color: #333 !important;
+}
+
 /* Navbar */
 
 .nav-item{
@@ -115,8 +132,8 @@ hr.seperator {
 }
 
 .horizontal{
-    display:flex;
-    flex-direction: row;
+    display:flex !important;
+    flex-direction: row !important;
 }
 
 .heightAnimation{
