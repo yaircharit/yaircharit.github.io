@@ -30,7 +30,7 @@ const navbar = ''+
                             // '<li><a href="usefull.html">usefull files</a></li>'+
                         '</ul>'+
                     '</li>'+
-                    '<li class="nav-item"><a class="whiteText"  href="Yair Charit - CVMay2021.pdf" target="blank">Resume</a></li>'+
+                    '<li class="nav-item"><a class="whiteText"  href="Yair Charit - CV2021.pdf" target="blank">Resume</a></li>'+
                     '<li id="navSocial" class="horizontal">'+socialbar +'</li>'+
                 '</ul>'+
 
