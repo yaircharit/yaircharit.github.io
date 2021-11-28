@@ -27,7 +27,7 @@ const navbar = ''+
                             '<li><a class="grayText" href="rps.html">RPS CTF</a></li>'+
                             '<li><a class="grayText" href="bookmarks.html">Dashboard+</a></li>'+
                             '<li><a class="grayText" href="autoMail.html">Mail Automation</a></li>'+
-                            // '<li><a href="usefull.html">usefull files</a></li>'+
+                            '<li><a class="grayText" href="GlobalWarming.html">GGlobal Warming Simulator</a></li>'+
                         '</ul>'+
                     '</li>'+
                     '<li class="nav-item"><a class="whiteText"  href="Yair Charit - CV2021.pdf" target="blank">Resume</a></li>'+

@@ -73,7 +73,7 @@ hr.seperator {
     border-radius: 25px;
     border: 1px thin black;
     display: inline-table;
-    margin: 20px 40px;
+    margin: 10px;
     background-color: gainsboro;
 }
 
@@ -134,6 +134,7 @@ hr.seperator {
 .horizontal{
     display:flex !important;
     flex-direction: row !important;
+    justify-content: space-evenly;
 }
 
 .heightAnimation{
