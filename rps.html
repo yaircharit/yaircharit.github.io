@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/master.css">
 </head>
 
-<body>
+<body style="padding: 5em 1em;">
   <!-- navbar -->
   <script src="YCtemplate.js" onload="loadTemplate()" type="text/javascript"></script>
 
@@ -22,71 +22,67 @@
   <p style="left: 20px;">To play the game (in some browsers) you must have <a
       href="https://unity-web-player.en.softonic.com/">Unity Web Player</a></p>
   <img src="Art/wip.jpg" style="float: left; height: 100px;">
-  <div id="unity-container" style="margin-left:10%">
-    <canvas id="unity-canvas"></canvas>
-    <div id="unity-loading-bar">
-      <div id="unity-logo"></div>
-      <div id="unity-progress-bar-empty">
-        <div id="unity-progress-bar-full"></div>
+  <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">RPS</div>
       </div>
     </div>
-    <div id="unity-fullscreen-button" style="position: relative; float: left;"></div>
-
-    <p id='message'>
-      Rock Paper Scissors from the good ol' days (icq)<br />
-      Last updated: 16/Nov/2020<br />
-      Alpha v</p>
-    <br />
-  </div>
-
-
-  <script>
-    var version = "0.2.2"
-    var buildUrl = `Build/${version}`;
-    var loaderUrl = buildUrl + `/${version}.loader.js`;
-    var config = {
-      dataUrl: buildUrl + `/${version}.data`,
-      frameworkUrl: buildUrl + `/${version}.framework.js`,
-      codeUrl: buildUrl + `/${version}.wasm`,
-      streamingAssetsUrl: "StreamingAssets",
-      companyName: "Yair Charit",
-      productName: "RPS",
-      productVersion: `${version}`,
-    };
-
-    var container = document.querySelector("#unity-container");
-    var canvas = document.querySelector("#unity-canvas");
-    var loadingBar = document.querySelector("#unity-loading-bar");
-    var progressBarFull = document.querySelector("#unity-progress-bar-full");
-    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-
-    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-      container.className = "unity-mobile";
-      config.devicePixelRatio = 1;
-    } else {
-      canvas.style.width = "960px";
-      canvas.style.height = "600px";
-    }
-    loadingBar.style.display = "block";
-
-    var script = document.createElement("script");
-    script.src = loaderUrl;
-    script.onload = () => {
-      createUnityInstance(canvas, config, (progress) => {
-        progressBarFull.style.width = 100 * progress + "%";
-      }).then((unityInstance) => {
-        loadingBar.style.display = "none";
-        fullscreenButton.onclick = () => {
-          unityInstance.SetFullscreen(1);
-        };
-      }).catch((message) => {
-        alert(message);
-      });
-    };
-    document.body.appendChild(script);
-    document.getElementById('message').innerHTML += version;
+    <script>
     document.getElementById('navbarBackground').style.opacity = 1;
     document.getElementById('navSocial').style.opacity = 1;
+      var buildUrl = "Build/0.3.1";
+      var loaderUrl = buildUrl + "/0.3.1.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/0.3.1.data",
+        frameworkUrl: buildUrl + "/0.3.1.framework.js",
+        codeUrl: buildUrl + "/0.3.1.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Yair Charit",
+        productName: "RPS",
+        productVersion: "0.3.1",
+      };
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    document.getElementById('unity-build-title').innerHTML +=  ` ${config.productVersion}`;
+    
   </script>
 
 </body>
