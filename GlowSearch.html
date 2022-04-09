@@ -1,7 +1,7 @@
 <html>
 
 <head>
-
+    <link rel="icon" href="Art/GlowSearch/darkcloud.png">
     <style>
         .middle {
             display: table;
@@ -59,6 +59,8 @@
             background-repeat: no-repeat;
             background-position: center;
             height: auto;
+            background-color: rgb(255, 255, 255);
+            /* filter: brightness(50%);  */
         } 
 
         @keyframes fadeout {
@@ -74,7 +76,9 @@
     </style>
     <script>
         clouds_size = 0
-        
+        var brightness = 255
+        clicks_to_black = 15
+        brightness_change = 255/clicks_to_black
         function search() {
             var img = document.createElement("img");
             img.src = 'Art/GlowSearch/lightbulb.png';
@@ -88,6 +92,8 @@
             document.body.appendChild(img);
             clouds_size += 5
             body.style.backgroundSize = clouds_size +'vw'
+            brightness -= brightness_change
+            body.style.backgroundColor = `rgb(${brightness},${brightness},${brightness})`
         }
     </script>
 </head>
