@@ -76,8 +76,8 @@
     </style>
     <script>
         clouds_size = 0
-        var brightness = 255
-        clicks_to_black = 15
+        brightness = 255
+        clicks_to_black = 30
         brightness_change = 255/clicks_to_black
         function search() {
             var img = document.createElement("img");
@@ -90,8 +90,12 @@
             img.style.top = document.body.clientHeight * Math.random() + 'px';
             img.style.left = document.body.clientWidth * Math.random() + 'px';
             document.body.appendChild(img);
+
+            // enlarge dark cloud
             clouds_size += 5
             body.style.backgroundSize = clouds_size +'vw'
+
+            // darken background
             brightness -= brightness_change
             body.style.backgroundColor = `rgb(${brightness},${brightness},${brightness})`
         }
