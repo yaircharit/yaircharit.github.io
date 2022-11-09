@@ -25,6 +25,12 @@ h2 {
 
 p {
   margin: 0 0 15px;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline none;
 }
 
 .date {
@@ -35,6 +41,8 @@ p {
   font-size: 0.95em;
   line-height: 20px;
   /* position: absolute; */
+  font-family: 'Poiret One', cursive;
+  font-weight: 400;
   color: #2e704c;
   font-weight: 900;
 }
@@ -93,10 +101,11 @@ p {
   word-break: break-word;
   hyphens: auto;
   overflow: hidden;
+  font-family: 'Monaco', monospace;
 }
 
 .timelineTitle {
-  font-size: 1.5em;
+  font-size: 2em;
   position: absolute;
   z-index: 100;
   cursor: pointer;
@@ -104,6 +113,8 @@ p {
   top: 20px;
   padding-right: 10px;
   transition: transform 0.2s linear;
+  font-family: 'Poiret One', cursive;
+  /* font-weight: 400; */
 }
 
 .radio {
@@ -163,6 +174,7 @@ p {
     padding-top: 45px;
     border-color: #7cdd99;
     margin-left:25px;
+    text-decoration: underline none;
   }
   .content:before, .content:after {
     content: "";
@@ -191,6 +203,11 @@ p {
   }
   .circle{
     left: -14px;
+  }
+
+  a {
+    color: #7cdd99;
+    
   }
 /* 
   .circle,

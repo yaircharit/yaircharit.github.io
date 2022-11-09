@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yair Charit | Client-Server implementation</title>
+    <link rel="icon" href="Art/YCLogo/YC_Logo_DarkRed2.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <script src="YCtemplate.js" onload="loadTemplate()" type="text/javascript"></script>
+
+    <div class='section' style="padding: 5em;">
+        <p id="message">
+            Client side developed in C++, Server side developed in Python.<br>
+            All users need to register to the server- all users are stored in an SQL database.<br>
+            Use AES encryption to establish symmetric RSA encryption keys with other users.<br>
+            Once a connection was established encrypted messages can be sent between users, a message can be either some
+            text and even a file.<br>
+            All (encrypted) messages are stored in an SQL table ready to be fetched.<br>
+            All messages are deleted after fetching them.<br>
+        </p>
+        <a href="https://github.com/yaircharit/OU-MS-of-CS/tree/Def-MMN15" target="_blank"><img id="githubIcon"
+                src="Art/icons/black/github.png" class="thumbnail img-rounded social-icon"></a>
+        <img src="Art/websiteunderconstruction.jpg">
+    </div>
+    <script>
+        document.getElementById('navbarBackground').style.opacity = 1;
+        document.getElementById('navSocial').style.opacity = 1;
+    </script>
+</body>
+
+</html>

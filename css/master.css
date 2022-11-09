@@ -4,8 +4,7 @@
 
 body {
     padding: 0;
-    font-family: 'Poiret One', cursive;
-    font-weight: 400;
+    
 }
 
 td{
@@ -99,6 +98,8 @@ hr.seperator {
 
 .title {
     font-size: 40px;
+    font-family: 'Poiret One', cursive;
+    font-weight: 400;
 }
 
 .font20{
