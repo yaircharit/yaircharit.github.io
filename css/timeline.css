@@ -97,11 +97,11 @@ a {
   
   max-height: 0;
   color: transparent;
-  text-align: justify;
+  /* text-align: justify; */
   word-break: break-word;
-  hyphens: auto;
+  /* hyphens: auto; */
   overflow: hidden;
-  font-family: 'Monaco', monospace;
+  font-family: 'Courier New';
 }
 
 .timelineTitle {
