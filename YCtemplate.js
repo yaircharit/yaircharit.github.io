@@ -30,7 +30,7 @@ const navbar = ''+
                             // '<li><a href="usefull.html">usefull files</a></li>'+
                         '</ul>'+
                     '</li>'+
-                    '<li class="nav-item"><a class="whiteText"  href="Yair Charit - CV.pdf" target="blank">Resume</a></li>'+
+                    '<li class="nav-item"><a class="whiteText"  href="https://docs.google.com/document/d/e/2PACX-1vTW4N2dcJruJ_CGI-PB4XhNqlxKAu323qgk65w8M-HQjRJT4jfWqY1FjxbuBuGfbg/pub" target="blank">Resume</a></li>'+
                     '<li id="navSocial" class="horizontal">'+socialbar +'</li>'+
                 '</ul>'+
 
