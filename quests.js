@@ -1,128 +1,127 @@
-// JSON quest data with 'details' & 'nextQuests'
 const questData = [
   {
     id: 'quest-0',
-    title: "The Tower and the Elf",
-    category: "Personal Quest",
-    summary: "Awakened in a ring of runes at the foot of an ivory tower in Emberfall.",
-    reward: "Clues to your origin",
+    title: "The Memory Keeper's Fate",
+    category: "Main Quest",
+    summary: "Stopped a dragonborn ritual and rescued Draksha, but the mystery deepens.",
+    reward: "Draksha’s gratitude; vision clues; encrypted scroll",
     details: `
-      <strong>Origin:</strong><br>
-      You awoke alone in glowing runes beside a familiar stranger. An elven wizard in blue-silver robes split you apart and vanished.<br>
+      <strong>Origin (Session 1):</strong><br>
+      Garak Kha'zul pleaded for help at Brisban’s Inn.  
+      You uncovered a draconic ritual and stopped it in time.<br>
       <strong>Progress:</strong><br>
-      Haven’t found the tower ruins yet.<br>
+      Ritual thwarted, vision received, encrypted scroll recovered.
     `,
     subQuests: [
       {
-        title: "Investigate Emberfall’s tower",
-        completed: false,
-        details: `
-          <strong>Description:</strong> Explore the ruins of the ivory tower you recall.<br>
-          <strong>Session Clues:</strong> Ask villagers, follow rune residue north of the mountain pass.
-        `
+        title: "Aid Garak Kha'zul",
+        completed: true,
+        details: "Healed him and accepted his offer of 50 gp to stop the dragonborn."
       },
       {
-        title: "Learn identity of blue-silver elf",
-        completed: false,
-        relatedQuests: ["Library Research"],
-        details: `
-          <strong>Description:</strong> Discover who the wizard was.<br>
-          <strong>Session Clues:</strong> Check archives at The Sylpharium; look for eyewitnesses at Brisban’s Inn.
-        `
+        title: "Cross the mountain path",
+        completed: true,
+        details: "Spoke with wildlife for guidance and reached the shrine."
       },
       {
-        title: "Discover who the other person was",
+        title: "Infiltrate the dragonborn cave",
+        completed: true,
+        details: "Fought guards, disrupted the ritual, and freed Draksha."
+      },
+      {
+        title: "Decode the three-part vision",
         completed: false,
-        details: `
-          <strong>Description:</strong> Find the companion you were with.<br>
-          <strong>Session Clues:</strong> Investigate rumors of two figures in arcane portals.
-        `
+        details: "Interpret the meaning of the dragon, flaming sword, and tiger warrior."
+      },
+      {
+        title: "Decode the encrypted draconic scroll",
+        completed: false,
+        details: "One scroll remains written in encrypted draconic. It may relate to the memory ritual."
       }
     ]
   },
   {
     id: 'quest-1',
-    title: "The Emberwoven Shroud",
-    category: "Main Quest",
-    summary: "A cloaked agent offered 300 gp to retrieve the fabled Shroud from Emberfall.",
-    reward: "300 gp; audience with employer",
+    title: "New Beginnings",
+    category: "Side Quest",
+    summary: "Returned to Creston to gather knowledge, send letters, and prepare for the road to Grimhold.",
+    reward: "Maps, horses, insight",
     details: `
-      <strong>Origin:</strong><br>
-      Session 6 at The Bloody Blade: a gold-lined stranger recruited you and paid 300 gp upfront.<br>
+      <strong>Origin (Session 2):</strong><br>
+      You returned to town, asked questions about the ritual and vision, and read about King Adelbern.<br>
       <strong>Progress:</strong><br>
-      Stocked supplies and researched Emberfall’s hazards.
+      Equipped and informed.
     `,
     subQuests: [
       {
-        title: "Stock Up for Emberfall",
+        title: "Talk to Garak about the vision",
         completed: true,
-        details: `
-          <strong>Session 6 Purchases:</strong><br>
-          Ring of Absorb Elements, Feywild Shard, Bag of Holding, potions, alchemist’s fire.
-        `
+        details: "He couldn’t identify the visions but confirmed Draksha's state of mind."
       },
       {
-        title: "Research Emberfall",
-        completed: false,
-        details: `
-          <strong>Session 6 Library:</strong><br>
-          Read *History & Geography of the Elemental Cities* and torn *Testimonies* pages.
-        `
+        title: "Buy the history book from Brisban",
+        completed: true,
+        details: "Learned of King Adelbern and his flaming sword."
       },
       {
-        title: "Find the Emberwoven Shroud",
-        completed: false,
-        details: `
-          <strong>Session 6</strong><br>
-          Search the Emberfall for the Emberwoven Shroud.
-        `
+        title: "Send letters and get map",
+        completed: true,
+        details: "Letters sent to Aleron and Zorathar. Phili gave you a map of the region."
       },
       {
-        title: "Retrieve the Emberwoven Shroud",
-        completed: false,
-        details: `
-          <strong>Session 6</strong><br>
-          Retrieve the EWS to your mysterious employer in New Kingsville (?)
-        `
+        title: "Get horses from Brando",
+        completed: true,
+        details: "Charm magic helped you buy horses cheap."
       }
     ]
   },
   {
     id: 'quest-2',
-    title: "The Memory Keeper",
+    title: "Parnell's Gang and the Smuggling Ring",
     category: "Main Quest",
-    summary: "Delivered the Kha’zul brothers safely to New Kingsville; they granted you free lodging.",
-    reward: "Free rooms; Draksha’s gratitude",
+    summary: "Investigated bounties in Grimhold and uncovered the operations of Parnell's Gang.",
+    reward: "150 gp (Rusty); Guard’s trust",
     details: `
-      <strong>Origin:</strong><br>
-      Began Session 1 after aiding Garak at Brisban’s Inn.<br>
+      <strong>Origin (Sessions 2–5):</strong><br>
+      You followed bounties to Lady Luck’s Lair and discovered a smuggling route under the city.<br>
       <strong>Progress:</strong><br>
-      Protected them across mountain pass; arrived safely.
+      Freed Thorn, defeated Parnell, uncovered a safehouse and an ally in the Vale's Guard.
     `,
     subQuests: [
       {
-        title: "Protect Garak and Draksha",
+        title: "Track Thorn Reddale in Lady Luck’s Lair",
         completed: true,
-        details: `
-          <strong>Completed:</strong> Fended off highwaymen ambush.
-        `
+        details: "Used his sock scent to follow his trail into a secret entrance."
       },
       {
-        title: "Deliver them to New Kingsvale safely",
+        title: "Infiltrate Parnell’s hideout",
         completed: true,
-        details: `
-          <strong>Completed:</strong> Escorted by the Vale’s Guard to New Kingsville
-        `
+        details: "Disguises, charm, and clever timing helped you get past guards."
       },
       {
-        title: "Investigate",
+        title: "Defeat Parnell’s Gang",
+        completed: true,
+        details: "Killed Parnell and his men, secured a logbook and important letters."
+      },
+      {
+        title: "Gain Draven Blackthorn’s support",
+        completed: true,
+        details: "Gave him proof of the smuggling ring; he sent backup and granted access."
+      },
+      {
+        title: "Investigate safehouse deed",
+        completed: true,
+        details: "Discovered Tavon Greystone's family house was their fallback point."
+      }, 
+      {
+        title: "Fang's Keep Map",
         completed: false,
-        details: `
-          Find out more about the dragonbornes who attacked their tribe.<br>
-		  What did they want? <br>
-		  what they were looking for in Dreksha's memmories?<br>
-		  What is the meaning of the vision we all saw?
-        `
+        details: "The map shows several secret breaches to Fangs Keep, the city of humanoid-animals."
+      },
+      {
+        title: "Discover T.D.’s identity",
+        completed: false,
+        details: "Who is T.D.? What are his plans? What does he want with the smuggling ring?"
       }
     ]
   },
@@ -130,28 +129,24 @@ const questData = [
     id: 'quest-3',
     title: "The Lights of Emberfall",
     category: "Side Quest",
-    summary: "Investigate strange flickers in Emberfall’s ruins with a borrowed trinket.",
-    reward: "Unknown magical insight",
+    summary: "Follow magical flickers deep in Emberfall’s ruins using a borrowed trinket.",
+    reward: "Unknown magical reaction; trinket lore",
     details: `
-      <strong>Origin:</strong><br>
-      Session 2: heard rumors at Frida & Funny’s.<br>
+      <strong>Origin (Session 2 & 6):</strong><br>
+      Frida & Funny’s gave a magical trinket for 10 gp to track hidden arcana.<br>
       <strong>Progress:</strong><br>
-      Paid deposit and obtained trinket in Session 6.
+      Trinket obtained; ruins await.
     `,
     subQuests: [
       {
-        title: "Pay 10 gp for trinket",
+        title: "Pay deposit for trinket",
         completed: true,
-        details: `
-          <strong>Session 6:</strong> Paid 10 gp deposit; trinket pulses near hidden glyphs.
-        `
+        details: "Paid 10 gp for the trinket. It pulses in presence of arcane auras."
       },
       {
-        title: "Explore ruins",
+        title: "Explore Emberfall’s ruins",
         completed: false,
-        details: `
-          Search for the source of these mystirous lights.
-        `
+        details: "Follow light anomalies and hidden glyphs in Emberfall."
       }
     ]
   },
@@ -159,32 +154,72 @@ const questData = [
     id: 'quest-4',
     title: "Library Research",
     category: "Faction Quest",
-    summary: "Recover missing lore about magic, elves, and the Feywild.",
-    reward: "Knowledge; clues to Shadowfell",
+    summary: "Research torn manuscripts and trace elven magic",
+    reward: "Insight into fey and ancient rituals",
     details: `
-      <strong>Origin:</strong><br>
-      Session 6: Tazir found three key texts in the city library.<br>
+      <strong>Origin (Session 6):</strong><br>
+      Found tomes by Kaelen Thornheart, Kendra Stormeye, and one with missing Emberfall pages.<br>
       <strong>Progress:</strong><br>
-      Identified books by Thornheart, Stormeye, and an anonymous historian.
+      Still analyzing contents; torn pages suspicious.
     `,
     relatedQuests: ["The Tower and the Elf"],
     subQuests: [
       {
-        title: "Review key tomes",
+        title: "Study Thornheart’s research",
         completed: false,
-        details: `
-          <strong>Books:</strong><br>
-          • Kaelen Thornheart on elves & Feywild<br>
-          • Kendra Stormeye’s Sylpharium project<br>
-          • History of magic & the gods
-        `
+        details: "Elves origins & the Feywild."
       },
       {
-        title: "Investigate torn pages",
+        title: "Review Stormeye’s Sylpharium thesis",
         completed: false,
-        details: `
-          <strong>Clue:</strong> *Testimonies* pages missing author’s name; ask librarians.
-        `
+        details: "Dismissed for lacking evidence, her work hinted at fey-splicing—maybe relevant to Elio?"
+      },
+      {
+        title: "Investigate torn pages from 'Testimonies'",
+        completed: false,
+        details: "Pages were cleanly removed. Ask the librarian who accessed them last."
+      }
+    ]
+  },
+  {
+    id: 'quest-5',
+    title: "The Tower and the Elf",
+    category: "Personal Quest",
+    summary: "Elio remembers a strange tower and a familiar figure… but not why it matters.",
+    reward: "Answers from the past",
+    details: `
+      <strong>Origin:</strong><br>
+      In a small crooked tower there was a flash of arcane light shot to the skies. 
+      Elio awoke next to a crazed wizard and a strangely familiar figure smiling eerily at him.  
+      The wizard started chanting in a strange language.
+      Before Elio could react, he was pulled out of the tower, flying at impossible speeds. 
+      He eventually landed in the middle of a forest, without any memory of who he was or how he got there.
+      Feeling distressed and lost he started experiencing flashes of memory, and slowly learned to control his arcane powers.
+      Yearning for answers, he set out to find the tower and the wizard, hoping to uncover the truth behind his past.<br>
+      <strong>Progress:</strong><br>
+      Flashes of memory tie Elio to Emberfall’s ruins, to the wizard, and to the mysterious figure.
+    `,
+    subQuests: [
+      {
+        title: "Follow visions of the tower",
+        completed: false,
+        details: "Elio feels drawn to Emberfall—its tower may be the key."
+      },
+      {
+        title: "Find the familiar figure",
+        completed: false,
+        details: "Someone stood across from him at the ritual. Elio can't shake the feeling he knew them."
+      },
+      {
+        title: "Discover the wizard's identity",
+        completed: false,
+        details: "The elven wizard chanted in an ancient tongue. His intentions remain a mystery.",
+        relatedQuests: ["Library Research"]
+      },
+      {
+        title: "Uncover the ritual’s truth",
+        completed: false,
+        details: "What happened that night? The fragments feel like they once belonged to something whole."
       }
     ]
   }
