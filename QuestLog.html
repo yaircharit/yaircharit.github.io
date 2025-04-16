@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Interactive Quest Log</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1c1f26;
+      color: #eee;
+      margin: 0; padding: 0;
+    }
+    .quest-log {
+      width: 90%; max-width: 960px;
+      margin: 30px auto; padding: 20px;
+      background: #2a2e39; border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    h1 { text-align: center; color: #ffdd57; }
+    .search-bar { text-align: center; margin-bottom: 20px; }
+    input[type="text"] {
+      width: 70%; padding: 10px; font-size: 16px;
+      border: none; border-radius: 6px;
+    }
+    h2 {
+      color: #ffdd57; margin-top: 40px;
+      border-bottom: 1px solid #444; padding-bottom: 5px;
+    }
+    .quest {
+      background: #333844; margin-bottom: 10px;
+      border-radius: 6px; overflow: hidden;
+    }
+    .quest-header {
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 15px;
+      cursor: pointer; transition: background 0.3s;
+      border-bottom: 1px solid #444;
+    }
+    .quest-header:hover { background: #3c4152; }
+    .quest-title-text { display: inline-flex; align-items: center; }
+    .info-icon {
+      margin-left: 6px; font-size: 16px; cursor: pointer;
+    }
+    .status {
+      font-size: 13px; padding: 2px 8px;
+      border-radius: 12px; color: #fff;
+    }
+    .status.active { background: #4caf50; }
+    .status.completed { background: #777; }
+    .quest-summary, .quest-meta {
+      padding: 0 15px; font-size: 14px; color: #bbb; line-height: 1.4;
+    }
+    .quest-meta span { margin-right: 15px; }
+    .quest-details {
+      display: none; padding: 10px 15px;
+      background: #2e3240; font-size: 13px; color: #ccc;
+      border-top: 1px solid #444;
+    }
+    .quest-details a {
+      color: #ffdd57; text-decoration: none;
+    }
+    .sub-quests {
+      display: none; padding: 0 15px 10px 30px;
+    }
+    .sub-quest {
+      padding: 10px; background: #2f3241;
+      border-radius: 4px; margin-bottom: 6px;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .sub-quest:hover { background: #3b3f50; }
+    .sub-quest .title { font-weight: bold; }
+    .sub-content {
+      display: none; padding: 6px 10px 6px 20px;
+      font-size: 13px; color: #aaa;
+    }
+    .sub-quest.completed .title { text-decoration: line-through; color: #777; }
+  </style>
+</head>
+<body>
+
+<div class="quest-log">
+  <h1>Quest Log</h1>
+  <div class="search-bar">
+    <input id="searchInput" type="text" placeholder="Search by title, category, or summary…">
+  </div>
+
+  <div id="active-quests"></div>
+  <hr>
+  <div id="completed-quests"></div>
+  
+</div>
+
+<script src="quests.js"></script>
+<script>
+
+
+// Create and return a quest card
+function createQuestCard(q) {
+  q.status = q.subQuests.every(sub=>sub.completed)? "completed" : "active";
+  const card = document.createElement('div');
+  card.className = 'quest';
+  card.id = q.id;
+
+  // Header
+  const header = document.createElement('div');
+  header.className = 'quest-header';
+  header.innerHTML = `
+    <div class="quest-title-text">
+      ${q.title}
+      <span class="info-icon">ℹ️</span>
+    </div>
+	
+    <span class="status ${q.status}">${q.status.toUpperCase()}</span>
+  `;
+  card.appendChild(header);
+
+  // Summary & Meta
+  const summary = document.createElement('div');
+  summary.className = 'quest-summary';
+  summary.textContent = q.summary;
+  card.appendChild(summary);
+
+  const meta = document.createElement('div');
+  meta.className = 'quest-meta';
+  meta.innerHTML = `<span><strong>Category:</strong> ${q.category}</span>
+                    <span><strong>Reward:</strong> ${q.reward}</span>`;
+  card.appendChild(meta);
+
+  // Details section (hidden)
+  const details = document.createElement('div');
+  details.className = 'quest-details';
+  let html = q.details;
+  if (q.nextQuests.length) {
+    html += `<p><strong>Next:</strong> ` +
+            q.nextQuests.map(title => {
+              const target = questData.find(x => x.title===title);
+              return `<a href="#${target.id}">${title}</a>`;
+            }).join(', ') +
+            `</p>`;
+  }
+  details.innerHTML = html;
+  card.appendChild(details);
+
+  // Subquests container
+  const subList = document.createElement('div');
+  subList.className = 'sub-quests';
+  q.subQuests.forEach(sq => {
+    const sub = document.createElement('div');
+    sub.className = 'sub-quest' + (sq.completed?' completed':'');
+    sub.innerHTML = `<div class="title">${sq.title}</div>`;
+	
+    // sub-content hidden
+    const content = document.createElement('div');
+    content.className = 'sub-content';
+    content.innerHTML = sq.details;
+	content.style.display = sq.completed? 'none' : 'block';
+    sub.appendChild(content);
+    // toggle on click
+    sub.addEventListener('click', e => {
+      e.stopPropagation();
+      content.style.display = content.style.display==='block'?'none':'block';
+    });
+	
+    subList.appendChild(sub);
+  });
+  subList.style.display = 'block';
+
+  card.appendChild(subList);
+
+  // toggle subquests on header click
+  header.addEventListener('click', () => {
+    subList.style.display = subList.style.display==='block'?'none':'block';
+  });
+  // toggle details on info-icon click
+  header.querySelector('.info-icon').addEventListener('click', e => {
+    e.stopPropagation();
+    details.style.display = details.style.display==='block'?'none':'block';
+  });
+
+  return card;
+}
+
+// Render and filter
+function render(filter='') {
+  const act = document.getElementById('active-quests');
+  const com = document.getElementById('completed-quests');
+  act.innerHTML = com.innerHTML = '';
+  
+  questData.forEach(q => {
+    const hay = (q.title+q.category+q.summary+q.reward+q.subQuests.map(sub=> sub.title +' ' +sub.details).join()).toLowerCase();
+	console.log(hay);
+    if (!filter || hay.includes(filter.toLowerCase())) {
+      const card = createQuestCard(q);
+      if (q.status==='completed') com.appendChild(card);
+      else act.appendChild(card);
+    }
+  });
+}
+
+// Search
+document.getElementById('searchInput')
+  .addEventListener('input', e => {
+	render(e.target.value)
+  }
+  );
+
+// Initial render
+window.onload = () => render();
+</script>
+
+</body>
+</html>
