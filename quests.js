@@ -153,7 +153,7 @@ const questData = [
   {
     id: 'quest-4',
     title: "Library Research",
-    category: "Faction Quest",
+    category: "Side Quest",
     summary: "Research torn manuscripts and trace elven magic",
     reward: "Insight into fey and ancient rituals",
     details: `
@@ -184,7 +184,7 @@ const questData = [
   {
     id: 'quest-5',
     title: "The Tower and the Elf",
-    category: "Personal Quest",
+    category: "Main Quest",
     summary: "Elio remembers a strange tower and a familiar figure… but not why it matters.",
     reward: "Answers from the past",
     details: `
