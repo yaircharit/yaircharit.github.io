@@ -12,7 +12,6 @@ const questData = [
       <strong>Progress:</strong><br>
       Haven’t found the tower ruins yet.<br>
     `,
-    nextQuests: ["Library Research"],
     subQuests: [
       {
         title: "Investigate Emberfall’s tower",
@@ -25,6 +24,7 @@ const questData = [
       {
         title: "Learn identity of blue-silver elf",
         completed: false,
+        relatedQuests: ["Library Research"],
         details: `
           <strong>Description:</strong> Discover who the wizard was.<br>
           <strong>Session Clues:</strong> Check archives at The Sylpharium; look for eyewitnesses at Brisban’s Inn.
@@ -52,7 +52,6 @@ const questData = [
       <strong>Progress:</strong><br>
       Stocked supplies and researched Emberfall’s hazards.
     `,
-    nextQuests: [],
     subQuests: [
       {
         title: "Stock Up for Emberfall",
@@ -100,7 +99,6 @@ const questData = [
       <strong>Progress:</strong><br>
       Protected them across mountain pass; arrived safely.
     `,
-    nextQuests: [],
     subQuests: [
       {
         title: "Protect Garak and Draksha",
@@ -140,7 +138,6 @@ const questData = [
       <strong>Progress:</strong><br>
       Paid deposit and obtained trinket in Session 6.
     `,
-    nextQuests: ["Library Research"],
     subQuests: [
       {
         title: "Pay 10 gp for trinket",
@@ -170,7 +167,7 @@ const questData = [
       <strong>Progress:</strong><br>
       Identified books by Thornheart, Stormeye, and an anonymous historian.
     `,
-    nextQuests: [],
+    relatedQuests: ["The Tower and the Elf"],
     subQuests: [
       {
         title: "Review key tomes",

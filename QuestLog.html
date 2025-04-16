@@ -39,7 +39,7 @@
       border-bottom: 1px solid #444;
     }
     .quest-header:hover { background: #3c4152; }
-    .quest-title-text { display: inline-flex; align-items: center; }
+    .quest-title-text { font-size: large; display: inline-flex; align-items: center; }
     .info-icon {
       margin-left: 6px; font-size: 16px; cursor: pointer;
     }
@@ -76,6 +76,14 @@
       font-size: 13px; color: #aaa;
     }
     .sub-quest.completed .title { text-decoration: line-through; color: #777; }
+    .relatedQuest {
+      display: block; padding: 10px 15px;
+      background: #2e3240; font-size: 13px; color: #ccc;
+      border-top: 1px solid #444;
+    }
+    .relatedQuest a {
+      color: #ffdd57; text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -126,21 +134,13 @@ function createQuestCard(q) {
   meta.className = 'quest-meta';
   meta.innerHTML = `<span><strong>Category:</strong> ${q.category}</span>
                     <span><strong>Reward:</strong> ${q.reward}</span>`;
+
   card.appendChild(meta);
 
   // Details section (hidden)
   const details = document.createElement('div');
   details.className = 'quest-details';
-  let html = q.details;
-  if (q.nextQuests.length) {
-    html += `<p><strong>Next:</strong> ` +
-            q.nextQuests.map(title => {
-              const target = questData.find(x => x.title===title);
-              return `<a href="#${target.id}">${title}</a>`;
-            }).join(', ') +
-            `</p>`;
-  }
-  details.innerHTML = html;
+  details.innerHTML = q.details;
   card.appendChild(details);
 
   // Subquests container
@@ -154,8 +154,17 @@ function createQuestCard(q) {
     // sub-content hidden
     const content = document.createElement('div');
     content.className = 'sub-content';
-    content.innerHTML = sq.details;
-	content.style.display = sq.completed? 'none' : 'block';
+    html = sq.details
+    if (sq.relatedQuests && sq.relatedQuests.length) {
+    html += `<p class="relatedQuest"><strong>Related Quests:</strong> ` +
+            sq.relatedQuests.map(title => {
+              const target = questData.find(x => x.title===title);
+              return `<a href="#${target.id}">${title}</a>`;
+            }).join(', ') +
+            `</p>`;
+  }
+    content.innerHTML = html;
+	  content.style.display = sq.completed? 'none' : 'block';
     sub.appendChild(content);
     // toggle on click
     sub.addEventListener('click', e => {
@@ -168,7 +177,14 @@ function createQuestCard(q) {
   subList.style.display = 'block';
 
   card.appendChild(subList);
-
+if (q.relatedQuests && q.relatedQuests.length) {
+    card.innerHTML += `<p class="relatedQuest"><strong>Related Quests:</strong> ` +
+            q.relatedQuests.map(title => {
+              const target = questData.find(x => x.title===title);
+              return `<a href="#${target.id}">${title}</a>`;
+            }).join(', ') +
+            `</p>`;
+  }
   // toggle subquests on header click
   header.addEventListener('click', () => {
     subList.style.display = subList.style.display==='block'?'none':'block';
@@ -190,7 +206,6 @@ function render(filter='') {
   
   questData.forEach(q => {
     const hay = (q.title+q.category+q.summary+q.reward+q.subQuests.map(sub=> sub.title +' ' +sub.details).join()).toLowerCase();
-	console.log(hay);
     if (!filter || hay.includes(filter.toLowerCase())) {
       const card = createQuestCard(q);
       if (q.status==='completed') com.appendChild(card);
