@@ -71,11 +71,19 @@
     }
     .sub-quest:hover { background: #3b3f50; }
     .sub-quest .title { font-weight: bold; }
+    .completed-label,.sub-quest.completed {
+      display: block; padding: 10px;
+      background: #444; font-size: 13px; color: #fff;
+      border-radius: 4px; cursor: pointer;
+      margin-bottom: 10px; transition: background 0.3s;
+      font-size: 13px;
+    }
     .sub-content {
       display: none; padding: 6px 10px 6px 20px;
       font-size: 13px; color: #aaa;
     }
-    .sub-quest.completed .title { text-decoration: line-through; color: #777; }
+    .sub-quest.completed .title { font-size: 13px; text-decoration: line-through; color: #777; }
+
     .relatedQuest {
       display: block; padding: 10px 15px;
       background: #2e3240; font-size: 13px; color: #ccc;
@@ -146,38 +154,81 @@ function createQuestCard(q) {
   // Subquests container
   const subList = document.createElement('div');
   subList.className = 'sub-quests';
+
+  // Completed subquests container
+  const completedSubList = document.createElement('div');
+  completedSubList.className = 'completed-sub-quests';
+  completedSubList.style.display = q.status == 'completed'? 'block' : 'none'; // Hidden by default
+
   q.subQuests.forEach(sq => {
     const sub = document.createElement('div');
-    sub.className = 'sub-quest' + (sq.completed?' completed':'');
+    sub.className = 'sub-quest' + (sq.completed ? ' completed' : '');
     sub.innerHTML = `<div class="title">${sq.title}</div>`;
-	
-    // sub-content hidden
+
+    // Sub-content hidden
     const content = document.createElement('div');
     content.className = 'sub-content';
-    html = sq.details
+    let html = sq.details;
     if (sq.relatedQuests && sq.relatedQuests.length) {
-    html += `<p class="relatedQuest"><strong>Related Quests:</strong> ` +
-            sq.relatedQuests.map(title => {
-              const target = questData.find(x => x.title===title);
-              return `<a href="#${target.id}">${title}</a>`;
-            }).join(', ') +
-            `</p>`;
-  }
+        html += `<p class="relatedQuest"><strong>Related Quests:</strong> ` +
+                sq.relatedQuests.map(title => {
+                    const target = questData.find(x => x.title === title);
+                    return `<a href="#${target.id}">${title}</a>`;
+                }).join(', ') +
+                `</p>`;
+    }
     content.innerHTML = html;
-	  content.style.display = sq.completed? 'none' : 'block';
+    content.style.display = sq.completed ? 'none' : 'block'; // Show if completed
     sub.appendChild(content);
-    // toggle on click
-    sub.addEventListener('click', e => {
-      e.stopPropagation();
-      content.style.display = content.style.display==='block'?'none':'block';
-    });
-	
-    subList.appendChild(sub);
-  });
-  subList.style.display = 'block';
 
+    // Toggle on click
+    sub.addEventListener('click', e => {
+        e.stopPropagation();
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Append to the appropriate container
+    if (sq.completed) {
+        completedSubList.appendChild(sub);
+    } else {
+        subList.appendChild(sub);
+    }
+  });
+
+  // Add completed subquests toggle
+  if (completedSubList.children.length > 0) {
+    var completedLabel = document.createElement('div');
+    completedLabel.className = 'completed-label';
+    completedLabel.textContent = 'Completed:';
+
+    // Add hover effect
+    completedLabel.addEventListener('mouseover', () => {
+        completedLabel.style.background = '#555';
+    });
+    completedLabel.addEventListener('mouseout', () => {
+        completedLabel.style.background = '#444';
+    });
+
+    completedLabel.addEventListener('click', () => {
+        const isVisible = completedSubList.style.display === 'block';
+        completedSubList.style.display = isVisible ? 'none' : 'block';
+    });
+
+    
+  }
+
+  // Append both lists to the card
+  subList.style.display = 'block';
+  console.log(completedLabel)
+  if (completedLabel && q.status != 'completed')
+  {
+    subList.appendChild(completedLabel);
+  }
+  subList.appendChild(completedSubList);
   card.appendChild(subList);
-if (q.relatedQuests && q.relatedQuests.length) {
+  
+
+  if (q.relatedQuests && q.relatedQuests.length) {
     card.innerHTML += `<p class="relatedQuest"><strong>Related Quests:</strong> ` +
             q.relatedQuests.map(title => {
               const target = questData.find(x => x.title===title);
