@@ -110,22 +110,24 @@ const questData = [
     category: "Main Quest",
     summary: "Uncover the identity and motives of the enigmatic 'T.D.' behind Grimhold’s smuggling ring.",
     reward: "Unknown",
-    relatedQuests: ["The Blacksmit's Son"],
+    relatedQuests: ["The Blacksmit's Son", "The Memory Keeper"],
     details: `
       <strong>Origin (Sessions 2–5):</strong><br>
-      While investigating Parnell’s smuggling ring, you discovered a hand-drawn map of Fang’s Keep’s secret breaches and intercepted letters signed “T.D.”  
-      During Tavon Greystone’s interrogation, he admitted that T.D. is a powerful patron who communicates via hidden messages beneath a loose stone at The Bloody Blade.<br>
-      <strong>Background:</strong><br>
-      • The Fang’s Keep map shows hidden tunnels and breaches.<br>
-      • T.D.’s letters threatening Parnel<br>
-      • Tavon doesn’t know T.D.’s true name, only that a middleman retrieves and plants the messages.<br>
-      <strong>Progress:</strong><br>
-      You know where T.D.’s messages are hidden, but not who they serve or what they ultimately want.
-    `,
+    You first encountered “T.D.” while dismantling Parnell Varen’s ring in Grimhold.  
+    Hand-drawn maps of Fang’s Keep’s secret breaches and letters signed “T.D.” hinted at a powerful patron pulling the strings.<br>
+
+    <strong>Background:</strong><br>
+    Eldric Valeheart is the Valdor Crown’s covert envoy assigned to track threats against the Human Kingdom.  
+    He crossed paths with T.D.’s network when a forged Vale’s Guard order threatened the Lost Prophecy—an ancient claim the Dragonborn of Vhak’zul guard fiercely.  
+    Valeheart’s resources revealed that “T.D.” uses Minister Cassian Velro as a public cover: Velro’s gallery openings are a veneer for coded exchanges and sensitive auctions.  
+    Now, Eldric shares what little he knows: Velro’s family crest bears a dark fang motif, and his under-the-table dealings align with the timing of recent “T.D.” shipments.<br>
+
+    <strong>Progress:</strong><br>
+    You know where T.D.’s messages are hidden in Grimhold, and Eldric has pointed you toward Velro’s gallery in New Kingsvale as the next link in the chain.
+  `,
     subQuests: [
       { title: "Search under the stone at The Bloody Blade", completed: false, details: "Recover any letters or tokens left by T.D." },
-      { title: "Identify the intermediary",                 completed: false, details: "Discover who plants and collects the hidden messages." },
-      { title: "Uncover T.D.'s identity",                   completed: false, details: "Determine T.D.'s true name and motives." },
+      { title: "Uncover T.D.'s identity",                   completed: true, details: "Determine T.D.'s true name and motives." },
     ]
   },
 
@@ -167,7 +169,31 @@ const questData = [
     subQuests: [
       { title: "Travel to the forgotten temple",    completed: true, details: "Make your way in The Scar and find the forgotten temple of Sylira." },
       { title: "Retrieve the Emberwoven Shroud",    completed: true, details: "Retrieve the Emberwoven Shroud." },
-      { title: "Deliver the Emberwoven Shroud",     completed: false, details: "Hand over the Shroud and receive your reward." }
+      { title: "Deliver the Emberwoven Shroud",     completed: true, details: "Hand over the Shroud and receive your reward." }
     ]
-  }
+  },
+  
+  // Quest 7 – The Gallery Intrigue
+{
+  id: "quest-7",
+  title: "The Gallery Intrigue",
+  category: "Main Quest",
+  summary: "Attend Cassian Velro’s gallery opening to uncover his ties to Talonar Darkfang and T.D.’s coup.",
+  reward: "500 gp; false identities; event attire",
+  relatedQuests: ["The Mysterious T.D."],
+  details: `
+    <strong>Origin (Session 8):</strong><br>
+    Eldric Valeheart tasked you to infiltrate Minister Cassian Velro’s gallery opening in two days.  
+    He warned of Valdor’s strict magic regulations and provided 500 gp, new identities, and a crest for proper attire.<br>
+    <strong>Objective:</strong><br>
+    Discover Velro’s connection to Talonar Darkfang and the gallery’s true purpose.
+  `,
+  subQuests: [
+    { title: "Obtain false identities",         completed: false, details: "Meet Eldric’s contact to receive your covers." },
+    { title: "Acquire event attire",            completed: false, details: "Trade the flaming-wing crest for formal clothing at The Silk & Sun." },
+    { title: "Attend the gallery opening",      completed: false, details: "Enter Velro’s gallery under your aliases." },
+    { title: "Gather intel on Talonar Darkfang",completed: false, details: "Look for any whispers, letters, or exhibits linking Velro to T.D." },
+    { title: "Report findings to Eldric",       completed: false, details: "Return to the safehouse and debrief Valeheart." }
+  ]
+}
 ];
