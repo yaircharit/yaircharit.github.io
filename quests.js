@@ -47,7 +47,7 @@ const questData = [
       { title: "Infiltrate the dragonborn cave", completed: true,  details: "Find and infiltrate the dragonborn's stronghold" },
       { title: "Rescue Draksha", completed: true,  details: "Stop the ritual and free Draksha" },
       { title: "Escort the orcs to Saftey", completed: true,  details: "Help Garak and Draksha get to saftey." },
-      { title: "Decode the three-part vision", completed: false, details: "Interpret the dragon, the flaming sword, and the tiger warrior." },
+      { title: "Decode the three-part vision", completed: true, details: "Interpret the dragon, the flaming sword, and the tiger warrior." },
       { title: "Decode the encrypted draconic scroll", completed: false, details: "Translate and decode the draconic cipher to reveal hidden lore." }
     ]
   },
@@ -126,7 +126,6 @@ const questData = [
     You know where T.D.’s messages are hidden in Grimhold, and Eldric has pointed you toward Velro’s gallery in New Kingsvale as the next link in the chain.
   `,
     subQuests: [
-      { title: "Search under the stone at The Bloody Blade", completed: false, details: "Recover any letters or tokens left by T.D." },
       { title: "Uncover T.D.'s identity",                   completed: true, details: "Determine T.D.'s true name and motives." },
     ]
   },
@@ -145,7 +144,9 @@ const questData = [
     subQuests: [
       { title: "Study Thornheart’s research", completed: false, details: "Examine ties between elves and the Feywild's magic." },
       { title: "Review Stormeye’s thesis",   completed: false, details: "Her Sylpharium project hints at fey rituals." },
-      { title: "Investigate missing pages",  completed: false, details: "Determine who removed the manuscript’s crucial sections." }
+      { title: "Investigate missing pages",  completed: false, details: "Determine who removed the manuscript’s crucial sections." },
+      { title: "Research the soul rituals book", completed: false, details: "Study the forgotten knowledge of soul rituals and their powers" },
+      { title: "Adventures to the 4 elemental cities", completed: false, details: "Find out more about the elemental cities and the journey between them." },
     ]
   },
 
@@ -189,11 +190,28 @@ const questData = [
     Discover Velro’s connection to Talonar Darkfang and the gallery’s true purpose.
   `,
   subQuests: [
-    { title: "Obtain false identities",         completed: false, details: "Meet Eldric’s contact to receive your covers." },
+    { title: "Obtain false identities",         completed: true, details: "Meet Eldric’s contact to receive your covers." },
     { title: "Acquire event attire",            completed: false, details: "Trade the flaming-wing crest for formal clothing at The Silk & Sun." },
     { title: "Attend the gallery opening",      completed: false, details: "Enter Velro’s gallery under your aliases." },
     { title: "Gather intel on Talonar Darkfang",completed: false, details: "Look for any whispers, letters, or exhibits linking Velro to T.D." },
     { title: "Report findings to Eldric",       completed: false, details: "Return to the safehouse and debrief Valeheart." }
   ]
+},
+{
+  id: "quest-8",
+  title: "Silverleaf’s Secret Workshop",
+  category: "Side Quest",
+  summary: "Uncover the hidden secrets behind Silverleaf Elixirs.",
+  reward: "",
+  relatedQuests: [],
+  details: `
+    <strong>Origin (Session 9):</strong><br>
+    While shopping at Silverleaf Elixirs, Elio turned invisible and slipped into a backroom where he discovered a clandestine robotics workshop run by a defeated dwarf named George.  
+    He stole several notebooks and schematics before slipping away.<br>
+  `,
+  subQuests: [
+    { title: "Analyze the stolen schematics",    completed: false, details: "Study the notes to uncover any alchemical or mechanical secrets." }
+  ]
 }
+
 ];
