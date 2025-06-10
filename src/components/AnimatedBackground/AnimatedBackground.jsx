@@ -248,10 +248,10 @@ const AnimatedBackground = () => {
         const randomPoint = points[Math.floor(Math.random() * points.length)];
         worms.push(new GridWorm(randomPoint, interval, points, canvas.width, canvas.height));
       }
-    };
-
+    };    
+    
     const animate = () => {
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       worms.forEach(worm => {

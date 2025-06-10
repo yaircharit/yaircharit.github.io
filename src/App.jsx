@@ -30,7 +30,8 @@ function App() {
           <h2>My <span className="gradient-text">Projects</span></h2>
           <Projects />
         </section>
-        <section id="contact">
+        <section id="contact" className="contact-section">
+          <hr />
           <h2>Contact <span className="gradient-text">Me</span></h2>
           <ContactIcons color="black" />
           <p>Feel free to reach out through any of these platforms!</p>
