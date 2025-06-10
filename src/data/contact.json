@@ -1,0 +1,20 @@
+{
+  "contacts": {
+    "resume": {
+      "url": "https://drive.google.com/file/d/1ov8S9gkSfA49PbyPXv_N7cbPfM07Lwkz/view?usp=sharing",
+      "label": "Resume"
+    },
+    "linkedin": {
+      "url": "https://linkedin.com/in/yair-charit",
+      "label": "LinkedIn"
+    },
+    "email": {
+      "url": "mailto:yaircharit@gmail.com",
+      "label": "Email"
+    },
+    "github": {
+      "url": "https://github.com/yaircharit",
+      "label": "GitHub"
+    }
+  }
+}

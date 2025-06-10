@@ -1,0 +1,32 @@
+{
+  "timeline": [
+    {
+      "id": "education1",
+      "year": "March 2018 - March 2021",
+      "title": "Computer Science B.Sc.",
+      "institution": "Tel-Hai College",
+      "description": "B.Sc. in computer science graduate from Tel-Hai College, specialized in software development."
+    },
+    {
+      "id": "work1",
+      "year": "September 2019 - April 2021",
+      "title": "OS and Assembly Language Instructor",
+      "institution": "Cyber Education Center",
+      "description": "Instructor of the architecture course in the \"Magshimim\" program. \nRelaying complex ideas on Windows and Linux OS principles, as well as the Assembly x8086 language while managing a small class of top high school students"
+    },
+    {
+      "id": "work2",
+      "year": "January 2021 - March 2022",
+      "title": "Software Quality Assurance Engineer",
+      "institution": "Biosense Webster",
+      "description": "• Analyzing and debugging to validate system behaviors\n• Testing compatibility with medical devices\n• Traveling abroad for Fluoroscopy machines validation\n• Developing automation for SQA department efficiency"
+    },
+    {
+      "id": "work3",
+      "year": "March 2022 - November 2023",
+      "title": "Software Automation Testing Engineer",
+      "institution": "Biosense Webster",
+      "description": "• Created modular automatic testing infrastructure using C#, BASH and Ranorex\n• Managed automated daily sanity tests for development builds\n• Developed and maintained test plans for the TruDi project\n• Led automation efforts to improve test coverage and efficiency"
+    }
+  ]
+}
