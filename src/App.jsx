@@ -17,15 +17,17 @@ function App() {
             <div className="title-underline"></div>
             <ContactIcons color="black" />
           </div>
-        </section>
+        </section>        
         <section id="about">
-          <h2>About <span className="gradient-text">Me</span></h2>
-          <p>Detail-oriented and resourceful SQA Automation Engineer with hands-on experience in developing scalable automated testing systems for medical devices.<br />
-          Proven track record in test automation, system integration, and validation, with a strong foundation in object-oriented programming and scripting.<br />
-          Skilled in collaborating with cross-functional teams to ensure reliability, performance, and compliance. <br />
-          Now seeking a challenging role to contribute to the quality, safety, and security of complex software systems.</p>
-          <Timeline />
+          <div className="about-content">
+            <h2>About <span className="gradient-text">Me</span></h2>
+            <p>Detail-oriented and resourceful SQA Automation Engineer with hands-on experience in developing scalable automated testing systems for medical devices.<br />
+            Proven track record in test automation, system integration, and validation, with a strong foundation in object-oriented programming and scripting.<br />
+            Skilled in collaborating with cross-functional teams to ensure reliability, performance, and compliance. <br />
+            Now seeking a challenging role to contribute to the quality, safety, and security of complex software systems.</p>
+          </div>
         </section>
+         <Timeline />
         <section id="projects">
           <h2>My <span className="gradient-text">Projects</span></h2>
           <Projects />

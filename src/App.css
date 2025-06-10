@@ -247,3 +247,17 @@ hr {
 .read-the-docs {
   color: #888;
 }
+
+.about-content {
+  text-align: center;
+  margin: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
