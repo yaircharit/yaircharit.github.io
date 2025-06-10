@@ -25,10 +25,10 @@ class GridWorm {  constructor(point, interval, pointsList, screenWidth, screenHe
     this.directionChangeInterval = 100; // Change direction every 100 frames
   }  getColor() {
     const colors = [
-      { r: 100, g: 108, b: 255 }, // Blue
-      { r: 255, g: 100, b: 108 }, // Pink
-      { r: 108, g: 255, b: 100 }, // Green
-      { r: 255, g: 180, b: 100 }  // Orange
+      { r: 66, g: 135, b: 245 },  // Bright blue
+      { r: 255, g: 82, b: 132 },  // Vibrant pink
+      { r: 46, g: 255, b: 96 },   // Bright green
+      { r: 255, g: 152, b: 0 }    // Bright orange
     ];
     
     const c1 = colors[Math.floor(this.colorIndex) % colors.length];
@@ -39,7 +39,7 @@ class GridWorm {  constructor(point, interval, pointsList, screenWidth, screenHe
     const g = Math.floor(c1.g * (1 - progress) + c2.g * progress);
     const b = Math.floor(c1.b * (1 - progress) + c2.b * progress);
     
-    return `rgba(${r}, ${g}, ${b}, 0.6)`;
+    return `rgba(${r}, ${g}, ${b}, 0.8)`; // Increased opacity to 80%
   }  getVelocity() {
     // Add inertia by sometimes keeping the current velocity (20% chance)
     if (this.velocity && Math.random() < 0.2) {
