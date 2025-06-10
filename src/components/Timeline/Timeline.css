@@ -3,13 +3,19 @@
   max-width: 1000px;
   margin: 2rem auto;
   padding: 40px 20px;
+  min-height: 90vh; /* Make timeline container taller */
 }
 
 .timeline-line {
   position: absolute;
   width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(100,100,255,0.3), rgba(100,100,255,0.1));
+  height: 200%; /* Extend line beyond the container */
+  background: linear-gradient(
+    to bottom,
+    rgba(100,100,255,0.3) 0%,
+    rgba(100,100,255,0.2) 85%,
+    rgba(100,100,255,0.05) 100%
+  );
   left: 50%;
   top: 0;
   transform: translateX(-50%);
@@ -26,10 +32,10 @@
   background: linear-gradient(
     to bottom,
     transparent,
-    #ffffff,
+    rgba(255,255,255,0.8),
     transparent
   );
-  animation: pulse-down 2s ease-in-out infinite;
+  animation: pulse-down 3s ease-in-out infinite; /* Slower animation for longer line */
 }
 
 @keyframes pulse-down {
@@ -37,7 +43,7 @@
     transform: translateY(-100%);
   }
   100% {
-    transform: translateY(300%);
+    transform: translateY(400%); /* Longer animation distance */
   }
 }
 

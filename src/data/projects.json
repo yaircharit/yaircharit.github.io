@@ -3,7 +3,7 @@
     {
       "id": "portfolio",
       "title": "Portfolio Website",
-      "description": "A personal portfolio website built with React and Vite",
+      "description": "A personal portfolio website built with React and Vite, built with the help of Claude 3.5.",
       "image": "/images/portfolio.png",
       "technologies": ["React", "Vite", "CSS"],
       "repository": "https://github.com/yaircharit/yaircharit.github.io"

@@ -13,6 +13,9 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  border: gray solid 1px;
+  backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 .project-card:hover {
