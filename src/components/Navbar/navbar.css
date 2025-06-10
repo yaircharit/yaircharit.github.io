@@ -1,0 +1,155 @@
+.navbar {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(0);
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #646cff;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #000000;
+  transition: 0.3s;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-icon {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.nav-logo {
+  height: 2rem;
+  width: auto;
+}
+
+
+.navbar-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;  /* Changed from 'left' to 'center' */
+  justify-content: flex-start;  /* Added to align items to the left */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li a {
+    color: #1a1a1a;
+    display: block;
+    text-align: left;
+    margin: 0.3rem 0.6rem;
+    white-space: nowrap;
+  }  
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0;
+  list-style: none;
+  width: max-content;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+.navbar-menu li a:hover {
+  background-color: rgb(193, 193, 193);
+;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    background-color: transparent;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+
+  .navbar-menu li a {
+    color: black;
+  } 
+  
+  .dropdown-menu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+}

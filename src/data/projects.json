@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "id": "portfolio",
+      "title": "Portfolio Website",
+      "description": "A personal portfolio website built with React and Vite",
+      "image": "/images/portfolio.png",
+      "technologies": ["React", "Vite", "CSS"],
+      "repository": "https://github.com/yaircharit/yaircharit.github.io"
+    },
+    {
+      "id": "DashboardPlus",
+      "title": "Dashboard Plus",
+      "description": "A stand-alone dashboard HTML page with an automated message board and organization containers for your repositorys",
+      "technologies": ["Javascript", "HTML", "CSS"],
+      "repository": "https://github.com/yaircharit/Dashboard-Plus"
+    },
+    {
+      "id": "Global Warming Simulator",
+      "title": "Global Warming Simulator",
+      "description": "A simulation project to visualize the effects of global warming",
+      "technologies": ["Javascript", "HTML", "CSS"],
+      "repository": "https://github.com/yaircharit/OU-MS-of-CS/tree/BioComp-MMN11"
+    },
+    {
+      "id": "Client-Server",
+      "title": "Client-Server Application",
+      "description": "Client side developed in C++, Server side developed in Python. Using AES encryption- register as a user and add other users as friends to establish a secure connection (RSA encryption keys).Once the connection was made use the server's SQL database to send each other text messages and files upon login!",
+      "technologies": ["C++", "Python", "SQL"]
+    },
+    {
+      "id": "Siimon Says Game",
+      "title": "Siimon Says Game",
+      "description": "A simple game of Siimon Says, developed in Unity with C#",
+      "technologies": ["Unity", "C#"],
+      "repository": "https://github.com/yaircharit/SimonSays"
+    },
+    {
+      "id": "Mailing Automation",
+      "title": "Mailing Automation",
+      "description": "Dina.co.il is an online shop which sells paintings on order. Each order that is placed is being saved in the site's databases. Every hour the system generates all e-mails for all new orders and sends it to the printing factory. As it was tailored to their needs, there is no need for human involvment anymore, it even adds an image of the required painting! Automation at its best!",
+      "technologies": ["Javascript"]
+    }
+  ]
+}

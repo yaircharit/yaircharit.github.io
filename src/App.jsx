@@ -1,33 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Navbar from './components/Navbar/navbar'
+import Projects from './components/Projects/Projects'
+import ContactIcons from './components/ContactIcons/ContactIcons'
+import AnimatedBackground from './components/AnimatedBackground/AnimatedBackground'
+import Timeline from './components/Timeline/Timeline'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(180)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar />
+      <main>
+        <section id="home" className="home-section">
+          <AnimatedBackground />
+          <div className="home-content">
+            <h1>Yair Charit</h1>
+            <div className="title-underline"></div>
+            <ContactIcons color="black" />
+          </div>
+        </section>
+        <section id="about">
+          <h2>About <span className="gradient-text">Me</span></h2>
+          <p>Detail-oriented and resourceful SQA Automation Engineer with hands-on experience in developing scalable automated testing systems for medical devices.<br />
+          Proven track record in test automation, system integration, and validation, with a strong foundation in object-oriented programming and scripting.<br />
+          Skilled in collaborating with cross-functional teams to ensure reliability, performance, and compliance. <br />
+          Now seeking a challenging role to contribute to the quality, safety, and security of complex software systems.</p>
+          <Timeline />
+        </section>
+        <section id="projects">
+          <h2>My <span className="gradient-text">Projects</span></h2>
+          <Projects />
+        </section>
+        <section id="contact">
+          <h2>Contact <span className="gradient-text">Me</span></h2>
+          <ContactIcons color="black" />
+          <p>Feel free to reach out through any of these platforms!</p>
+        </section>
+      </main>
     </>
   )
 }
