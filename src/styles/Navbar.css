@@ -1,6 +1,5 @@
 .navbar {
   width: 100%;
-  padding: 1rem;
   background: var(--bg-secondary);
   backdrop-filter: blur(5px);
   position: fixed;
@@ -61,6 +60,7 @@
 }
 
 .nav-logo {
+  margin: 1rem;
   height: 2rem;
   width: auto;
 }
@@ -108,8 +108,13 @@
 .navbar-menu li a:hover {
   background-color: var(--border);
 }
-
+.dark-mode .nav-logo {
+  filter: brightness(0) invert(1) contrast(1.2) saturate(1.5);
+}
 @media (max-width: 768px) {
+  .dark-mode .nav-logo {
+    filter: brightness(0) invert(1) contrast(1.2) saturate(1.5);
+  }
   .navbar {
     flex-wrap: wrap;
     padding: 0.5rem 0;
@@ -140,7 +145,6 @@
     align-items: stretch;
     gap: 0.5rem;
     background-color: transparent;
-    padding: 1rem;
     position: absolute;
     top: 100%;
     left: 0;
