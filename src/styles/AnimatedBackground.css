@@ -1,23 +1,49 @@
 .animated-background {
-  position: absolute; /* Changed from fixed to absolute */
+  background: var(--bg, #181a1b);
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 130vh; /* Extend beyond the section */
+  height: 130vh;
   z-index: -1;
   overflow: hidden;
   mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 70%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 70%,
+    rgba(0,0,0,0) 100%
   );
   -webkit-mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 70%,
-    rgba(0, 0, 0, 0) 100%
+    rgb(24, 26, 27, 1) 0%,
+    transparent 100%
   );
+}
+
+.dark-mode .animated-background {
+  background: #181a1b !important;
+}
+
+.dark-mode .animated-background::after {
+  background: linear-gradient(
+    to bottom,
+    #181a1b 0%,
+    rgba(24,26,27,0.98) 60%,
+    rgba(24,26,27,0.85) 100%
+  );
+}
+
+.dark-mode .contact-icons .contact-icon,
+.dark-mode .contact-icons .icon-github,
+.dark-mode .contact-icons .icon-linkedin,
+.dark-mode .contact-icons .icon-email {
+  color: #fff !important;
+  fill: #fff !important;
+  background: linear-gradient(90deg, #fff 0%, #b2fefa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .worm-canvas {
@@ -26,21 +52,5 @@
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-/* Add subtle gradient overlay */
-.animated-background::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.2),
-    transparent 70%
-  );
-  pointer-events: none;
-  mix-blend-mode: overlay;
+  background: transparent;
 }

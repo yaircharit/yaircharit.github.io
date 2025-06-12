@@ -3,6 +3,8 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px 20px 80px;
+  background: var(--card-bg, rgba(255,255,255,0.1));
+  color: var(--text, #222);
 }
 
 /* Hide the original timeline line since we're using the global one */
@@ -36,8 +38,8 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  background: #ffffff;
-  border: 3px solid rgba(0, 0, 0, 0.5);
+  background: var(--bg-secondary, #fff);
+  border: 3px solid var(--border, rgba(0, 0, 0, 0.5));
   border-radius: 50%;
   top: 50%;
   z-index: 2;
@@ -49,7 +51,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--text-secondary, rgba(0, 0, 0, 0.8));
   font-size: 0.85rem;
   width: max-content;
   z-index: 2;
@@ -85,14 +87,14 @@
 
 .timeline-content {
   padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--card-bg, rgba(255, 255, 255, 0.1));
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.2));
   border-radius: 15px;
   position: relative;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow, 0 4px 16px rgba(0, 0, 0, 0.4));
   transition: all 0.3s ease;
-  
+  color: var(--text, #222);
 }
 
 /* Add arrow indicators */
@@ -102,7 +104,7 @@
   right: -10px;
   top: 50%;
   transform: translateY(-50%);
-  border-left: 10px solid rgba(255, 255, 255, 0.1);
+  border-left: 10px solid var(--card-bg, rgba(255, 255, 255, 0.1));
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
 }
@@ -113,7 +115,7 @@
   left: -10px;
   top: 50%;
   transform: translateY(-50%);
-  border-right: 10px solid rgba(255, 255, 255, 0.1);
+  border-right: 10px solid var(--card-bg, rgba(255, 255, 255, 0.1));
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
 }
@@ -137,21 +139,21 @@
 .time-badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(255,255,255, 0.1);
+  background: var(--card-bg, rgba(255,255,255, 0.1));
   border-radius: 20px;
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: black;
+  color: var(--text, black);
 }
 
 .timeline-content h3 {
-  color: black;
+  color: var(--text, black);
   margin: 0 0 0.5rem 0;
   font-size: 1.4rem;
 }
 
 .timeline-content h4 {
-  color: rgba(0, 0, 0, 0.9);
+  color: var(--text-secondary, rgba(0, 0, 0, 0.9));
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
 }
@@ -185,7 +187,7 @@
 }
 
 .timeline-content p {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--text-secondary, rgba(0, 0, 0, 0.8));
   margin: 0;
   line-height: 1.5;
   white-space: pre-line;
@@ -199,7 +201,7 @@
 }
 
 .timeline-details li {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--text-secondary, rgba(0, 0, 0, 0.8));
   margin: 0.25rem 0;
   line-height: 1.4;
 }
@@ -261,7 +263,7 @@
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.7);
+    color: var(--text-secondary, rgba(0, 0, 0, 0.7));
   }
 
   .timeline-content {

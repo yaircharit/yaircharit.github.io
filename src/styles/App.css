@@ -1,3 +1,88 @@
+:root {
+  --bg: #f7f7f7;
+  --bg-secondary: #fff;
+  --text: #222;
+  --text-secondary: #666;
+  --border: rgba(0,0,0,0.1);
+  --card-bg: rgba(255,255,255,0.1);
+  --card-border: rgba(255,255,255,0.2);
+  --shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.dark-mode {
+  --bg: #181a1b;
+  --bg-secondary: #23272a;
+  --text: #f7f7f7;
+  --text-secondary: #b0b0b0;
+  --border: rgba(255,255,255,0.08);
+  --card-bg: rgba(30,30,30,0.7);
+  --card-border: rgba(255,255,255,0.08);
+  --shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+body, section, main {
+  background: var(--bg);
+  color: var(--text);
+}
+
+section {
+  
+  color: var(--text);
+}
+
+.project-page, .project-content, .project-card, .about-content, .timeline, .contact-section {
+  background: var(--card-bg);
+  color: var(--text);
+  border-color: var(--card-border);
+  box-shadow: var(--shadow);
+}
+
+.project-content h1, .project-content h3, .timeline-header h3, .timeline-header h4, .gradient-text {
+  color: var(--text);
+}
+
+.project-description, .project-content p, .timeline-details p, .contact-section p {
+  color: var(--text-secondary);
+}
+
+.technology-tag, .project-repo, .project-repo-link, .back-button, .zoom-controls, .open-html-btn {
+  background: var(--bg-secondary);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.technology-tag {
+  border: 1px solid var(--border);
+}
+
+.project-repo, .project-repo-link, .open-html-btn {
+  border: 1px solid var(--border);
+}
+
+.back-button, .zoom-controls button, .open-html-btn {
+  background: var(--bg-secondary);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.navbar, .navbar-menu, .dropdown-menu {
+  background: var(--bg-secondary);
+  color: var(--text);
+}
+
+::-webkit-scrollbar {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
 #root {
   width: 100%;
   text-align: center;
@@ -10,10 +95,14 @@ main {
   position: relative;
 }
 
-/* Add a pseudo-element for the main timeline line */
-body::before {
-  content: '';
-  position: fixed;
+/* Timeline vertical line container and line */
+.timeline-line-container {
+  position: relative;
+}
+
+.timeline-line-vertical {
+  position: absolute;
+  left: 50%;
   width: 4px;
   background: linear-gradient(
     to bottom,
@@ -21,12 +110,25 @@ body::before {
     rgba(100,100,255,0.2) 85%,
     rgba(100,100,255,0.05) 100%
   );
-  left: 50%;
-  top: 0;
-  height: 85vh; /* Reduced from 100vh to end after Projects section */
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 10;
   pointer-events: none;
+  /* top and height will be set dynamically */
+}
+
+.dark-mode .timeline-line-vertical {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.7) 0%,
+    rgba(255,255,255,0.3) 85%,
+    rgba(255,255,255,0.1) 100%
+  );
+}
+
+/* Remove old timeline line pseudo-element */
+body.show-timeline-line::before,
+.dark-mode body.show-timeline-line::before {
+  display: none !important;
 }
 
 section {
@@ -300,15 +402,14 @@ hr {
 }
 
 .about-content {
-  text-align: center;
-  margin: 0 auto 4rem; /* Reduced top margin */
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  max-width: 1200px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 /* Update Timeline section styles */
@@ -321,20 +422,17 @@ hr {
 }
 
 #about {
+  background: var(--card-bg, #23272a);
+  color: var(--text, #fff);
+  width: 90%;
+  max-width: 900px;
+  margin: 3.5rem auto 2rem auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+  padding: 2.5rem 2rem 2rem 2rem;
+  border: 1.5px solid var(--card-border, #333);
   position: relative;
-  z-index: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255, 255, 255, 0.8) 30%,
-    rgba(255, 255, 255, 0.95) 60%,
-    white 100%
-  );
-  width: fit-content;
-  padding-top: 2rem;
-  margin: 0 10px;
-  border-radius: 0px;
-  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); */
+  z-index: 2;
 }
 
 @media screen and (max-width: 768px) {
@@ -406,5 +504,34 @@ hr {
     margin: 0.5rem 0;
   }
 
-  
+    
+}
+
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #fff !important;
+}
+
+.dark-mode p {
+  color: #B0B0B0 !important;
+}
+
+.dark-mode .contact-icons .contact-icon,
+.dark-mode .contact-icons .icon-github,
+.dark-mode .contact-icons .icon-linkedin,
+.dark-mode .contact-icons .icon-email,
+.dark-mode .home-content .contact-icon,
+.dark-mode .home-content .icon-github,
+.dark-mode .home-content .icon-linkedin,
+.dark-mode .home-content .icon-email {
+  background: linear-gradient(90deg, #fff 0%, #b2fefa 40%, #a1c4fd 80%, #fbc2eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  color: #fff !important;
+  fill: currentColor !important;
 }

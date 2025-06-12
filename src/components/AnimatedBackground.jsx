@@ -24,12 +24,22 @@ class GridWorm {  constructor(point, interval, pointsList, screenWidth, screenHe
     this.timeSinceLastDirectionChange = 0; // Time tracker for forced direction changes
     this.directionChangeInterval = 100; // Change direction every 100 frames
   }  getColor() {
-    const colors = [
-      { r: 66, g: 135, b: 245 },  // Bright blue
-      { r: 255, g: 82, b: 132 },  // Vibrant pink
-      { r: 46, g: 255, b: 96 },   // Bright green
-      { r: 255, g: 152, b: 0 }    // Bright orange
-    ];
+    const isDark = typeof document !== 'undefined' && document.body.classList.contains('dark-mode');
+    const colors = isDark
+      ? [
+          { r: 0, g: 255, b: 255 },   // Neon cyan
+          { r: 255, g: 0, b: 255 },   // Neon magenta
+          { r: 0, g: 255, b: 100 },   // Neon green
+          { r: 255, g: 255, b: 0 },   // Neon yellow
+          { r: 0, g: 180, b: 255 },   // Neon blue
+          { r: 255, g: 80, b: 80 }    // Neon red
+        ]
+      : [
+          { r: 66, g: 135, b: 245 },  // Bright blue
+          { r: 255, g: 82, b: 132 },  // Vibrant pink
+          { r: 46, g: 255, b: 96 },   // Bright green
+          { r: 255, g: 152, b: 0 }    // Bright orange
+        ];
     
     const c1 = colors[Math.floor(this.colorIndex) % colors.length];
     const c2 = colors[this.nextColorIndex];
@@ -39,7 +49,7 @@ class GridWorm {  constructor(point, interval, pointsList, screenWidth, screenHe
     const g = Math.floor(c1.g * (1 - progress) + c2.g * progress);
     const b = Math.floor(c1.b * (1 - progress) + c2.b * progress);
     
-    return `rgba(${r}, ${g}, ${b}, 0.8)`; // Increased opacity to 80%
+    return `rgba(${r}, ${g}, ${b}, ${isDark ? 1 : 0.8})`; // Neon and more opaque in dark mode
   }  getVelocity() {
     // Add inertia by sometimes keeping the current velocity (20% chance)
     if (this.velocity && Math.random() < 0.2) {
