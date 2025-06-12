@@ -111,7 +111,7 @@ main {
     rgba(100,100,255,0.05) 100%
   );
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
   /* top and height will be set dynamically */
 }
@@ -534,4 +534,29 @@ hr {
   text-fill-color: transparent;
   color: #fff !important;
   fill: currentColor !important;
+}
+
+@media (max-width: 768px) {
+  .timeline-line-vertical {
+    left: 20px;
+    transform: none;
+  }
+  #about {
+    margin: 1.2rem auto 1.2rem auto;
+    text-align: center;
+    width: 95%;
+    max-width: 98vw;
+    padding: 0;
+  }
+  #about h2 {
+    margin: 0.5rem 0 1rem 0;
+    padding: 0;
+    text-align: center;
+  }
+  .about-content {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+    width: 100%;
+  }
 }

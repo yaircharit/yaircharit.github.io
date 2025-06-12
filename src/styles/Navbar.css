@@ -113,11 +113,27 @@
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
+    padding: 0.5rem 0;
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-right: 1.2rem;
+  }
+
+  .dark-mode-toggle {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    padding: 0.3rem;
   }
 
   .hamburger {
     display: flex;
-    margin-left: auto;
+    margin-left: 0.5rem;
+    /* Optionally increase size for touch */
   }
   .navbar-menu {
     display: none;
@@ -134,7 +150,6 @@
   .navbar-menu.active {
     display: flex;
   }
-
 
   .navbar-menu li a {
     color: var(--text, black);
