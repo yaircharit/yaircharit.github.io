@@ -1,3 +1,7 @@
+a {
+  color: var(--text);
+}
+
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -5,22 +9,21 @@
   padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  
 }
 
 .project-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--card-border);
   height: 100%;
-  backdrop-filter: blur(10px);
-  z-index: 2;
 }
 
 .project-card:hover {
@@ -36,6 +39,7 @@
   color: inherit;
 }
 
+
 .project-image {
   width: 100%;
   height: 200px;
@@ -48,21 +52,22 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 5;
+
 }
 
 .project-content h3 {
   margin: 0 0 1rem 0;
-  color: #1a1a1a;
+  color: var(--text);
   font-size: 1.4rem;
   font-weight: 600;
 }
 
 .project-content p {
-  margin: 0;
-  color: #666666;
+  margin: 0 0 1.5rem 0;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
   max-height: 120px;
   overflow-y: auto;
   padding-right: 10px;
@@ -93,7 +98,7 @@
   margin-top: auto;
   padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--card-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,7 +110,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text, #222);
+  color: var(--text);
   text-decoration: none;
   transition: transform 0.3s ease;
   padding: 0.5rem;
@@ -117,7 +122,6 @@
 }
 
 .dark-mode .project-repo {
-  color: #fff;
   background: linear-gradient(90deg, #fff 0%, #b2fefa 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -149,10 +153,10 @@
 }
 
 .technology-tag {
-  background-color: white;
-  color: black;
+  background-color: var(--bg-secondary);
+  color: var(--text);
   padding: 0.25rem 0.75rem;
-  border: #1a1a1a75 solid 1px;
+  border: 1px solid var(--border);
   border-radius: 15px;
   font-size: 0.75rem;
   white-space: nowrap;
@@ -160,8 +164,6 @@
 }
 
 #projects {
-  background: none !important;
-  box-shadow: none !important;
   position: relative;
   z-index: 1;
 }

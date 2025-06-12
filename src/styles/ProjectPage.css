@@ -2,7 +2,6 @@
   position: relative;
   padding: 2rem;
   max-width: 1200px;
-
 }
 
 .project-hero-image {
@@ -10,28 +9,28 @@
   height: auto;
   border-radius: 15px;
   margin: 2rem 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .project-content {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--card-border);
   border-radius: 15px;
   padding: 2rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .project-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #1a1a1a;
+  color: var(--text);
 }
 
 .project-description {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #666;
+  color: var(--text-secondary);
   margin: 1.5rem 0;
 }
 
@@ -43,10 +42,10 @@
 }
 
 .technology-tag {
-  background-color: white;
-  color: black;
+  background-color: var(--bg-secondary);
+  color: var(--text);
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
   border-radius: 20px;
   font-size: 0.9rem;
 }
@@ -54,8 +53,8 @@
 .project-repo-link {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background-color: #1a1a1a;
-  color: white;
+  background-color: var(--text);
+  color: var(--bg-secondary);
   text-decoration: none;
   border-radius: 8px;
   margin-top: 1rem;
@@ -63,7 +62,7 @@
 }
 
 .project-repo-link:hover {
-  background-color: #333;
+  background-color: var(--text-secondary);
   transform: translateY(-2px);
 }
 
@@ -72,18 +71,18 @@
   left: 2rem;
   top: 2rem;
   padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.3s ease;
-  color: #333;
+  color: var(--text);
   z-index: 10;
 }
 
 .back-button:hover {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--bg-secondary);
   transform: translateX(-3px);
 }
 
@@ -91,12 +90,12 @@
   margin-top: 2rem;
   width: 100%;
   height: 800px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--card-border);
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow);
 }
 
 .zoom-controls {
@@ -106,25 +105,25 @@
   gap: 0.5rem;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.7);
+  background: var(--bg-secondary);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow);
   width: 100%;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border);
 }
 
 .zoom-controls button {
   font-size: 1.2rem;
   padding: 0.3rem 0.8rem;
-  border: 1px solid #ccc;
-  background: white;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .zoom-controls button:hover {
-  background: #f0f0f0;
+  background: var(--border);
 }
 
 .zoom-label {
@@ -146,5 +145,5 @@
   height: 100%;
   border: none;
   display: block;
-  background: white;
+  background: var(--bg-secondary);
 }

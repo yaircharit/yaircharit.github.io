@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import projectsData from '../data/projects.json';
 import '../styles/ProjectPage.css';
 
-function ProjectPage() {
+export default function ProjectPage() {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const project = projectsData.projects.find(p => p.id === projectId);
@@ -18,19 +18,12 @@ function ProjectPage() {
     return <div>Project not found</div>;
   }
 
-  const handleBack = () => {
-    navigate('/#projects');
-  };
-
   const isHtmlLink = project.link && project.link.endsWith('.html');
-
-  const handleZoomIn = () => setZoom(z => Math.min(z + 0.05, 2));
-  const handleZoomOut = () => setZoom(z => Math.max(z - 0.05, 0.25));
-  const handleZoomReset = () => setZoom(1);
+  const handleZoom = amt => setZoom(z => Math.max(0.25, Math.min(z + amt, 2)));
 
   return (
     <div className="project-page">
-      <button onClick={handleBack} className="back-button">← Back</button>
+      <button onClick={() => navigate('/#projects')} className="back-button">← Back</button>
       
       <div className="project-content">
         <h1>{project.title}</h1>
@@ -73,10 +66,10 @@ function ProjectPage() {
         <div className="project-html-container">
           <div className="zoom-controls">
             <div>
-            <button onClick={handleZoomOut} title="Zoom Out">-</button>
-            <span className="zoom-label">{Math.round(zoom * 100)}%</span>
-            <button onClick={handleZoomIn} title="Zoom In">+</button>
-            <button onClick={handleZoomReset} title="Reset Zoom">⟳</button>
+              <button onClick={() => handleZoom(-0.05)} title="Zoom Out">-</button>
+              <span className="zoom-label">{Math.round(zoom * 100)}%</span>
+              <button onClick={() => handleZoom(0.05)} title="Zoom In">+</button>
+              <button onClick={() => setZoom(1)} title="Reset Zoom">⟳</button>
             </div>
             <a
               href={project.link}
@@ -101,5 +94,3 @@ function ProjectPage() {
     </div>
   );
 }
-
-export default ProjectPage;

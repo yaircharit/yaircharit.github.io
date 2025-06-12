@@ -4,22 +4,21 @@
   gap: 2rem;
 }
 
-.icon-resume {
-  font-size: 1.8rem; /* Slightly smaller to match other icons */
-}
-
 .contact-icon {
   font-size: 2rem;
   text-decoration: none;
   transition: transform 0.3s ease;
-  color: var(--text, #222);
+  color: var(--text);
 }
 
 .contact-icon:hover {
   transform: translateY(-3px);
 }
 
-/* Icons */
+.icon-resume {
+  font-size: 1.8rem;
+}
+
 .icon-linkedin::before,
 .icon-github::before {
   display: none;
@@ -30,12 +29,11 @@
   height: 1em;
   vertical-align: middle;
   display: inline-block;
-  color: var(--text, #222);
+  color: var(--text);
 }
 
 .dark-mode .contact-icon,
 .dark-mode .contact-icon svg {
-  color: #fff;
   background: linear-gradient(90deg, #fff 0%, #b2fefa 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -50,13 +48,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
-}
-
-.contact-icon svg {
-  width: 1em;
-  height: 1em;
-  vertical-align: middle;
-  display: inline-block;
 }
 
 .icon-whatsapp::before {
