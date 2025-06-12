@@ -16,17 +16,17 @@ return (
                       <p>{project.description}</p>
                     </div>
                     <div className="project-footer">
-                        {project.repository && (
-                        <a href={project.repository} className="project-repo" target="_blank" rel="noopener noreferrer">
-                          <span className="icon-github"></span>
-                        </a>
-                      )}
+                      
                       <div className="project-technologies">
                         {project.technologies.map((tech, index) => (
                           <span key={index} className="technology-tag">{tech}</span>
                         ))}
                       </div>
-                      
+                        {project.repository && (
+                        <a href={project.repository} className="project-repo" target="_blank" rel="noopener noreferrer">
+                          <span className="icon-github"></span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </a>
@@ -38,17 +38,17 @@ return (
                       <p>{project.description}</p>
                     </div>
                     <div className="project-footer">
-                        {project.repository && (
-                        <a href={project.repository} className="project-repo" target="_blank" rel="noopener noreferrer">
-                          <span className="icon-github"></span>
-                        </a>
-                      )}
+
                       <div className="project-technologies">
                         {project.technologies.map((tech, index) => (
                           <span key={index} className="technology-tag">{tech}</span>
                         ))}
                       </div>
-                      
+                      {project.repository && (
+                        <a href={project.repository} className="project-repo" target="_blank" rel="noopener noreferrer">
+                          <span className="icon-github"></span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </Link>

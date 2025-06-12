@@ -6,15 +6,51 @@
 main {
   padding-top: 5rem;
   width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Add a pseudo-element for the main timeline line */
+body::before {
+  content: '';
+  position: fixed;
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    rgba(100,100,255,0.3) 0%,
+    rgba(100,100,255,0.2) 85%,
+    rgba(100,100,255,0.05) 100%
+  );
+  left: 50%;
+  top: 0;
+  height: 85vh; /* Reduced from 100vh to end after Projects section */
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 section {
   padding: 0 4rem;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 section h1, section h2 {
   text-align: left;
   color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem; /* Enlarged from default */
+  font-weight: 600;
+}
+
+section p {
+  text-align: left;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.6;
 }
 
 .gradient-text {
@@ -51,7 +87,9 @@ section h1, section h2 {
   align-items: center;
   justify-content: center;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
+  margin-bottom: 0;
+  position: relative; /* Ensure this is the positioning context for AnimatedBackground */
 }
 
 .home-content {
@@ -69,6 +107,8 @@ section h1, section h2 {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   animation: content-fade-in 1s ease-out;
   width: 80%;
+  position: relative; /* Add this to establish stacking context */
+  z-index: 2; /* Place above the timeline line */
 }
 
 @keyframes content-fade-in {
@@ -149,12 +189,24 @@ section p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 4rem;
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
 }
 
 .contact-section p {
   font-size: 1.2rem;
   color: #666;
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 600px;
+  padding: 0 1rem;
+}
+
+.contact-section hr {
+  width: 80%;
+  margin: 2rem auto;
 }
 
 hr {
@@ -250,14 +302,107 @@ hr {
 
 .about-content {
   text-align: center;
-  margin: 2rem;
+  margin: 0 auto 4rem; /* Reduced top margin */
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+/* Update Timeline section styles */
+#timeline-section {
+  position: relative;
+  padding-top: 0;
+  margin-top: 0;
+  z-index: 1;
+  top: 0;
+}
+
+#about {
+  position: relative;
+  z-index: 1;
+    background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.8) 30%,
+    rgba(255, 255, 255, 0.95) 60%,
+    white 100%
+  );
+
+  padding-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  body::before {
+    left: 20px;
+    transform: none;
+    height: calc(100vh + 40vh); /* Adjusted to reach just past Projects section */
+    background: linear-gradient(
+      to bottom,
+      rgba(100,100,255,0.4) 0%,
+      rgba(100,100,255,0.2) 85%,
+      rgba(100,100,255,0.05) 100%
+    );
+  }
+  
+  section {
+    padding: 0 1rem;
+  }
+
+  section h1, section h2 {
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  section p {
+    padding: 0 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .about-content {
+    margin: 0 auto 3rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  #timeline-section {
+    margin-top: -1rem;
+  }
+
+  .home-section h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .home-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section {
+    padding: 0 0.5rem;
+  }
+
+  .about-content {
+    margin: 0.5rem auto 3rem;
+    width: calc(90% - 40px);
+    padding: 1rem;
+    z-index: -1;
+  }
+
+  .home-section h1 {
+    font-size: 2.8rem;
+    margin: 0.5rem 0;
+  }
+
+  
 }
