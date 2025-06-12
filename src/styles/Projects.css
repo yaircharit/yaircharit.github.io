@@ -19,8 +19,8 @@
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   height: 100%;
-    backdrop-filter: blur(10px);
-
+  backdrop-filter: blur(10px);
+  z-index: 2;
 }
 
 .project-card:hover {
@@ -157,5 +157,12 @@
   font-size: 0.75rem;
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+#projects {
+  background: none !important;
+  box-shadow: none !important;
+  position: relative;
+  z-index: 1;
 }
 

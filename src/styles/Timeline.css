@@ -270,3 +270,8 @@
     margin-top: 0.5rem;
   }
 }
+
+#timeline-section {
+  background: none !important;
+  box-shadow: none !important;
+}
