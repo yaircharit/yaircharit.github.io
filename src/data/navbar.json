@@ -1,0 +1,9 @@
+{
+  "menu": [
+    { "label": "Home", "type": "anchor", "target": "/#home" },
+    { "label": "About", "type": "anchor", "target": "/#about" },
+    { "label": "Projects", "type": "dropdown", "items": [] },
+    { "label": "Contact", "type": "anchor", "target": "/#contact" },
+    { "label": "Resume", "type": "external", "target": "resume" }
+  ]
+} 

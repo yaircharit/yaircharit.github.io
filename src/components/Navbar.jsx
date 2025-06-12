@@ -4,118 +4,165 @@ import '../styles/Navbar.css'
 import logo from '../assets/YC_Logo_Red.png'
 import projectsData from '../data/projects.json'
 import contactDetails from'../data/contact.json'
+import navbarData from '../data/navbar.json'
+import DropdownMenu from './DropdownMenu'
 
-function Navbar() {  const [isOpen, setIsOpen] = useState(false)
-  const [isProjectsOpen, setIsProjectsOpen] = useState(false)
+function useDarkMode() {
+  const [dark, setDark] = useState(() => {
+    const saved = localStorage.getItem('darkMode');
+    if (saved !== null) return saved === 'true';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+
+  useEffect(() => {
+    if (dark) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem('darkMode', dark);
+  }, [dark]);
+
+  return [dark, setDark];
+}
+
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(null)
   const [scrolled, setScrolled] = useState(false)
   const [dropdownTimeout, setDropdownTimeout] = useState(null)
   const navigate = useNavigate()
+  const [dark, setDark] = useDarkMode();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
     }
-
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Handle auto-close of dropdown
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (label) => {
     const timeout = setTimeout(() => {
-      setIsProjectsOpen(false)
-    }, 1000) // Close after 1 second
+      setOpenDropdown(null)
+    }, 1000)
     setDropdownTimeout(timeout)
   }
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (label) => {
     if (dropdownTimeout) {
       clearTimeout(dropdownTimeout)
       setDropdownTimeout(null)
     }
+    setOpenDropdown(label)
   }
 
   const handleNavigation = (e, path) => {
-    e.preventDefault()
-    if (path.startsWith('#')) {
-      // If we're on the home page, just scroll to the section
-      if (window.location.pathname === '/') {
-        const element = document.querySelector(path)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' })
-        }
-      } else {
-        // If we're on a different page, navigate to home and then scroll
-        navigate('/')
-        setTimeout(() => {
-          const element = document.querySelector(path)
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
-          }
-        }, 100)
-      }
-    } else {
-      navigate(path)
+    e.preventDefault();
+    if (path === '/') {
+      window.location.hash = '#/';
+    } else if (path.startsWith('#')) {
+      window.location.hash = '#/' + path; // double-hash for anchor
+    } else if (path.startsWith('/')) {
+      window.location.hash = '#' + path;
     }
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
 
-  const toggleProjects = () => {
-    setIsProjectsOpen(!isProjectsOpen)
+  // Helper to generate dropdown items for projects
+  const getProjectDropdownItems = () =>
+    projectsData.projects.map((project) => {
+      if (project.link) {
+        if (project.link.endsWith('.html')) {
+          return {
+            label: project.title,
+            href: `/project/${project.id}`,
+            onClick: (e) => handleNavigation(e, `/project/${project.id}`)
+          }
+        } else {
+          return {
+            label: project.title,
+            href: project.link,
+            target: '_blank',
+            rel: 'noopener noreferrer'
+          }
+        }
+      } else {
+        return {
+          label: project.title,
+          href: `/project/${project.id}`,
+          onClick: (e) => handleNavigation(e, `/project/${project.id}`)
+        }
+      }
+    })
+
+  // Helper for future dropdowns (static or dynamic)
+  const getDropdownItems = (item) => {
+    if (item.label === 'Projects') {
+      return getProjectDropdownItems()
+    }
+    // For future dropdowns, you can add logic here
+    // Example: return item.items || []
+    return item.items || []
   }
 
-  return (    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+  return (
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="left-section">
-        <a href="/" className="navbar-icon" onClick={(e) => handleNavigation(e, '/')}>
+        <a href="/" className="navbar-icon" onClick={(e) => handleNavigation(e, '/')}> 
           <img src={logo} className="nav-logo" alt="React Logo" />
         </a>
-
         <ul className={`navbar-menu ${isOpen ? 'active' : ''}`}>
-          <li><a href="#home" onClick={(e) => handleNavigation(e, '#home')}>Home</a></li>
-          <li><a href="#about" onClick={(e) => handleNavigation(e, '#about')}>About</a></li>
-          <li 
-            className="dropdown"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <a onClick={toggleProjects}>
-              Projects {isProjectsOpen ? '▼' : '▶'}
-            </a>
-            <ul className={`dropdown-menu ${isProjectsOpen ? 'active' : ''}`}>{projectsData.projects.map((project) => (
-                <li key={project.id}>
-                  {project.link ? (
-                    <a 
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.title}
-                    </a>
-                  ) : (
-                    <a 
-                      href={`/project/${project.id}`}
-                      onClick={(e) => handleNavigation(e, `/project/${project.id}`)}
-                    >
-                      {project.title}
-                    </a>
-                  )}
+          {navbarData.menu.map((item) => {
+            if (item.type === 'anchor') {
+              return (
+                <li key={item.label}>
+                  <a href={item.target} onClick={(e) => handleNavigation(e, item.target)}>{item.label}</a>
                 </li>
-              ))}
-            </ul>
-          </li>
-          <li><a href="#contact" onClick={(e) => handleNavigation(e, '#contact')}>Contact</a></li>
-          <li><a href={contactDetails.resumeLink}>Resume</a></li>
+              )
+            } else if (item.type === 'dropdown') {
+              return (
+                <DropdownMenu
+                  key={item.label}
+                  label={item.label}
+                  items={getDropdownItems(item)}
+                  isOpen={openDropdown === item.label}
+                  onToggle={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                  onMouseEnter={() => handleMouseEnter(item.label)}
+                  onMouseLeave={() => handleMouseLeave(item.label)}
+                  handleNavigation={handleNavigation}
+                />
+              )
+            } else if (item.type === 'external' && item.label === 'Resume') {
+              return (
+                <li key={item.label}>
+                  <a href={contactDetails.resumeLink} target="_blank" rel="noopener noreferrer">{item.label}</a>
+                </li>
+              )
+            }
+            return null
+          })}
         </ul>
       </div>
-      <button className="hamburger" onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div className="right-section">
+        <button
+          className="dark-mode-toggle"
+          onClick={() => setDark(d => !d)}
+          title={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+          style={{ fontSize: '1.5rem', background: 'none', border: 'none', cursor: 'pointer', marginLeft: '1rem' }}
+        >
+          {dark ? '🌙' : '☀️'}
+        </button>
+        <button className="hamburger" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
   )
 }
