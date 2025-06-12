@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="viewport" content="height=device-height,initial-scale=1,shrink-to-fit=no">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/movies-4/48/pokemon-movie-cinema-ball-512.png">
+    <title>SQA Dashboard</title>
+    <style>
+        #collections {
+            display: inline-flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        input {
+            border: none;
+            background-color: transparent;
+            font-family: 'Quattrocento Sans';
+            font-weight: 300;
+
+        }
+
+        ul.container-body>li.item,
+        li.item-content {
+            list-style-type: none;
+        }
+
+        li.item {
+            list-style-type: square;
+        }
+
+
+        li.item::marker {
+            font-size: 0.8em;
+            color: rgb(54, 54, 54);
+        }
+
+
+
+        button {
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        .little-button {
+            height: 10px;
+            width: 10px;
+            margin: 0%;
+            padding: 0 0.3em;
+            border: none;
+            border-radius: 50%;
+            color: lightgray;
+        }
+
+        .delete-button {
+            background-color: maroon;
+
+        }
+
+        .add-button {
+            background-color: rgb(131, 180, 131);
+            height: 1.5vw;
+            width: -webkit-fill-available;
+            float: left;
+            border-radius: 10px;
+            margin-top: 1vw;
+            padding: 0 1vw;
+        }
+
+        .news-button {
+            float: left;
+            margin: 1vw;
+        }
+
+        button.expand-button {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48cGF0aCBkPSJNMTUxLjUgMzQ3LjhMMy41IDIwMWMtNC43LTQuNy00LjctMTIuMyAwLTE3bDE5LjgtMTkuOGM0LjctNC43IDEyLjMtNC43IDE3IDBMMTYwIDI4Mi43bDExOS43LTExOC41YzQuNy00LjcgMTIuMy00LjcgMTcgMGwxOS44IDE5LjhjNC43IDQuNyA0LjcgMTIuMyAwIDE3bC0xNDggMTQ2LjhjLTQuNyA0LjctMTIuMyA0LjctMTcgMHoiLz48L3N2Zz4=);
+            background-repeat: no-repeat;
+            background-color: transparent;
+            float: right;
+            margin-top: 0.7rem;
+        }
+
+        div#buttons {
+            display: none;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+
+        button#god-mode-button {
+            left: 0;
+            bottom: 0;
+            padding: 1em;
+            background-color: transparent;
+            position: fixed;
+            border: none;
+            border-radius: 0;
+
+        }
+
+        button#god-mode-button:hover {
+            background-color: wheat;
+        }
+
+        button:disabled {
+            background-color: gray;
+        }
+
+        .collection {
+            width: 100%;
+            padding: 2em;
+        }
+
+        .collection-title {
+            border: none;
+            font-size: 2vw;
+            color: #222222;
+            height: fit-content;
+            border-bottom: #4d906b 1px dashed;
+        }
+
+        .collection-body {
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            margin-top: 1em;
+        }
+
+        .container {
+            margin: 0 2em;
+            width: fit-content;
+        }
+
+        .container-head {
+            border-bottom: #222222 1px dashed;
+            border-radius: 5px 5px 0 0;
+            width: fit-content;
+        }
+
+        .container-title {
+            font-size: 1.3em;
+            color: #222222;
+            width: fit-content;
+        }
+
+        .item-title {
+            font-size: 0.8em;
+            color: #222222;
+            font-style: italic;
+            width: -webkit-fill-available;
+        }
+
+        .item-head {
+            display: inline-flex;
+            flex-direction: row;
+            width: -webkit-fill-available;
+        }
+
+        .container-body {
+            border-radius: 0 0 5px 5px;
+            margin: 0;
+            border-top: none;
+        }
+
+        .clickable {
+            color: #1e44ac;
+        }
+
+        .clickable:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .tab-header {
+            background-color: rgb(201, 201, 201);
+            border-radius: 5px 5px 0 0;
+            margin-left: 0.5vw;
+            padding: 0 1vw;
+        }
+
+        .tab-header.active {
+            background-color: rgb(238, 238, 238);
+        }
+
+        .tab-content {
+            padding: 2vw;
+            display: inline-flex;
+            flex-direction: column;
+        }
+
+        div#news-content {
+            width: -webkit-fill-available;
+            background-color: rgb(240, 240, 240);
+            border-radius: 5px;
+        }
+
+        div#news {
+            margin: 4vw;
+            display: grid;
+        }
+
+        div#news-tabs {
+            width: -webkit-fill-available;
+            display: inline-flex;
+        }
+
+        textarea {
+            background-color: transparent;
+            border: none;
+            resize: none;
+            font-family: 'Quattrocento Sans';
+            font-weight: 300;
+            /* max-width: 10em; */
+        }
+
+        ul{
+            padding: 0.5em;
+        }
+
+        button#download-button {
+            display: none;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+    <script>
+
+
+        var reg = /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g
+        var bookmarks = [{ "Collection Title": [{ "Container Title": [{ "Item Title": ["", { "Sub-Item Title": [""] }] }] }] }]
+        var news = [{ "title": "Welcome", "content": "To enter edit mode click the invisible button in the bottom-left corner of the page :)\nDownload the page (bottom-right corner) to save your modifications", "startsAt": "24/10/2021; 11:24:33", "endsAt": "never" }]
+
+
+        function createElement(element, attribute, inner) {
+            if (typeof (element) === "undefined") {
+                return false;
+            }
+            if (typeof (inner) === "undefined") {
+                inner = "";
+            }
+            var el = document.createElement(element);
+            if (typeof (attribute) === 'object') {
+                for (var key in attribute) {
+                    el.setAttribute(key, attribute[key]);
+                }
+            }
+
+            if (!Array.isArray(inner)) {
+                inner = [inner];
+            }
+
+            for (var k = 0; k < inner.length; k++) {
+                if (inner[k].tagName) {
+                    el.appendChild(inner[k]);
+                } else {
+                    el.appendChild(document.createTextNode(inner[k]));
+                }
+            }
+            if (element == 'textarea') {
+                addResizeFunc(el)
+            }
+            return el;
+        }
+
+        const TEXTAREA_WIDTH = 30
+        const e = 'keyup,keypress,focus,blur,change'.split(',');
+        function addResizeFunc(element) {
+            let def_width = (element.classList.contains('news-content')) ? TEXTAREA_WIDTH * 3 : TEXTAREA_WIDTH
+            function fitSize() {
+                let longest_row_length = Math.min(Math.max.apply(null, element.innerHTML.toString().split('\n').map((e) => { return e.length })), def_width)
+                let CR = (element.innerHTML.toString().match(/\n/g) || [0]).length - 1
+                element.rows = Math.max(CR, Math.ceil((element.innerHTML.length - CR) / longest_row_length))
+                element.cols = longest_row_length
+            }
+            fitSize(element)
+            for (var i in e) element.addEventListener(e[i], fitSize, false);
+
+        }
+
+        function add(obj, json_obj = undefined) {
+            let func = ((obj instanceof CollectionContainer) ? ((obj, json) => { return new Collection(obj, json) }) : ((obj instanceof Collection) ? (obj, json) => { return new Container(obj, json) } : (obj, json) => { return new Item(obj, json) }))
+            let temp = (json_obj != undefined) ? func(obj, json_obj) : func(obj)
+            obj.body.push(temp)
+            obj.HTML.body.main.appendChild(temp.HTML.main)
+            return temp.immutable;
+        }
+
+        function remove(obj) {
+            obj.parent.body = obj.parent.body.filter((el) => { return el != obj })
+            obj.parent.HTML.body.main.removeChild(obj.HTML.main)
+            delete obj
+        }
+        function generateAddButton(obj) {
+            obj.HTML.body.addButton = createElement('button', { class: 'little-button add-button' }, '+')
+            obj.HTML.body.addButton.onclick = () => {
+                obj.HTML.body.main.removeChild(obj.HTML.body.addButton)
+                add(obj)
+                obj.HTML.body.main.appendChild(obj.HTML.body.addButton)
+            }
+            obj.HTML.body.addButton.hidden = !editMode
+            // obj.HTML.body.center = createElement('center', {}, obj.HTML.body.addButton)
+            obj.HTML.body.main.appendChild(obj.HTML.body.addButton)
+        }
+
+        function generateHead(obj) {
+            obj.HTML.head = {}
+            let obj_type = obj.constructor.name.toLowerCase()
+            obj.HTML.head.main = createElement('div', { class: obj_type + '-head' })
+
+            obj.HTML.head.deleteButton = createElement('button', { class: 'little-button delete-button' })
+            obj.HTML.head.deleteButton.onclick = () => { remove(obj) }
+            obj.HTML.head.deleteButton.hidden = !editMode;
+            obj.HTML.head.deleteButton.disabled = obj.immutable
+
+            obj.HTML.head.title = createElement('textarea', { class: obj_type + '-title', placeholder: `Empty ${obj_type}` }, obj.title)
+            obj.HTML.head.title.readOnly = !editMode;
+
+            if (obj_type == 'item') {
+                obj.HTML.head.expandButton = createElement('button', { class: 'little-button expand-button' })
+                obj.HTML.head.expandButton.hidden = !editMode && obj.body.length == 0;
+                obj.HTML.head.expandButton.onclick = () => { obj.toggleExpand() }
+                obj.HTML.head.title.onclick = () => { obj.titleClicked(); }
+                if (obj.url != '')
+                    obj.HTML.head.title.classList.add('clickable')
+            }
+
+            for (let name in obj.HTML.head)
+                if (name != 'main')
+                    obj.HTML.head.main.appendChild(obj.HTML.head[name])
+        }
+
+        function generateBody(obj, json_obj) {
+            obj.HTML.body = {}
+            obj.body = []
+            let obj_type = obj.constructor.name.toLowerCase()
+            let elem_type = (obj_type == 'collection') ? 'div' : 'ul'
+
+            obj.HTML.body.main = createElement(elem_type, { class: obj_type + '-body' })
+            if (obj_type == 'item') {
+                obj.url = Object.values(json_obj)[0]
+                if (obj.url instanceof Array)
+                    obj.url = obj.url[0]
+                obj.HTML.body.url = createElement('textarea', { class: 'item-url', placeholder: 'Empty URL', }, obj.url)//readOnly: !editMode 
+                obj.HTML.body.url.style.display = (editMode) ? 'block' : 'none'
+                obj.HTML.body.main.hidden = true
+                obj.HTML.body.main.appendChild(createElement('li', { class: 'item-content' }, obj.HTML.body.url))
+            }
+
+            json_obj = json_obj[obj.title]
+            let immutable_children = 0
+            for (let i in json_obj) {
+                if (json_obj[i] instanceof Object) {
+                    if (add(obj, json_obj[i]))
+                        obj.immutable = true
+                }
+            }
+            generateAddButton(obj)
+
+        }
+
+        function generateHTML(obj, json) {
+            obj.HTML = {}
+            let obj_type = obj.constructor.name.toLowerCase()
+            let elem_type = (obj_type == 'item') ? 'li' : 'div'
+            obj.title = Object.keys(json)[0]
+            if (obj.title.startsWith('*')) {
+                obj.immutable = true
+                obj.title = obj.title.substr(1)
+            }
+
+            obj.HTML.main = createElement(elem_type, { class: obj_type })
+
+            generateBody(obj, json)
+            generateHead(obj)
+
+            obj.HTML.main.appendChild(obj.HTML.head.main)
+            obj.HTML.main.appendChild(obj.HTML.body.main)
+        }
+
+        function toggleEditMode(obj) {
+            obj.HTML.head.deleteButton.hidden = !editMode
+            obj.HTML.head.title.readOnly = !editMode
+            obj.HTML.body.addButton.hidden = !editMode
+            if (!editMode)
+                obj.title = obj.HTML.head.title.value
+
+            if (obj.constructor.name == 'Item') {
+                obj.HTML.head.expandButton.hidden = !editMode && obj.body.length == 0;
+                if (!editMode)
+                    obj.url = obj.HTML.body.url.value
+                obj.HTML.body.url.style.display = (editMode) ? 'block' : 'none'
+                obj.HTML.body.url.readOnly = !editMode
+            }
+
+            for (let i in obj.body) { toggleEditMode(obj.body[i]) }
+        }
+
+        function download() {
+            downloadButton.style.display = 'none'
+            let fullHTML = document.documentElement.innerHTML
+            let head = fullHTML.substr(0, fullHTML.search('<bo' + 'dy>'))
+            bookmarks = cc.JSON;
+            news = newsObj.JSON;
+            head = head.replace(/\s*var bookmarks = \[.*\n/g, '\n\t\tvar ' + `bookmarks = ${JSON.stringify(bookmarks)}\n`)
+            head = head.replace(/\s*var news = \[.*\n/g, '\n\t\tvar ' + `news = ${JSON.stringify(news)}\n`)
+            let body = '<bo' + 'dy><div id="news"><div id="news-tabs"></div><div id="news-content"></div></div><div id="collections"></div>'
+            let footer = fullHTML.substr(fullHTML.search('<foo' + 'ter>')) + ''
+            let res = `<!DOCTYPE html><html lang="en">${head}${body}${footer}</html>`
+
+            var element = document.createElement('a');
+            element.setAttribute('href', `data:text/html;charset=utf-8,${encodeURIComponent(res)}`);
+            element.setAttribute('download', 'SQADashboard.html');
+            element.click();
+            downloadButton.style.display = 'block'
+        }
+
+        var editMode = false;
+        class CollectionContainer {
+            constructor(json_colls = [{ '': [] }], main_HTML_ID = 'collections', edit_button_ID = 'edit-button') {
+                this.body = []
+                this.HTML = { body: {} }
+                this.HTML.body.main = document.getElementById(main_HTML_ID)
+
+                for (let i in json_colls) {
+                    add(this, json_colls[i])
+                }
+
+                generateAddButton(this)
+            }
+
+            toggleEditMode() {
+                for (let col in this.body) { toggleEditMode(this.body[col]); }
+                this.HTML.body.addButton.hidden = !editMode
+                // if (!editMode) { bookmarks = this.JSON }
+            }
+
+
+
+            get JSON() {
+                let temp = []
+                for (let i in this.body) temp.push(this.body[i].JSON)
+                return temp;
+            }
+        }
+
+        class Collection {
+            constructor(parent, json_coll = { '': [] }) {
+                this.parent = parent
+                generateHTML(this, json_coll)
+                this.HTML.main.appendChild(createElement('hr'))
+            }
+
+            get JSON() {
+                this.title = this.HTML.head.title.value
+                let temp = {}
+                temp[`${this.title}`] = []
+                for (let i in this.body) temp[`${this.title}`].push(this.body[i].JSON)
+                return temp;
+            }
+        }
+
+        class Container {
+            constructor(parent, json_cont = { '': '' }) {
+                this.parent = parent
+                generateHTML(this, json_cont)
+            }
+
+            get JSON() {
+                this.title = this.HTML.head.title.value
+                let temp = {}
+                temp[`${this.title}`] = []
+                for (let i in this.body) temp[`${this.title}`].push(this.body[i].JSON)
+                return temp;
+            }
+        }
+
+        class Item {
+            constructor(parent, json_item = { '': [''] }) {
+                this.parent = parent;
+                this.expanded = false;
+                generateHTML(this, json_item)
+            }
+
+            toggleExpand() {
+                this.HTML.body.main.hidden = this.expanded
+                this.expanded = !this.expanded
+                this.HTML.body.addButton.hidden = !(this.expanded && editMode)
+            }
+
+            static webFileTypesRegEx = '(https://|https:\\\\|https://|http:\\\\).*|.*(\.pdf)'
+            titleClicked() {
+                let dir = this.url
+                if (!editMode && this.url != '') {
+                    if (this.url.match(Item.webFileTypesRegEx)) {
+                        window.open(this.url, '_blank')
+                    } else {
+                        navigator.clipboard.writeText(this.url).then(function () {
+                            alert(`${dir} was copied to your clipboard.\nTo open press Winkey+R, Winkey+V, Enter `)
+                        }, function () {
+                            alert('ERROR\nPlease try again')
+                        })
+                    }
+                }
+            }
+
+            get JSON() {
+                this.title = this.HTML.head.title.value
+                this.url = this.HTML.body.url.value
+                let temp = {}
+                temp[`${this.title}`] = [this.url]
+                for (let i in this.body) temp[`${this.title}`].push(this.body[i].JSON)
+                return temp;
+            }
+        }
+
+        class NewsFeed {
+
+            constructor(main_HTML_ID = 'news') {
+                this.HTML = {
+                    main: document.getElementById(main_HTML_ID),
+                    tabs: document.getElementById(`${main_HTML_ID}-tabs`),
+                    content: document.getElementById(`${main_HTML_ID}-content`),
+                    addButton: createElement('button', { class: 'little-button add-button news-button' }),
+                    addTab: createElement('div', { class: 'tab-header' })
+                }
+                this.body = []
+                this.count = 0
+
+                this.HTML.addButton.onclick = () => { this.add() }
+                this.HTML.addTab.appendChild(this.HTML.addButton);
+                this.HTML.addTab.hidden = !editMode
+                this.HTML.tabs.appendChild(this.HTML.addTab)
+
+                for (let i in news) {
+                    this.add(news[i])
+                }
+                this.displayFirst()
+            }
+
+            add(json = { title: '', content: '', startsAt: '', endsAt: 'never' }) {
+                let newsItem = new NewsItem(this, json)
+                this.clearBodyView()
+                this.body.push(newsItem);
+                this.HTML.tabs.appendChild(newsItem.HTML.head);
+                this.HTML.content.appendChild(newsItem.HTML.body);
+            }
+
+            clearBodyView() {
+                for (let item in this.body) {
+                    this.body[item].HTML.head.classList.remove('active')
+                    this.body[item].HTML.body.style.display = 'none'
+                }
+            }
+
+            toggleEditMode() {
+                this.HTML.addTab.hidden = !editMode
+                for (let item in this.body) {
+                    this.body[item].toggleEditMode()
+                }
+                this.displayFirst()
+            }
+
+            remove(newsItem) {
+                this.HTML.tabs.removeChild(newsItem.HTML.head)
+                this.HTML.content.removeChild(newsItem.HTML.body)
+                this.body = this.body.filter((item) => { return item != newsItem })
+
+                this.displayFirst()
+            }
+
+            displayFirst() {
+                this.clearBodyView()
+                for (let i in this.body) {
+                    if (editMode || (this.body[i].startsAt.getTime() <= now.getTime() && (this.body[i].endsAt == 'never' || now.getTime() <= stringToDate(this.body[i].endsAt).getTime()))) {
+                        this.body[i].HTML.head.classList.add('active')
+                        this.body[i].HTML.head.style.display = 'block'
+                        this.body[i].HTML.body.style.display = 'block'
+                        return;
+                    }
+                }
+            }
+
+            get JSON() {
+                let res = []
+                let temp;
+
+                now = new Date()
+                for (let item in this.body) {
+                    temp = this.body[item].JSON
+                    if (stringToDate(temp.startsAt).getTime() <= now.getTime() && (temp.endsAt == 'never' || now.getTime() <= stringToDate(temp.endsAt).getTime()))
+                        res.push(temp)
+                }
+                return res
+            }
+        }
+        var now = new Date()
+
+        class NewsItem {
+            constructor(parent, json = { title: '', content: '', startsAt: '', endsAt: 'never' }) {
+                this.parent = parent
+                this.title = json.title
+                this.body = json.content
+                this.id = NewsItem.count++
+                this.startsAt = stringToDate(json.startsAt)
+                this.endsAt = (json.endsAt != '') ? json.endsAt : 'never'
+
+                this.HTML = {
+                    head: createElement('div', { class: 'tab-header' }),
+                    title: createElement('textarea', { class: 'tab-title', 'data-tab-id': `news${this.id}`, placeholder: 'Empty title' }, this.title),
+                    deleteButton: createElement('button', { class: 'little-button delete-button news-button' },),
+
+                    body: createElement('div', { class: 'tab-content', id: `news${this.id}` }),
+                    content: createElement('textarea', { readOnly: editMode, class: 'news-content', placeholder: 'Empty News' }, this.body),
+                    dateDiv: createElement('div', { id: `news${this.id}-dates` }),
+                    start: createElement('input', { id: `news${this.id}-start`, class: 'date-input', placeHolder: 'YYYY-MM-DD; HH:MM', value: `${dateToString(this.startsAt)}` }),
+                    end: createElement('input', { id: `news${this.id}-end`, class: 'date-input', placeHolder: 'YYYY-MM-DD; HH:MM', value: this.endsAt })
+                }
+                this.HTML.deleteButton.hidden = !editMode;
+                this.HTML.title.readOnly = !editMode;
+                this.HTML.content.readOnly = !editMode;
+                this.HTML.dateDiv.hidden = !editMode
+                this.HTML.body.appendChild(this.HTML.content)
+                this.HTML.dateDiv.appendChild(createElement('label', { for: `news${this.id}-start` }, 'Starts At:'))
+                this.HTML.dateDiv.appendChild(this.HTML.start);
+                this.HTML.dateDiv.appendChild(createElement('label', { for: `news${this.id}-end` }, 'Ends At:'))
+                this.HTML.dateDiv.appendChild(this.HTML.end);
+
+                this.HTML.body.appendChild(this.HTML.dateDiv)
+                this.HTML.head.appendChild(this.HTML.deleteButton)
+                this.HTML.head.appendChild(this.HTML.title)
+                this.HTML.title.onclick = () => { this.onTabClick() }
+                this.HTML.deleteButton.onclick = () => { this.parent.remove(this) }
+
+                this.HTML.head.style.display = (editMode || (this.startsAt.getTime() <= now.getTime() && (this.endsAt == 'never' || now.getTime() <= stringToDate(this.endsAt).getTime()))) ? 'block' : 'none'
+                this.HTML.body.style.display = (editMode || (this.startsAt.getTime() <= now.getTime() && (this.endsAt == 'never' || now.getTime() <= stringToDate(this.endsAt).getTime()))) ? 'block' : 'none'
+
+            }
+
+            onTabClick() {
+                this.parent.clearBodyView()
+                this.HTML.head.classList.toggle('active')
+                this.HTML.body.style.display = 'block';
+            }
+
+            toggleEditMode() {
+                this.HTML.deleteButton.hidden = !editMode
+                this.HTML.title.readOnly = !editMode
+                this.HTML.content.readOnly = !editMode
+                this.HTML.dateDiv.style.display = (editMode) ? 'block' : 'none'
+
+                this.HTML.head.style.display = (editMode || (this.startsAt <= now && (this.endsAt == 'never' || now.getTime() <= stringToDate(this.endsAt).getTime()))) ? 'block' : 'none'
+                this.HTML.body.style.display = (editMode || (this.startsAt <= now && (this.endsAt == 'never' || now.getTime() <= stringToDate(this.endsAt).getTime()))) ? 'block' : 'none'
+            }
+
+            get JSON() {
+                this.title = this.HTML.title.value
+                this.body = this.HTML.content.value
+                this.startsAt = stringToDate(this.HTML.start.value)
+                this.endsAt = this.HTML.end.value
+                return {
+                    title: this.title,
+                    content: this.body,
+                    startsAt: dateToString(this.startsAt),
+                    endsAt: this.endsAt
+                }
+            }
+        }
+        NewsItem.count = 0
+
+        function godButtonClick() {
+            downloadButton.style.display = (downloadButton.style.display != 'block') ? 'block' : 'none';
+            editMode = !editMode
+            if (!editMode) {
+                bookmarks = cc.JSON;
+                news = newsObj.JSON;
+            }
+            newsObj.toggleEditMode()
+            cc.toggleEditMode()
+        }
+
+        function stringToDate(strObj) {
+            if (strObj == '') {
+                let temp = new Date()
+                temp.setMinutes(temp.getMinutes() - 1)
+                return temp;
+            }
+            if (strObj == 'never')
+                return null;
+            strObj = strObj.split('; ')
+            let dateStrObj = strObj[0].split('/').map((elem) => { return parseInt(elem) })
+            let timeStrObj = strObj[1].split(':').map((elem) => { return parseInt(elem) })
+            return new Date(dateStrObj[2], dateStrObj[1], dateStrObj[0], timeStrObj[0], timeStrObj[1], timeStrObj[2])
+        }
+
+        function dateToString(dateObj) {
+            let temp = [dateObj.getDate(), dateObj.getMonth(), dateObj.getFullYear(), dateObj.getHours(), dateObj.getMinutes(), dateObj.getSeconds()].map((elem) => { return ((elem <= '9') ? "0" : "") + elem })
+            return `${temp[0]}/${temp[1]}/${temp[2]}; ${temp[3]}:${temp[4]}:${temp[5]}`
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="news">
+        <div id="news-tabs"></div>
+        <div id="news-content"></div>
+    </div>
+    <div id="collections"></div>
+    <footer>
+        <button id="download-button" class="intButton saveButton" onclick="download()"
+            style="display: none;">Download</button>
+        <button id="god-mode-button" onclick="godButtonClick()"></button>
+    </footer>
+    <script>
+        var downloadButton = document.getElementById('download-button')
+        var cc = new CollectionContainer(bookmarks, 'collections')
+        var newsObj = new NewsFeed('news')
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
