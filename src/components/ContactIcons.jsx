@@ -1,5 +1,5 @@
-import './ContactIcons.css'
-import contactData from '../../data/contact.json'
+import '../styles/ContactIcons.css'
+import contactData from '../data/contact.json'
 
 const ContactIcons = ({ color = 'white' }) => {  // default to white if no color provided
   const icons = {

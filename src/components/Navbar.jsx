@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './navbar.css'
-import logo from '../../assets/YC_Logo_Red.png'
-import projectsData from '../../data/projects.json'
-import contactDetails from'../../data/contact.json'
+import '../styles/Navbar.css'
+import logo from '../assets/YC_Logo_Red.png'
+import projectsData from '../data/projects.json'
+import contactDetails from'../data/contact.json'
 
 function Navbar() {  const [isOpen, setIsOpen] = useState(false)
   const [isProjectsOpen, setIsProjectsOpen] = useState(false)

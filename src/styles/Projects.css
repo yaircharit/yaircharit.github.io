@@ -91,27 +91,23 @@
 
 .project-footer {
   margin-top: auto;
-  padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-  flex-wrap: nowrap;
+  gap: 0.75rem;
 }
 
 .project-repo {
+  flex-shrink: 0;
   display: flex;
   padding: 0.25rem 0.75rem;
-  background-color: white;
-  color: black;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
   text-decoration: none;
-  border-radius: 15px;
-  transition: background-color 0.3s ease;
-  flex-shrink: 0;
-  margin-left: 0.5rem;
-  border: #1a1a1a75 solid 1px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .project-repo:hover {
@@ -122,27 +118,19 @@
 
 .project-technologies {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 0.4rem;
-  overflow-x: auto;
   flex: 1;
-  min-width: 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.project-technologies::-webkit-scrollbar {
-  display: none;
 }
 
 .technology-tag {
-  background-color: white;
-  color: black;
-  padding: 0.25rem 0.75rem;
-  border: #1a1a1a75 solid 1px;
-  border-radius: 15px;
-  font-size: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-size: 0.8rem;
   white-space: nowrap;
-  flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import projectsData from '../../data/projects.json'
-import './Projects.css'
+import projectsData from '../data/projects.json'
+import '../styles/Projects.css'
 
 function Projects() {
 return (

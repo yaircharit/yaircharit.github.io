@@ -9,7 +9,6 @@ A personal portfolio website built with React and Vite, showcasing my projects a
 - Project showcase with details
 - Animated background
 - Contact information
-- Dark/Light mode support
 
 ## 🛠️ Built With
 

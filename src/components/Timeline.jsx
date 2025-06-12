@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import timelineData from '../../data/timeline.json'
-import './Timeline.css'
+import timelineData from '../data/timeline.json'
+import '../styles/Timeline.css'
 
 const Timeline = () => {
   const [expandedId, setExpandedId] = useState(null);

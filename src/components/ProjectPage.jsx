@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import projectsData from '../../data/projects.json';
-import './ProjectPage.css';
+import projectsData from '../data/projects.json';
+import '../styles/ProjectPage.css';
 
 function ProjectPage() {
   const { projectId } = useParams();

@@ -1,11 +1,11 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar/navbar'
-import Projects from './components/Projects/Projects'
-import ProjectPage from './components/ProjectPage/ProjectPage'
-import ContactIcons from './components/ContactIcons/ContactIcons'
-import AnimatedBackground from './components/AnimatedBackground/AnimatedBackground'
-import Timeline from './components/Timeline/Timeline'
-import './App.css'
+import Navbar from './components/Navbar'
+import Projects from './components/Projects'
+import ProjectPage from './components/ProjectPage'
+import ContactIcons from './components/ContactIcons'
+import AnimatedBackground from './components/AnimatedBackground'
+import Timeline from './components/Timeline'
+import './styles/App.css'
 
 function App() {
   return (
