@@ -3,8 +3,8 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px 20px 80px;
-  background: var(--card-bg, rgba(255,255,255,0.1));
-  color: var(--text, #222);
+  background: var(--card-bg);
+  color: var(--text);
 }
 
 /* Hide the original timeline line since we're using the global one */
@@ -38,11 +38,11 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  background: var(--bg-secondary, #fff);
-  border: 3px solid var(--border, rgba(0, 0, 0, 0.5));
+  background: var(--bg-secondary);
+  border: 3px solid var(--border);
   border-radius: 50%;
   top: 50%;
-  z-index: 2;
+  z-index: 5;
   transition: transform 0.3s ease;
   transform: translateY(-50%);
 }
@@ -51,7 +51,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-secondary, rgba(0, 0, 0, 0.8));
+  color: var(--text-secondary);
   font-size: 0.85rem;
   width: max-content;
   z-index: 2;
@@ -87,14 +87,14 @@
 
 .timeline-content {
   padding: 20px;
-  background: var(--card-bg, rgba(255, 255, 255, 0.1));
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.2));
+  border: 1px solid var(--card-border);
   border-radius: 15px;
   position: relative;
-  box-shadow: var(--shadow, 0 4px 16px rgba(0, 0, 0, 0.4));
+  box-shadow: var(--shadow);
   transition: all 0.3s ease;
-  color: var(--text, #222);
+  color: var(--text);
 }
 
 /* Add arrow indicators */
@@ -104,7 +104,7 @@
   right: -10px;
   top: 50%;
   transform: translateY(-50%);
-  border-left: 10px solid var(--card-bg, rgba(255, 255, 255, 0.1));
+  border-left: 10px solid var(--card-bg);
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
 }
@@ -115,7 +115,7 @@
   left: -10px;
   top: 50%;
   transform: translateY(-50%);
-  border-right: 10px solid var(--card-bg, rgba(255, 255, 255, 0.1));
+  border-right: 10px solid var(--card-bg);
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
 }
@@ -147,13 +147,13 @@
 }
 
 .timeline-content h3 {
-  color: var(--text, black);
+  color: var(--text);
   margin: 0 0 0.5rem 0;
   font-size: 1.4rem;
 }
 
 .timeline-content h4 {
-  color: var(--text-secondary, rgba(0, 0, 0, 0.9));
+  color: var(--text-secondary);
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
 }
@@ -187,7 +187,7 @@
 }
 
 .timeline-content p {
-  color: var(--text-secondary, rgba(0, 0, 0, 0.8));
+  color: var(--text-secondary);
   margin: 0;
   line-height: 1.5;
   white-space: pre-line;
@@ -201,7 +201,7 @@
 }
 
 .timeline-details li {
-  color: var(--text-secondary, rgba(0, 0, 0, 0.8));
+  color: var(--text-secondary);
   margin: 0.25rem 0;
   line-height: 1.4;
 }
@@ -255,23 +255,26 @@
   .timeline-date,
   .timeline-item:nth-child(odd) .timeline-date,
   .timeline-item:nth-child(even) .timeline-date {
-    position: relative;
-    left: auto;
+    left: calc(100% + 20px);
     right: auto;
-    top: auto;
-    transform: none;
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--text-secondary, rgba(0, 0, 0, 0.7));
   }
 
-  .timeline-content {
-    margin-top: 0.5rem;
+  .timeline-content,
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    width: 100%;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content::after,
+  .timeline-item:nth-child(even) .timeline-content::after {
+    display: none;
   }
 }
 
 #timeline-section {
-  background: none !important;
-  box-shadow: none !important;
+  position: relative;
+  padding-top: 0;
+  margin-top: 0;
+  z-index: 2;
+  top: 0;
 }
