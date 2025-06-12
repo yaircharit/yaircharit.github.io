@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import './AnimatedBackground.css'
+import '../styles/AnimatedBackground.css'
 
 class GridWorm {  constructor(point, interval, pointsList, screenWidth, screenHeight) {
     this.radius = 2;
