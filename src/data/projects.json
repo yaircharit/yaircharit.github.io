@@ -15,7 +15,7 @@
       "description": "A stand-alone dashboard HTML page with an automated message board and organization containers for your repositorys",
       "technologies": ["Javascript", "HTML", "CSS"],
       "repository": "https://github.com/yaircharit/Dashboard-Plus",
-      "link": "/yaircharit.github.io/MyProjects/bookmarks.html"
+      "link": "/MyProjects/bookmarks.html"
     },
     {
       "id": "Global Warming Simulator",
@@ -23,7 +23,7 @@
       "description": "A simulation project to visualize the effects of global warming",
       "technologies": ["Javascript", "HTML", "CSS"],
       "repository": "https://github.com/yaircharit/OU-MS-of-CS/tree/BioComp-MMN11",
-      "link": "/yaircharit.github.io/MyProjects/GlobalWarmingSim/GlobalWarming.html"
+      "link": "/MyProjects/GlobalWarmingSim/GlobalWarming.html"
     },
     {
       "id": "Client-Server",
@@ -44,8 +44,7 @@
       "description": "Dina.co.il is an online shop which sells paintings on order. Each order that is placed is being saved in the site's databases. Every hour the system generates all e-mails for all new orders and sends it to the printing factory. As it was tailored to their needs, there is no need for human involvment anymore, it even adds an image of the required painting! Automation at its best!",
       "fullDescription": "I developed an automated email generation and delivery system for Dina.co.il, a custom painting e-commerce platform. The system automatically processes new orders from the site's database, generates customized emails with the painting images, and sends them directly to the printing factory.\n\nKey Features:\n- Automated hourly checks for new orders\n- Dynamic email generation with order details\n- Image attachment automation\n- Error handling and logging\n- Zero human intervention required\n\nThe automation has significantly reduced manual processing time and eliminated human errors in order communication.",
       "technologies": ["Javascript", "APIs", "DB Integration"],
-      "image": "/yaircharit.github.io/images/dina.png"
-      
+      "image": "/images/dina.png"
     }
   ]
 }
