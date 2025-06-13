@@ -34,20 +34,24 @@
 
 .dark-mode .contact-icon,
 .dark-mode .contact-icon svg {
-  background: linear-gradient(90deg, #fff 0%, #b2fefa 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
+  color: var(--text);
+  fill: var(--text);
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  text-fill-color: initial;
 }
 
 .dark-mode .contact-icon:hover,
 .dark-mode .contact-icon:hover svg {
-  background: linear-gradient(90deg, #b2fefa 0%, #fff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
+  color: var(--text);
+  fill: var(--text);
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  text-fill-color: initial;
 }
 
 .icon-whatsapp::before {

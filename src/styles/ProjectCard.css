@@ -6,15 +6,15 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  
+  width: 90%;
+  max-width: 1200px;
+  margin: 4vw auto;
+  position: relative;
 }
 
 .project-card {
   position: relative;
-  background: rgba(255,255,255,0.95);
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   transition: all 0.3s ease;
@@ -96,7 +96,6 @@ a {
 
 .project-footer {
   margin-top: auto;
-  padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.05);
   border-top: 1px solid var(--card-border);
   display: flex;
@@ -104,6 +103,7 @@ a {
   align-items: center;
   gap: 0.5rem;
   flex-wrap: nowrap;
+  width: 100%;
 }
 
 .project-repo {
@@ -161,10 +161,5 @@ a {
   font-size: 0.75rem;
   white-space: nowrap;
   flex-shrink: 0;
-}
-
-#projects {
-  position: relative;
-  z-index: 1;
 }
 

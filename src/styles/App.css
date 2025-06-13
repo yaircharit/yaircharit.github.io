@@ -72,7 +72,7 @@ main { padding-top: 5rem; width: 100%; overflow-x: hidden; position: relative; }
   position: absolute;
   left: 50%;
   width: 4px;
-  background: linear-gradient(to bottom,rgba(100,100,255,0.3) 0%,rgba(100,100,255,0.2) 85%,rgba(100,100,255,0.05) 100%);
+  background: linear-gradient(to bottom, transparent 0%,rgba(100,100,255,0.3) 2%,rgba(100,100,255,0.2) 85%,rgba(100,100,255,0.05) 100%);
   transform: translateX(-50%);
   z-index: 3;
   pointer-events: none;
@@ -105,7 +105,7 @@ main { padding-top: 5rem; width: 100%; overflow-x: hidden; position: relative; }
 
 body.show-timeline-line::before, .dark-mode body.show-timeline-line::before { display: none !important; }
 
-section { padding: 0 4rem; box-sizing: border-box; width: 100%; position: relative; z-index: 1; }
+section { padding: 0 4rem; margin-top: 2rem; box-sizing: border-box; width: 100%; position: relative; z-index: 1; }
 section h1, section h2 { text-align: left; color: #666; margin-bottom: 1.5rem; font-size: 2.5rem; font-weight: 600; }
 section p { text-align: left; padding: 0 2rem; margin-bottom: 1rem; color: rgba(0,0,0,0.8); line-height: 1.6; }
 
@@ -150,12 +150,26 @@ hr { width: 100%; }
 .read-the-docs { color: #888; }
 
 .about-content { background: none; border: none; box-shadow: none; padding: 0; margin: 0; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; }
-#timeline-section { position: relative; padding-top: 0; margin-top: 0; z-index: 2; top: 0; }
-#about { background: var(--card-bg, #23272a); color: var(--text, #fff); width: 90%; max-width: 900px; margin: 3.5rem auto 2rem auto; border-radius: 16px; box-shadow: 0 6px 32px rgba(0,0,0,0.18); padding: 2.5rem 2rem 2rem 2rem; border: 1.5px solid var(--card-border, #333); position: relative; z-index: 2; }
+#timeline-section { position: relative; padding-top: 0; z-index: 2; top: 0; }
+#about {
+  background: var(--card-bg, #23272a);
+  color: var(--text, #fff);
+  width: 90%;
+  max-width: 900px;
+  margin: 3.5rem auto 2rem auto;
+  border-radius: 16px;
+  box-shadow: none;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border: 1.5px solid var(--card-border, #333);
+  position: relative;
+  z-index: 2;
+  transition: box-shadow 0.3s ease;
+}
+
 
 @media screen and (max-width: 768px) {
   .timeline-line-vertical { left: 20px; transform: none; }
-  #about { margin: 1.2rem auto; text-align: center; width: 95%; max-width: 98vw; padding: 0; }
+  #about { text-align: center; width: 95%; max-width: 98vw; padding: 0; }
   #about h2 { margin: 0.5rem 0 1rem 0; padding: 0; text-align: center; }
   .about-content { text-align: center; margin: 0 auto; padding: 0.5rem 0.5rem 1.5rem 0.5rem; width: 100%; }
 }
@@ -163,10 +177,9 @@ hr { width: 100%; }
 @media screen and (max-width: 768px) {
   body::before { left: 20px; transform: none; height: calc(100vh + 40vh); background: linear-gradient(to bottom,rgba(100,100,255,0.4) 0%,rgba(100,100,255,0.2) 85%,rgba(100,100,255,0.05) 100%); }
   section { padding: 0 1rem; }
-  section h1, section h2 { text-align: center; font-size: 2rem; width: 100%; padding: 0 1rem; }
+  section h1, section h2 { text-align: center; font-size: 2rem; width: 100%; }
   section p { padding: 0 0.5rem; font-size: 0.95rem; line-height: 1.6; }
   .about-content { margin: 0 auto 3rem; padding: 1.5rem; border-radius: 15px; }
-  #timeline-section { margin-top: -1rem; }
   .home-section h1 { font-size: 3.5rem; text-align: center; width: 100%; }
   .home-content { width: 90%; padding: 1.5rem; }
 }
@@ -177,7 +190,7 @@ hr { width: 100%; }
   .home-section h1 { font-size: 2.8rem; margin: 0.5rem 0; }
 }
 
-.dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 { color: #fff !important; }
+.dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 { color: var(--text) !important; }
 .dark-mode p { color: #B0B0B0 !important; }
 .dark-mode .contact-icons .contact-icon, .dark-mode .contact-icons .icon-github, .dark-mode .contact-icons .icon-linkedin, .dark-mode .contact-icons .icon-email, .dark-mode .home-content .contact-icon, .dark-mode .home-content .icon-github, .dark-mode .home-content .icon-linkedin, .dark-mode .home-content .icon-email {
   background: linear-gradient(90deg, #fff 0%, #b2fefa 40%, #a1c4fd 80%, #fbc2eb 100%);
