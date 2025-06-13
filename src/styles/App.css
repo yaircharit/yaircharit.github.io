@@ -26,7 +26,7 @@ body, section, main {
 }
 
 .project-page, .project-content, .project-card, .about-content, .timeline, .contact-section {
-  background: var(--card-bg);
+  background: transparent;
   color: var(--text);
   border-color: var(--card-border);
   /* box-shadow: var(--shadow); */
@@ -65,7 +65,7 @@ body, section, main {
 ::-webkit-scrollbar-thumb { background: var(--border); }
 
 #root { width: 100%; text-align: center; }
-main { padding-top: 5rem; width: 100%; overflow-x: hidden; position: relative; }
+main { width: 100%; overflow-x: hidden; position: relative; }
 
 .timeline-line-container { position: relative; }
 .timeline-line-vertical {
@@ -97,7 +97,7 @@ main { padding-top: 5rem; width: 100%; overflow-x: hidden; position: relative; }
   100% { top: 100%; opacity: 0; }
 }
 .dark-mode .timeline-line-vertical {
-  background: linear-gradient(to bottom,rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.3) 85%,rgba(255,255,255,0.1) 100%);
+  background: linear-gradient(to bottom, transparent 0%,rgba(255,255,255,0.7) 2%,rgba(255,255,255,0.3) 85%,rgba(255,255,255,0.1) 100%);
 }
 .dark-mode .timeline-line-vertical::after {
   background: radial-gradient(circle, #fff 0%, #b2fefa 60%, transparent 100%);
@@ -152,7 +152,7 @@ hr { width: 100%; }
 .about-content { background: none; border: none; box-shadow: none; padding: 0; margin: 0; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; }
 #timeline-section { position: relative; padding-top: 0; z-index: 2; top: 0; }
 #about {
-  background: var(--card-bg, #23272a);
+  background: transparent;
   color: var(--text, #fff);
   width: 90%;
   max-width: 900px;
@@ -160,7 +160,6 @@ hr { width: 100%; }
   border-radius: 16px;
   box-shadow: none;
   padding: 2.5rem 2rem 2rem 2rem;
-  border: 1.5px solid var(--card-border, #333);
   position: relative;
   z-index: 2;
   transition: box-shadow 0.3s ease;
