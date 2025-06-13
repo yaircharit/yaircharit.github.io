@@ -177,12 +177,12 @@
 }
 
 .timeline-item:nth-child(odd).expanded .timeline-content {
-  transform: translateX(-10px);
+  transform: translateX(-2px);
   box-shadow: -8px 4px 24px rgba(0, 0, 0, 0.15);
 }
 
 .timeline-item:nth-child(even).expanded .timeline-content {
-  transform: translateX(10px);
+  transform: translateX(2px);
   box-shadow: 8px 4px 24px rgba(0, 0, 0, 0.15);
 }
 
@@ -279,7 +279,7 @@
 
   .timeline-item:nth-child(odd).expanded .timeline-content,
   .timeline-item:nth-child(even).expanded .timeline-content {
-    transform: translateX(10px);
+    transform: translateX(2px);
     box-shadow: 8px 4px 24px rgba(0, 0, 0, 0.15);
   }
 }
