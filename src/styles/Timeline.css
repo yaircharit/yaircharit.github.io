@@ -240,14 +240,14 @@
   .timeline-item,
   .timeline-item:nth-child(odd),
   .timeline-item:nth-child(even) {
-    width: calc(100% - 40px);
-    margin-left: 40px;
+    width: calc(90% - 4vw);
+    margin-left: 4vw;
   }
 
   .timeline-dot,
   .timeline-item:nth-child(odd) .timeline-dot,
   .timeline-item:nth-child(even) .timeline-dot {
-    left: -3rem;
+    left: -5.5vw;
     right: auto;
     transform: translateY(-50%);
   }
@@ -255,19 +255,32 @@
   .timeline-date,
   .timeline-item:nth-child(odd) .timeline-date,
   .timeline-item:nth-child(even) .timeline-date {
-    left: calc(100% + 20px);
+    position: relative;
+    left: 0;
     right: auto;
+    top: 0;
+    transform: none;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: left;
   }
 
   .timeline-content,
   .timeline-item:nth-child(odd) .timeline-content,
   .timeline-item:nth-child(even) .timeline-content {
-    width: 100%;
+    width: 90%;
+    margin: auto 4vw;
   }
 
   .timeline-item:nth-child(odd) .timeline-content::after,
   .timeline-item:nth-child(even) .timeline-content::after {
     display: none;
+  }
+
+  .timeline-item:nth-child(odd).expanded .timeline-content,
+  .timeline-item:nth-child(even).expanded .timeline-content {
+    transform: translateX(10px);
+    box-shadow: 8px 4px 24px rgba(0, 0, 0, 0.15);
   }
 }
 
