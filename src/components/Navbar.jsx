@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import '../styles/Navbar.css'
 import logo from '../assets/YC_Logo_Red.png'
 import projectsData from '../data/projects.json'
-import contactDetails from '../data/contact.json'
 import navbarData from '../data/navbar.json'
 import DropdownMenu from './DropdownMenu'
 
@@ -35,9 +34,8 @@ export default function Navbar() {
 
   const handleNavigation = (e, path) => {
     e.preventDefault()
-    if (path === '/') window.location.hash = '#/'
-    else if (path.startsWith('#')) window.location.hash = '#/' + path
-    else if (path.startsWith('/')) window.location.hash = '#' + path
+
+    window.location.hash = path
     setIsOpen(false)
   }
 
@@ -59,13 +57,10 @@ export default function Navbar() {
         </a>
         <ul className={`navbar-menu${isOpen ? ' active' : ''}`}>
           {navbarData.menu.map(item => {
-            if (item.type === 'anchor')
-              return <li key={item.label}><a href={item.target} onClick={e => handleNavigation(e, item.target)}>{item.label}</a></li>
             if (item.type === 'dropdown')
               return <DropdownMenu key={item.label} label={item.label} items={getDropdownItems(item)} isOpen={openDropdown === item.label} onToggle={() => setOpenDropdown(openDropdown === item.label ? null : item.label)} onMouseEnter={() => { if (dropdownTimeout) { clearTimeout(dropdownTimeout); setDropdownTimeout(null) } setOpenDropdown(item.label) }} onMouseLeave={() => setDropdownTimeout(setTimeout(() => setOpenDropdown(null), 1000))} handleNavigation={handleNavigation} />
-            if (item.type === 'external' && item.label === 'Resume')
-              return <li key={item.label}><a href={contactDetails.resumeLink} target="_blank" rel="noopener noreferrer">{item.label}</a></li>
-            return null
+            
+            return <li key={item.label}><a href={item.target} onClick={e => handleNavigation(e, item.target)}>{item.label}</a></li>
           })}
         </ul>
       </div>

@@ -115,6 +115,9 @@ a {
   transition: transform 0.3s ease;
   padding: 0.5rem;
   margin-left: 0.5rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
 }
 
 .project-repo:hover {
@@ -122,7 +125,6 @@ a {
 }
 
 .dark-mode .project-repo {
-  background: linear-gradient(90deg, #fff 0%, #b2fefa 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -130,7 +132,6 @@ a {
 }
 
 .dark-mode .project-repo:hover {
-  background: linear-gradient(90deg, #b2fefa 0%, #fff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

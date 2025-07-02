@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
-import timelineData from '../data/timeline.json'
+import {timelineData} from '../data/timeline.json'
 import '../styles/Timeline.css'
 
 export default function Timeline() {
   const [expandedId, setExpandedId] = useState(null)
   useEffect(() => {
-    setExpandedId(timelineData.timeline.at(-1).id)
+    setExpandedId(timelineData.at(-1).id)
   }, [])
   return (
     <div className="timeline">
       <div className="timeline-line"></div>
       <div className="timeline-items">
-        {[...timelineData.timeline].reverse().map(item => (
+        {[...timelineData].reverse().map(item => (
           <div key={item.id} className={`timeline-item${expandedId === item.id ? ' expanded' : ''}`} onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}>
             <div className="timeline-dot"></div>
             <div className="timeline-date">{item.year}</div>

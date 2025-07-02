@@ -1,0 +1,41 @@
+.resume-container {
+  min-height: 100vh;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: --bg-secondary;
+}
+
+.resume-download-btn {
+  margin: 1.5rem;
+  padding: 0.5rem 1.2rem;
+  background: #4f6cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.resume-download-btn:hover,
+.resume-download-btn:focus {
+  background: #3a4db7;
+}
+
+.resume-iframe {
+  width: 794px;
+  height: 1123px;
+  border: none;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 8px;
+  max-width: 95vw;
+}
+
