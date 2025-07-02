@@ -39,3 +39,10 @@
   max-width: 95vw;
 }
 
+
+@media (max-width: 720px) {
+  .resume-iframe {
+    height: 550px; /* smaller height for mobile */
+  }
+}
+
