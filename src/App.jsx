@@ -7,6 +7,8 @@ import AnimatedBackground from './components/AnimatedBackground'
 import Timeline from './components/Timeline'
 import './styles/App.css'
 import { useEffect } from 'react'
+import Resume from './components/Resume';
+import {aboutData} from './data/myData.json'
 
 function useShowTimelineLineOnHome() {
   const location = useLocation()
@@ -81,16 +83,13 @@ export default function App() {
                   <div className="home-content">
                     <h1>Yair Charit</h1>
                     <div className="title-underline"></div>
-                    <ContactIcons />
+                    <ContactIcons ignoreDarkMode />
                   </div>
                 </section>
                 <section id="about">
                   <h2>About <span className="gradient-text">Me</span></h2>
                   <div className="about-content">
-                    <p>Detail-oriented and resourceful SQA Automation Engineer with hands-on experience in developing scalable automated testing systems for medical devices.<br />
-                      Proven track record in test automation, system integration, and validation, with a strong foundation in object-oriented programming and scripting.<br />
-                      Skilled in collaborating with cross-functional teams to ensure reliability, performance, and compliance. <br />
-                      Now seeking a challenging role to contribute to the quality, safety, and security of complex software systems.</p>
+                    <p dangerouslySetInnerHTML={{ __html: aboutData.join('<br/>') }} />
                   </div>
                 </section>
                 <section id="timeline-section">
@@ -104,6 +103,7 @@ export default function App() {
             }
           />
           <Route path="/project/:projectId" element={<ProjectPage />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
         <section id="contact" className="contact-section">
           <hr />

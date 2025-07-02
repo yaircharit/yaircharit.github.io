@@ -280,12 +280,10 @@ const AnimatedBackground = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    canvas.addEventListener('click', initialize);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', handleResize);
-      canvas.removeEventListener('click', initialize);
     };
   }, []);
 

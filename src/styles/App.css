@@ -200,3 +200,11 @@ hr { width: 100%; }
   color: #fff !important;
   fill: currentColor !important;
 }
+
+.contact-icons.ignore-darkmode,
+.contact-icons.ignore-darkmode .contact-icon,
+.contact-icons.ignore-darkmode svg {
+  color: #222 !important;
+  filter: none !important;
+  background: none !important;
+}
