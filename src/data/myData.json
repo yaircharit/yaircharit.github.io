@@ -5,10 +5,10 @@
     "Skilled in collaborating with cross-functional teams to ensure reliability, performance, and compliance.",
     "Now seeking a challenging role to contribute to the quality, safety, and security of complex software systems."
   ], 
-  "contactData": {
-    "Resume" : "/resume",
-    "GitHub" : "https://github.com/yaircharit",
-    "LinkedIn" : "https://linkedin.com/in/yair-charit",
-    "Email" : "mailto:yaircharit@gmail.com"
-  }
+  "contactData": [
+    {"label": "Resume" ,"url": "/resume", "icon": "FaFile"},
+    {"label": "GitHub" , "url": "https://github.com/yaircharit", "icon": "FaGithub"},
+    {"label": "LinkedIn" , "url": "https://linkedin.com/in/yair-charit", "icon": "FaLinkedin"},
+    {"label": "Email" , "url": "mailto:yaircharit@gmail.com", "icon": "FaEnvelope"}
+  ]
 }

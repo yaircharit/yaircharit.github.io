@@ -11,7 +11,7 @@ function ProjectCard({ project }) {
     </div>
   )
   const repo = project.repository && (
-    <a href={project.repository} className="project-repo" target="_blank" rel="noopener noreferrer"><Icon name="github" /></a>
+    <a href={project.repository} className="project-repo" target="_blank" rel="noopener noreferrer"><Icon name="FaGithub" /></a>
   )
   const titleLink = project.link
     ? (project.link.endsWith('.html')

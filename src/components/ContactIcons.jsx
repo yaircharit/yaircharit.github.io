@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {contactData} from "../data/myData.json";
+import myData from "../data/myData.json";
 import Icon from "./Icon";
 
 function isExternal(url) {
@@ -8,9 +8,10 @@ function isExternal(url) {
 }
 
 export default function ContactIcons({ ignoreDarkMode = false }) {
+  const contactData = myData.contactData || [];
   return (
     <div className={`contact-icons${ignoreDarkMode ? " ignore-darkmode" : ""}`}>
-      {Object.entries(contactData).map(([label, url]) =>
+      {contactData.map(({ label, url, icon }) =>
         isExternal(url) ? (
           <a
             key={label}
@@ -21,7 +22,7 @@ export default function ContactIcons({ ignoreDarkMode = false }) {
             aria-label={label}
             style={{ fontSize: "2rem", margin: "0 0.5rem" }}
           >
-            <Icon name={label} />
+            <Icon name={icon} size={28} />
           </a>
         ) : (
           <Link
@@ -31,7 +32,7 @@ export default function ContactIcons({ ignoreDarkMode = false }) {
             aria-label={label}
             style={{ fontSize: "2rem", margin: "0 0.5rem" }}
           >
-            <Icon name={label} />
+            <Icon name={icon} size={28} />
           </Link>
         )
       )}
