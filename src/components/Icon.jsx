@@ -1,17 +1,9 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaFile } from "react-icons/fa";
+import * as FaIcons from "react-icons/fa";
 
-// Map icon names to icon components
-const Icons = {
-  resume: FaFile,
-  github: FaGithub,
-  linkedin: FaLinkedin,
-  email: FaEnvelope,
-};
-
-
-export default function Icon({ name, size = 32, color = "inherit", ...props }) {
-  const Icon = Icons[name.toLowerCase()];
-  if (!Icon) return null;
-  return <Icon size={size} color={color} {...props} />;
+export default function Icon({ name, size = 32, color, ...props }) {
+    // Use CSS variable for color if not explicitly set
+    const iconColor = color ?? "var(--icon-color, currentColor)";
+    const IconComponent = FaIcons[name];
+    if (!IconComponent) return null;
+    return <IconComponent size={size} color={iconColor} {...props} />;
 }

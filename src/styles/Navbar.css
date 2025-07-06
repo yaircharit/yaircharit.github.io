@@ -19,16 +19,16 @@
   backdrop-filter: blur(10px);
 }
 
-.navbar-brand {
+.left-section {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-.navbar-brand a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--text, #646cff);
+.right-section {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+  gap: 0.5rem;
 }
 
 .hamburger {
@@ -38,6 +38,7 @@
   background: none;
   border: none;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .hamburger span {
@@ -45,24 +46,11 @@
   height: 3px;
   background-color: var(--text);
   transition: 0.3s;
+  display: block;
 }
 
-.left-section {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-icon {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  margin-right: 2rem;
-}
-
-.nav-logo {
-  margin: 1rem;
-  height: 2rem;
-  width: auto;
+.mobile-only {
+  display: none;
 }
 
 .navbar-menu {
@@ -82,6 +70,7 @@
   margin: 0.3rem 0.6rem;
   white-space: nowrap;
   background: transparent;
+  text-decoration: none;
 }
 
 .dropdown {
@@ -108,13 +97,32 @@
 .navbar-menu li a:hover {
   background-color: var(--border);
 }
-.dark-mode .nav-logo {
+
+.dark-mode .navbar-logo {
   filter: brightness(0) invert(1) contrast(1.2) saturate(1.5);
 }
+
+.navbar-logo {
+  height: 36px;
+  cursor: pointer;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure vertical alignment for logo and dark mode toggle */
+.dark-mode-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
-  .dark-mode .nav-logo {
-    filter: brightness(0) invert(1) contrast(1.2) saturate(1.5);
-  }
   .navbar {
     flex-wrap: wrap;
     padding: 0.5rem 0;
@@ -123,8 +131,13 @@
   .right-section {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    margin-right: 1.2rem;
+    gap: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: auto; /* Pushes right-section to the far right */
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
+    height: 100%;
   }
 
   .dark-mode-toggle {
@@ -132,6 +145,15 @@
     margin-right: 0.5rem;
     font-size: 2rem;
     padding: 0.3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    margin-left: 0.5rem;
+    height: 36px;
+    display: flex;
+    align-items: center;
   }
 
   .hamburger {
@@ -139,30 +161,40 @@
     margin-left: 0.5rem;
   }
 
+  .mobile-only {
+    display: flex;
+  }
+
   .navbar-menu {
     display: none;
     flex-direction: column;
     align-items: stretch;
-    gap: 0.5rem;
-    background-color: transparent;
+    background: var(--bg-secondary);
     position: absolute;
     top: 100%;
     left: 0;
+    z-index: 1001;
   }
 
   .navbar-menu.active {
     display: flex;
   }
 
-  .navbar-menu li a {
-    color: var(--text);
+  .dropdown {
+    position: relative;
+    width: 100%;
   }
-  
+
   .dropdown-menu {
-    position: absolute;
-    left: 100%;
-    top: 0;
+    display: none;
+    position: static;
+    background: var(--bg-secondary);
     box-shadow: none;
-    background-color: var(--bg-secondary);
+    width: 100%;
+    z-index: 1002;
+  }
+
+  .dropdown-menu.active {
+    display: block;
   }
 }
