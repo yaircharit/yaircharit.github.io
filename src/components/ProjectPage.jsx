@@ -21,6 +21,9 @@ export default function ProjectPage() {
 
   const isHtmlLink = project.link && project.link.endsWith('.html');
   const handleZoom = amt => setZoom(z => Math.max(0.25, Math.min(z + amt, 2)));
+  const repo = project.repository && (
+    <a href={project.repository} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 'auto' }}><Icon name="FaGithub" /></a>
+  )
 
   return (
     <div className="project-page">
@@ -32,17 +35,7 @@ export default function ProjectPage() {
           {project.technologies.map((tech, index) => (
             <span key={index} className="technology-tag">{tech}</span>
           ))}
-          {project.repository && (
-            <a 
-              href={project.repository} 
-              className="github-icon" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{ marginLeft: 'auto' }}
-            >
-              <Icon name="github" />
-            </a>
-          )}
+          {repo}
         </div>
         <p className="project-description">{project.description}</p>
       </div>
