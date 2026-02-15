@@ -37,7 +37,7 @@ export default function ProjectPage() {
           ))}
           {repo}
         </div>
-        <p className="project-description">{project.description}</p>
+        <p className="project-description">{(project.fullDescription) ? project.fullDescription : project.description}</p>
       </div>
       {project.image && (
         <img 
