@@ -190,7 +190,8 @@
     position: static;
     background: var(--bg-secondary);
     box-shadow: none;
-    width: 100%;
+    margin-left: 1rem;
+    width: auto;
     z-index: 1002;
   }
 
