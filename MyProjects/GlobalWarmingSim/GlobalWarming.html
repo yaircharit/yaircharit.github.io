@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="GlobalWarming.css">
+    <title>Game of Global Warming</title>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script defer src="./GlobalWarming.js"></script>
+</head>
+
+<body>
+    <button id="button-help" type="button" aria-haspopup="dialog" aria-controls="help-modal" aria-label="Help">?</button>
+    <div id='gametable'>
+        <div id='sidebar'>
+            <div id='buttons'>
+                <button id="button-step" type="button">1 Step</button>
+                <button id="button-run" type="button">Run</button>
+                <button id="button-stop" type="button">Stop</button>
+                <center><label id='time-label'>Time: 0</label></center>
+            </div>
+            <hr style="width: 90%; border-color:light-gray">
+            <label for='vars' class='vars-label' style="width: fit-content;">Polution Modifier</label>
+            <div id='vars'></div>
+            <hr style="width: 90%; border-color:light-gray">
+            <div id='update-vars'></div>
+        </div>
+        <canvas id="chart"></canvas>
+        <div id='gameboard'></div>
+    </div>
+
+    <div id="help-modal" class="modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="help-title" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="help-title">How to use</h2>
+                <button id="help-close" type="button" class="modal-close" aria-label="Close help">×</button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li><b>1 Step</b>: advance the simulation by one tick.</li>
+                    <li><b>Run</b>: start running continuously (updates every ~250ms).</li>
+                    <li><b>Stop</b>: stop the continuous run.</li>
+                    <li><b>Pollution Modifier</b>: change how much pollution each tile type generates/absorbs.</li>
+                    <li><b>env.*</b>: tweak pollution and temperature thresholds (freeze/scorch/deforest/etc.) that control environment transitions.</li>
+                    <li><b>Chart</b>: shows average temperature, pollution, and cities over time.</li>
+                    <li><b>Zoom</b>: zoom in and out of the map.</li>
+                </ul>
+                <div class="modal-hint">Tip: Press <b>Esc</b> to close this window.</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

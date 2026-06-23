@@ -1,0 +1,200 @@
+
+:root {
+    --tile-width: 50px;
+    --tile-margin: 2px;
+    --board-size: 51;
+    --board-width: 2754px; /*  = (tileWidth+(tileMargin*2))*boardSize  */
+
+    --default-color: lightgray;
+    --glacier-color: lightblue;
+    --water-color: rgb(86, 155, 179);
+    --ground-color: rgb(168, 137, 69);
+    --forest-color: rgb(36, 121, 36);
+    --city-color: rgb(126, 61, 126);
+    --scorched-color: gray;
+}
+
+body{
+    background-color: rgb(105, 82, 32);
+    
+}
+
+label{
+    font-size: 9px;
+}
+
+#gametable{
+    display: inline-flex;
+    justify-content: center;
+}
+
+#gameboard {
+    display: inline-flex; 
+    flex-wrap: wrap;
+    width: var(--board-width);
+}
+
+.game-tile {
+    display: flex; 
+    flex-direction: column;
+    font-size: large;
+    /* flex-wrap: wrap; */
+    width:              var(--tile-width);
+    height:             var(--tile-width);
+    background-color:   var(--default-color);
+    margin:             var(--tile-margin)
+}
+
+#chart{
+    max-height: 20%;
+    max-width: 40%;
+    position: fixed;
+    font-size: 40px;
+    right: 0;
+    bottom: 0;
+    background-color: lightyellow;
+}
+
+#sidebar{
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 0;
+    top: 0;
+    position: fixed;
+    background-color: rgb(105, 82, 32);
+    border-radius: 0 0 0 50px;
+    border: 3px rgb(207, 207, 207) ;
+    border-style: double;
+    border-top: none;
+    border-right: none;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+label.vars-label,input,#time-label{
+    width: 3vw;
+    font-size: 1vw;
+    margin: 0.5vw;
+
+}
+
+input{
+  background-color: lightgray;  
+}
+
+.var-elements{
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+
+#buttons,#vars,#update-vars{
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+button{
+    font-size: 1vw;
+    color: rgb(207, 207, 207);
+    border: none ;
+    border-radius: 15px;
+    padding: 1vw;
+    margin: 0.5em;
+    
+}
+
+button#button-step, button#button-run{
+    background-color: rgb(66, 146, 66);
+}
+
+button#button-stop{
+    background-color: maroon;
+}
+
+button#button-help{
+    background-color: rgb(70, 70, 70);
+    border-radius: 999px;
+    width: clamp(22px, 2.2vw, 32px);
+    height: clamp(22px, 2.2vw, 32px);
+    padding: 0;
+    line-height: clamp(22px, 2.2vw, 32px);
+    font-weight: 700;
+    position: fixed;
+    left: clamp(8px, 1.2vw, 14px);
+    top: clamp(8px, 1.2vw, 14px);
+    z-index: 10000;
+    font-size: clamp(12px, 1.2vw, 16px);
+}
+
+.modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal.is-hidden{
+    display: none;
+}
+
+.modal-content{
+    width: min(42rem, 92vw);
+    max-height: 80vh;
+    overflow: auto;
+    background: rgb(255, 255, 240);
+    color: rgb(30, 30, 30);
+    border-radius: clamp(10px, 1.2vw, 16px);
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0 clamp(10px, 1.6vw, 14px) clamp(28px, 4vw, 44px) rgba(0,0,0,0.35);
+}
+
+.modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(10px, 1.2vw, 14px);
+    padding: clamp(10px, 1.4vw, 16px) clamp(12px, 1.6vw, 18px);
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.modal-header h2{
+    margin: 0;
+    font-size: clamp(16px, 1.6vw, 22px);
+}
+
+.modal-close{
+    background: transparent;
+    color: rgb(30, 30, 30);
+    border: none;
+    border-radius: 10px;
+    padding: clamp(6px, 0.8vw, 10px) clamp(8px, 1vw, 12px);
+    margin: 0;
+    font-size: clamp(18px, 1.8vw, 24px);
+    line-height: 1;
+}
+
+.modal-close:hover{
+    background: rgba(0,0,0,0.06);
+}
+
+.modal-body{
+    padding: clamp(10px, 1.4vw, 16px) clamp(12px, 1.6vw, 18px) clamp(12px, 1.8vw, 20px) clamp(12px, 1.6vw, 18px);
+    font-size: clamp(12px, 1.1vw, 16px);
+}
+
+.modal-body ul{
+    margin: 0;
+    padding-left: clamp(16px, 1.6vw, 22px);
+}
+
+.modal-hint{
+    margin-top: clamp(10px, 1.2vw, 14px);
+    font-size: clamp(11px, 1vw, 15px);
+    opacity: 0.85;
+}

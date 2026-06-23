@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tetris ASM in Browser</title>
+  <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  <style>
+    body { margin: 0; background: black; }
+    #jsdos { width: 100vw; height: 80vh; }
+  </style>
+</head>
+<body>
+  <div id="jsdos"></div>
+  <script>
+    Dos(document.getElementById("jsdos"), {
+      wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js"
+    }).ready((fs, main) => {
+      fetch("TETRIS.EXE")
+        .then(response => response.arrayBuffer())
+        .then(buffer => {
+          fs.createFile("TETRIS.EXE", new Uint8Array(buffer));
+          main(["TETRIS.EXE"]);
+        });
+    });
+  </script>
+</body>
+</html> 
