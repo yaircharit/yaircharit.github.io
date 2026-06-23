@@ -5,7 +5,7 @@ export default function DropdownMenu({ label, items, isOpen, onToggle, onMouseEn
     <li className="dropdown" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <a onClick={onToggle} style={{ cursor: 'pointer' }}>{label} {isOpen ? '▼' : '▶'}</a>
       <ul className={`dropdown-menu${isOpen ? ' active' : ''}`}>
-        {items.map((item, i) => (
+        {items.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0)).reverse().map((item, i) => (
           <li key={i}>
             <a
               href={item.href}
