@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "portfolio",
-      "sortOrder": 0,
+      "sortOrder": 0, 
       "title": "Portfolio Website",
       "description": "A personal portfolio website built with React and Vite, built with the help of Claude 3.5.",
       "image": "/images/portfolio.png",
@@ -70,7 +70,7 @@
       "description": "Based in Conway's Game of Life, Metushelah Finder is a simulation that searches for the largest and longest-lived pattern in a cellular automaton. The program generates random initial configurations and evolves them according to the rules of Conway's Game of Life, tracking the lifespan of each pattern. The goal is to identify and catalog patterns that persist for extended periods, contributing to the study of cellular automata and emergent behavior.",
       "technologies": ["Python", "Genetic Algorithm"],
       "repository": "https://github.com/yaircharit/OU-MS-of-CS/tree/BioComp-MMN12",
-      "link": "/MyProjects/MetushelahFinder/index.html"
+      "link": "/MyProjects/MetushelahFinder/MetushExplainer.html"
     }
   ]
 }

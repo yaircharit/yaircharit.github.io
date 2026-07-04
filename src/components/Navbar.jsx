@@ -42,8 +42,8 @@ export default function Navbar() {
   const getProjectDropdownItems = () =>
     projectsData.projects.map(project =>
       project.link && !project.link.endsWith('.html')
-        ? { label: project.title, href: project.link, target: '_blank', rel: 'noopener noreferrer' }
-        : { label: project.title, href: `/project/${project.id}`, onClick: e => handleNavigation(e, `/project/${project.id}`) }
+        ? { label: project.title, sortOrder: project.sortOrder, href: project.link, target: '_blank', rel: 'noopener noreferrer' }
+        : { label: project.title, sortOrder: project.sortOrder, href: `/project/${project.id}`, onClick: e => handleNavigation(e, `/project/${project.id}`) }
     )
 
   const getDropdownItems = item =>
