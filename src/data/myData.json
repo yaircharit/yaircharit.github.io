@@ -1,10 +1,7 @@
 {
-  "aboutData": [
-    "Detail-oriented and resourceful SQA Automation Engineer with hands-on experience in developing scalable automated testing systems for medical devices.",
-    "Proven track record in test automation, system integration, and validation, with a strong foundation in object-oriented programming and scripting.",
-    "Skilled in collaborating with cross-functional teams to ensure reliability, performance, and compliance.",
-    "Now seeking a challenging role to contribute to the quality, safety, and security of complex software systems."
-  ], 
+  "aboutData": 
+    "Detail-oriented and resourceful SQA Automation Engineer with hands-on experience in developing scalable automated testing systems for medical devices.\nProven track record in test automation, system integration, and validation, with a strong foundation in object-oriented programming and scripting.\nSkilled in collaborating with cross-functional teams to ensure reliability, performance, and compliance.\nNow seeking a challenging role to contribute to the quality, safety, and security of complex software systems.\n"
+  , 
   "contactData": [
     {"label": "Resume" ,"url": "/resume", "icon": "FaFile"},
     {"label": "GitHub" , "url": "https://github.com/yaircharit", "icon": "FaGithub"},

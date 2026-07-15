@@ -33,7 +33,7 @@ function ProjectCard({ project }) {
 export default function ProjectCardList() {
   return (
     <div className="projects-container">
-      {projectsData.projects.map(project => (
+      {projectsData.projects.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0)).reverse().map(project => (
         <div key={project.id} className="project-card">
           <ProjectCard project={project} />
         </div>

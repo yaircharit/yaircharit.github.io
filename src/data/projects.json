@@ -2,6 +2,7 @@
   "projects": [
     {
       "id": "portfolio",
+      "sortOrder": 0, 
       "title": "Portfolio Website",
       "description": "A personal portfolio website built with React and Vite, built with the help of Claude 3.5.",
       "image": "/images/portfolio.png",
@@ -11,6 +12,7 @@
     },
     {
       "id": "DashboardPlus", 
+      "sortOrder": 1,
       "title": "Dashboard Plus",
       "description": "A stand-alone dashboard HTML page with an automated message board and organization containers for your repositorys",
       "technologies": ["Javascript", "HTML", "CSS"],
@@ -19,6 +21,7 @@
     },
     {
       "id": "Global Warming Simulator",
+      "sortOrder": 2,
       "title": "Global Warming Simulator",
       "description": "A 'Game of Life' style simulation of global warming, Each cell represents a part of the world, and each turn the temperature of each cell is affected by its neighbor. Cities create pollution and the wind moves pollution around. The player can change the values of pollution emissions of each cell type, trying to achieve balance.",
       "technologies": ["Javascript", "HTML", "CSS"],
@@ -27,12 +30,14 @@
     },
     {
       "id": "Client-Server",
+      "sortOrder": 2,
       "title": "Client-Server Application",
       "description": "Client side developed in C++, Server side developed in Python. Using AES encryption- register as a user and add other users as friends to establish a secure connection (RSA encryption keys).Once the connection was made use the server's SQL database to send each other text messages and files upon login!",
       "technologies": ["C++", "Python", "SQL"]
     },
     {
       "id": "Simon Says Game",
+      "sortOrder": 2,
       "title": "Simon Says Game",
       "description": "A simple game of Simon Says, developed in Unity with C#, featuring Firebase integration for storing high scores and a REST API for fetching game data.\nIncludes a separate abstract and generic project to load configuration data of all types.",
       "technologies": ["Unity", "C#", "Firebase", "RestAPI"],
@@ -41,6 +46,7 @@
     },
     {      
       "id": "Mailing Automation",
+      "sortOrder": 1,
       "title": "Mailing Automation",
       "description": "Dina.co.il is an online shop which sells paintings on order. Each order that is placed is being saved in the site's databases. Every hour the system generates all e-mails for all new orders and sends it to the printing factory. As it was tailored to their needs, there is no need for human involvment anymore, it even adds an image of the required painting! Automation at its best!",
       "fullDescription": "Developed an automated email generation and delivery system for Dina.co.il, a custom painting e-commerce platform. The system automatically processes new orders from the site's database, generates customized emails with the painting images, and sends them directly to the printing factory.\n\nKey Features:\n- Automated hourly checks for new orders\n- Dynamic email generation with order details\n- Image attachment automation\n- Error handling and logging\n- Zero human intervention required\n\nThe automation has significantly reduced manual processing time and eliminated human errors in order communication.",
@@ -49,12 +55,22 @@
     },
     {
       "id": "Antz",
+      "sortOrder": 3,
       "title": "Antz",
-      "description": "A 3D simulation focused on autonomous agents using state-based AI, Ant Colony Optimization (pheromone pathfinding), and a genetic algorithm that drives colony evolution. The player defines the queen’s genome, shaping the behavioral traits of future generations.",
-      "fullDescription": "Antz is a 3D simulation exploring decentralized AI systems and evolutionary dynamics within an ant colony.\nRather than directly controlling units, the player influences the system at a genetic level by defining the queen’s genome. From there, behavior emerges autonomously.\nCurrent Implemented Systems\nAutonomous Agent AI\nEach ant operates using state-based logic\nNo predefined roles (no workers/soldiers yet)\nAnts independently search for food and return it to the nest\nBehavior decisions are driven by internal state (energy, environment input)\nThis creates decentralized behavior without global control logic.\nAnt Colony Optimization (ACO) Pathfinding\nPheromone-based pathfinding system\nAnts deposit pheromones while traveling\nOther ants probabilistically follow stronger pheromone trails\nTrails decay over time, allowing dynamic path adaptation\nThis enables emergent shortest-path discovery without traditional centralized pathfinding algorithms.\nGenomic Evolution System\nThe queen has a configurable genome selected by the player at the start\nGenes influence colony traits (e.g., reproduction interval and other evolving parameters)\nOffspring inherit genetic traits\nDesigned to evolve through a genetic algorithm framework\nThis shifts control from micromanagement to system-level tuning.\nResource & Survival Mechanics\nAnts have HP and Energy\nEvery action consumes energy\nWhen energy reaches zero, HP begins to drop\nFood restores energy\nColony survival depends on resource efficiency\nThis creates natural evolutionary pressure within the simulation.\nQueen System\nThe queen is stationary\nShe produces broods at intervals determined by her genome\nColony growth rate is genetically controlled\nDesign Philosophy\nThis project explores:\nDecentralized intelligence\nEmergent behavior from simple rules\nEvolutionary systems\nSwarm algorithms\nSimulation over scripted gameplay\nInstead of designing fixed mechanics, the goal is to build interacting systems that produce complex behavior organically.\nWhat This Demonstrates\nStrong C# architecture in Unity\nImplementation of Ant Colony Optimization\nGenetic algorithm design and integration\nState-machine AI systems\nSimulation-oriented systems thinking\nRoadmap (Planned)\nRole differentiation (workers, scouts, etc.)\nFully editable 3D terrain\nNest construction systems\nPlayer interaction beyond genome selection\nExpanded evolutionary pressure and mutation systems",
+      "description": "A 3D simulation focused on autonomous agents using state-based AI, Ant Colony Optimization (pheromone pathfinding), and a genetic algorithm that drives colony evolution. The player defines the queen's genome, shaping the behavioral traits of future generations.",
+      "fullDescription": "Antz is a 3D simulation exploring decentralized AI systems and evolutionary dynamics within an ant colony. Rather than directly controlling units, the player influences the system at a genetic level by defining the queen's genome. From there, behavior emerges autonomously.\n\nEach ant operates using state-based logic without predefined roles. Ants independently search for food and return it to the nest, with behavior decisions driven by internal state such as energy and environmental input. This creates decentralized behavior without global control logic. The colony also employs a pheromone-based pathfinding system where ants deposit pheromones while traveling, and other ants probabilistically follow stronger trails. Trails decay over time, allowing dynamic path adaptation and enabling emergent shortest-path discovery without traditional centralized pathfinding algorithms.\n\nThe queen has a configurable genome selected by the player at the start, with genes influencing colony traits such as reproduction interval. Offspring inherit genetic traits designed to evolve through a genetic algorithm framework, shifting control from micromanagement to system-level tuning. Ants have HP and energy that deplete with every action, and when energy reaches zero, HP begins to drop. Food restores energy, creating natural evolutionary pressure as colony survival depends on resource efficiency.\n\nThis project explores decentralized intelligence, emergent behavior from simple rules, evolutionary systems, and swarm algorithms. Rather than designing fixed mechanics, the goal is to build interacting systems that produce complex behavior organically. The architecture demonstrates strong C# practices in Unity, implementation of Ant Colony Optimization, genetic algorithm design, state-machine AI systems, and simulation-oriented systems thinking. Future roadmap includes role differentiation, fully editable 3D terrain, nest construction systems, and expanded evolutionary mechanics.",
       "technologies": ["Unity", "C#", "Genetic Algorithms", "State-based AI", "Ant Colony Optimization"],
       "repository": "https://github.com/yaircharit/Antz",
       "link": "/MyProjects/Antz/index.html"
+    },
+    {
+      "id": "MetushFinder",
+      "sortOrder": 3,
+      "title": "Metushelah Finder",
+      "description": "Based in Conway's Game of Life, Metushelah Finder is a simulation that searches for the largest and longest-lived pattern in a cellular automaton. The program generates random initial configurations and evolves them according to the rules of Conway's Game of Life, tracking the lifespan of each pattern. The goal is to identify and catalog patterns that persist for extended periods, contributing to the study of cellular automata and emergent behavior.",
+      "technologies": ["Python", "Genetic Algorithm"],
+      "repository": "https://github.com/yaircharit/OU-MS-of-CS/tree/BioComp-MMN12",
+      "link": "/MyProjects/MetushelahFinder/MetushExplainer.html"
     }
   ]
 }

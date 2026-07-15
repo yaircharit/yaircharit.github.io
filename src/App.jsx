@@ -1,13 +1,15 @@
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import ProjectCardList from './components/ProjectCard'
-import ProjectPage from './components/ProjectPage'
 import ContactIcons from './components/ContactIcons'
 import AnimatedBackground from './components/AnimatedBackground'
 import Timeline from './components/Timeline'
 import './styles/App.css'
-import { useEffect } from 'react'
-import Resume from './components/Resume';
+import { Suspense, lazy, useEffect } from 'react'
+
+const ProjectPage = lazy(() => import('./components/ProjectPage'))
+const Resume = lazy(() => import('./components/Resume'))
+
 import {aboutData} from './data/myData.json'
 
 function useShowTimelineLineOnHome() {
@@ -72,39 +74,45 @@ export default function App() {
       <TimelineLineManager />
       <Navbar />
       <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="timeline-line-container">
-                <div className="timeline-line-vertical"></div>
-                <section id="home" className="home-section">
-                  <AnimatedBackground />
-                  <div className="home-content">
-                    <h1>Yair Charit</h1>
-                    <div className="title-underline"></div>
-                    <ContactIcons ignoreDarkMode />
-                  </div>
-                </section>
-                <section id="about">
-                  <h2>About <span className="gradient-text">Me</span></h2>
-                  <div className="about-content">
-                    <p dangerouslySetInnerHTML={{ __html: aboutData.join('<br/>') }} />
-                  </div>
-                </section>
-                <section id="timeline-section">
-                  <Timeline />
-                </section>
-                <section id="projects">
-                  <h2>My <span className="gradient-text">Projects</span></h2>
-                  <ProjectCardList />
-                </section>
-              </div>
-            }
-          />
-          <Route path="/project/:projectId" element={<ProjectPage />} />
-          <Route path="/resume" element={<Resume />} />
-        </Routes>
+        <Suspense fallback={<div className="loading">Loading…</div>}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="timeline-line-container">
+                  <div className="timeline-line-vertical"></div>
+                  <section id="home" className="home-section">
+                    <AnimatedBackground />
+                    <div className="home-content">
+                      <h1>Yair Charit</h1>
+                      <div className="title-underline"></div>
+                      <ContactIcons ignoreDarkMode />
+                    </div>
+                  </section>
+                  <section id="about">
+                    <h2>About <span className="gradient-text">Me</span></h2>
+                    <div className="about-content">
+    {
+      aboutData.split('\n').map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ))
+    }
+                    </div>
+                  </section>
+                  <section id="timeline-section">
+                    <Timeline />
+                  </section>
+                  <section id="projects">
+                    <h2>My <span className="gradient-text">Projects</span></h2>
+                    <ProjectCardList />
+                  </section>
+                </div>
+              }
+            />
+            <Route path="/project/:projectId" element={<ProjectPage />} />
+            <Route path="/resume" element={<Resume />} />
+          </Routes>
+        </Suspense>
         <section id="contact" className="contact-section">
           <hr />
           <h2>Contact <span className="gradient-text">Me</span></h2>

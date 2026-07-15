@@ -5,28 +5,35 @@
       "year": "March 2018 - March 2021",
       "title": "Computer Science B.Sc.",
       "institution": "Tel-Hai College",
-      "description": "B.Sc. in computer science graduate from Tel-Hai College, specialized in software development."
+      "description": "Completed a B.Sc. in Computer Science with a focus on software development, algorithms, and system design."
     },
     {
       "id": "work1",
-      "year": "September 2019 - April 2021",
-      "title": "OS and Assembly Language Instructor",
+      "year": "August 2019 - April 2021",
+      "title": "Assembly & Operating Systems Instructor",
       "institution": "Cyber Education Center",
-      "description": "Instructor of the architecture course in the \"Magshimim\" program. \nRelaying complex ideas on Windows and Linux OS principles, as well as the Assembly x8086 language while managing a small class of top high school students"
+      "description": "Taught x86 Assembly and OS fundamentals with an emphasis on low-level debugging, system architecture, and practical problem-solving."
     },
     {
       "id": "work2",
       "year": "January 2021 - March 2022",
-      "title": "Software Quality Assurance Engineer",
+      "title": "Software Testing Engineer",
       "institution": "Biosense Webster",
-      "description": "• Analyzing and debugging to validate system behaviors\n• Testing compatibility with medical devices\n• Traveling abroad for Fluoroscopy machines validation\n• Developing automation for SQA department efficiency"
+      "description": "Executed hardware-software integration testing for complex multidisciplinary medical systems.\nBuilt internal tools to automate manual validation tasks, improving team efficiency.\nTranslated system requirements into structured validation protocols for regulatory release."
     },
     {
       "id": "work3",
       "year": "March 2022 - November 2023",
-      "title": "Software Automation Testing Engineer",
+      "title": "Automation Engineer",
       "institution": "Biosense Webster",
-      "description": "• Created modular automatic testing infrastructure using C#, BASH and Ranorex\n• Managed automated daily sanity tests for development builds\n• Developed and maintained test plans for the TruDi project\n• Led automation efforts to improve test coverage and efficiency"
+      "description": "Developed C#/.NET and Ranorex automation for complex medical device software.\nReduced execution time by 70% through event-driven design and bottleneck optimization.\nExpanded automation coverage from 20% to 45% and designed modular frameworks with dynamic object repositories.\nCollaborated with R&D and clinical experts to validate complex edge cases."
+    },
+    {
+      "id": "personal1",
+      "year": "November 2023 - Present",
+      "title": "International Travel & Personal Development",
+      "institution": "Self-directed",
+      "description": "Dedicated time for international travel, continuous learning, and skill development."
     }
   ]
 }
